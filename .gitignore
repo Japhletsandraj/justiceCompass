@@ -1,21 +1,41 @@
-# Knowledge base — raw + processed data is built locally via scripts/build.py
-scripts/kb/
+# -----------------------------------------------------------------------------
+# Raw scraped intermediates — NOT the deliverable, never committed.
+# knowledge_base/ IS the deliverable and is deliberately NOT ignored.
+# -----------------------------------------------------------------------------
+data/raw/*
+!data/raw/.gitkeep
+
+# Logs and checkpoints
+logs/*
+!logs/.gitkeep
 
 # Dataset download caches
 **/.cache/
+.huggingface/
+.kaggle/
 
 # Python
 __pycache__/
 *.py[cod]
+*.egg-info/
 .venv/
 venv/
 env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Environment / secrets
 .env
 .env.*
 !.env.example
+*.pem
+credentials.json
+kaggle.json
 
 # OS / editor cruft
 Thumbs.db
 .DS_Store
+.idea/
+.vscode/
+*.swp

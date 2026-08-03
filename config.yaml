@@ -1,0 +1,847 @@
+# =============================================================================
+# JusticeCompass — pipeline configuration
+# =============================================================================
+# Single source of truth for sources, domains, rate limits and licence posture.
+# Nothing in the codebase hard-codes a URL or a delay; it all comes from here.
+#
+# READ THIS BEFORE STAGE 2 -----------------------------------------------------
+# Every `license.verified_by_human` below is `false`. No network calls were made
+# while writing this file, so no licence text has been read this session. The
+# terms recorded here are best-known starting points for YOU to confirm, not
+# findings. Sources whose `usage` is research_only / no_redistribution /
+# unverified are `enabled: false` and the licence gate refuses to fetch them
+# until you flip both flags deliberately.
+# =============================================================================
+
+kb:
+  name: JusticeCompass Legal Knowledge Base
+  version: "0.1.0"                 # KB version, written into manifest.json
+  schema_version: "1.0.0"          # must match src/schema/models.py SCHEMA_VERSION
+  jurisdiction: India
+  description: >-
+    Indian legal knowledge base covering criminal law, consumer protection,
+    family law, tenancy & property, and constitutional law. Built as retrieval
+    substrate for an AI legal assistant. Not legal advice.
+
+paths:
+  raw_dir: data/raw                # gitignored, intermediate only, NOT the deliverable
+  kb_dir: knowledge_base           # the deliverable — committed to git
+  logs_dir: logs
+  checkpoint_file: logs/checkpoint.json   # drives `build_kb.py --resume`
+
+# -----------------------------------------------------------------------------
+# Domains — keys must match the Domain enum in src/schema/models.py
+# -----------------------------------------------------------------------------
+domains:
+  criminal_law:
+    label: Criminal Law
+    description: >-
+      Harassment, assault, sexual offences, cybercrime and general penal law
+      under the current BNS/BNSS/BSA regime, with the repealed IPC/CrPC/Evidence
+      Act retained for historical case-law lookup.
+    focus_topics: [harassment, assault, sexual_offences, cybercrime, bail, fir_procedure]
+    statute_files:
+      bns_sections.jsonl: current
+      ipc_sections_archived.jsonl: archived
+      bnss_sections.jsonl: current
+      bsa_sections.jsonl: current
+
+  consumer_protection:
+    label: Consumer Protection
+    description: >-
+      Consumer Protection Act 2019: defective goods, deficient services, unfair
+      trade practices, e-commerce rules, and the three-tier redressal forums.
+    focus_topics: [defective_goods, deficiency_of_service, unfair_trade_practice, e_commerce, product_liability]
+    statute_files:
+      cpa_2019_sections.jsonl: current
+
+  family_law:
+    label: Family Law & Domestic Violence
+    description: >-
+      Marriage, divorce, maintenance, custody, and protection from domestic
+      violence across Hindu, Muslim and secular (Special Marriage Act) regimes.
+    focus_topics: [marriage, divorce, maintenance, custody, domestic_violence, dowry]
+    statute_files:
+      hindu_marriage_act.jsonl: current
+      muslim_personal_law.jsonl: current
+      special_marriage_act.jsonl: current
+      dv_act_2005.jsonl: current
+
+  tenancy_property:
+    label: Tenancy & Property Disputes
+    description: >-
+      Landlord-tenant relations, eviction, rent control, deposits and transfer of
+      property. Rent control is state law — one file per state.
+    focus_topics: [eviction, rent_control, security_deposit, lease, sale_deed, easement]
+    statute_files:
+      transfer_of_property_act.jsonl: current
+    state_subdir: rent_control_by_state
+
+  constitutional_law:
+    label: Constitutional Law
+    description: >-
+      Fundamental rights, directive principles, writ jurisdiction and the
+      constitutional provisions most often invoked in the other four domains.
+    focus_topics: [fundamental_rights, writs, equality, life_and_liberty, freedom_of_speech]
+    statute_files:
+      articles.jsonl: current
+
+# -----------------------------------------------------------------------------
+# Copyright / storage policy — enforced in src/schema/models.py, not just here
+# -----------------------------------------------------------------------------
+copyright_policy:
+  # Bare statutory text: s.52(1)(q) of the Copyright Act, 1957 permits
+  # reproduction of any Act of a legislature (with rules/orders). Safe to store.
+  store_full_statute_text: true
+
+  # Judgments: s.52(1)(q)(iv) permits reproducing court judgments unless the
+  # court prohibits it — so official court text is arguably storable in full.
+  # We deliberately stay STRICTER than the law allows: citation + short summary
+  # only. Flip this to true only as a considered decision, and only for sources
+  # whose license.full_text_storage_allowed is also true.
+  store_full_judgment_text: false
+
+  max_summary_chars: 1200          # must equal SUMMARY_MAX_CHARS in models.py
+  max_quoted_chars_per_document: 300
+  on_ambiguous_license: skip_and_log   # skip_and_log | fail_run | store_flagged
+
+  # Publisher headnotes, syllabi and copy-edited reports are protected work
+  # (Eastern Book Company v. D.B. Modak, (2008) 1 SCC 1). Never ingest them.
+  never_ingest:
+    - publisher_headnotes
+    - editorial_summaries
+    - paywalled_content
+    - user_comments
+
+  # Hosts we do not fetch from at all. Reasons recorded so the decision is
+  # reviewable rather than folklore.
+  blocked_hosts:
+    - host: indiankanoon.org
+      reason: >-
+        Terms of use prohibit automated crawling/scraping; a paid API exists.
+        Use it via the API with a licence, or not at all.
+    - host: scconline.com
+      reason: Subscription database, copyrighted editorial content.
+    - host: manupatra.com
+      reason: Subscription database, copyrighted editorial content.
+    - host: casemine.com
+      reason: Commercial aggregator, ToS restricts automated access.
+    - host: lawyerservices.in
+      reason: Aggregator of uncertain provenance and licensing.
+
+# Which licence classes may be fetched without an explicit per-source override.
+license_gate:
+  allow_usage: [public_domain, commercial_ok, attribution_required]
+  require_explicit_enable_for: [share_alike, research_only, no_redistribution, unverified]
+  # Refuse to run if a source is enabled but its licence has never been checked.
+  block_unverified_sources: true
+
+# -----------------------------------------------------------------------------
+# HTTP behaviour
+# -----------------------------------------------------------------------------
+http:
+  # Fill in a real contact address before Stage 2 — an unattributed bot hitting
+  # government infrastructure is the fastest way to get blocked.
+  user_agent: "JusticeCompassBot/0.1 (+contact: SET_YOUR_EMAIL_HERE)"
+  timeout_seconds: 30
+  connect_timeout_seconds: 10
+  max_retries: 3
+  backoff_base_seconds: 2.0        # exponential: 2s, 4s, 8s
+  backoff_max_seconds: 60
+  retry_on_status: [429, 500, 502, 503, 504]
+  verify_tls: true
+  follow_redirects: true
+  max_redirects: 5
+  max_response_mb: 50              # guards against accidentally pulling a huge PDF
+
+robots:
+  respect_robots_txt: true         # checked before every request; no override flag exists
+  cache_ttl_seconds: 86400
+  on_disallow: skip_and_log        # never fetch_anyway
+  on_fetch_error: skip_and_log     # unreadable robots.txt is treated as disallow
+
+rate_limits:
+  default:
+    requests_per_second: 0.33      # ~1 request every 3 seconds
+    max_concurrent: 1
+    jitter_seconds: [0.5, 1.5]
+    daily_request_cap: 5000
+  per_host:
+    "indiacode.nic.in":
+      requests_per_second: 0.25    # government infra — be gentle
+      max_concurrent: 1
+      daily_request_cap: 3000
+    "legislative.gov.in":
+      requests_per_second: 0.25
+      max_concurrent: 1
+    "judgments.ecourts.gov.in":
+      requests_per_second: 0.2
+      max_concurrent: 1
+      daily_request_cap: 2000
+    "main.sci.gov.in":
+      requests_per_second: 0.2
+      max_concurrent: 1
+    "ncdrc.nic.in":
+      requests_per_second: 0.25
+      max_concurrent: 1
+    "huggingface.co":
+      requests_per_second: 2.0     # CDN-backed bulk downloads, not page scraping
+      max_concurrent: 2
+
+# =============================================================================
+# SOURCES
+# =============================================================================
+# Field notes:
+#   url_verified: false  -> the URL is a documented entry point, but the exact
+#                           deep link was NOT resolved (no network calls in
+#                           Stage 1). Scrapers resolve by search at runtime.
+#   enabled: false       -> excluded from `--all` until you turn it on.
+# =============================================================================
+
+sources:
+
+  # ---------------------------------------------------------------------------
+  # Statutes — central Acts (India Code is the official GoI repository)
+  # ---------------------------------------------------------------------------
+  statutes:
+
+    - id: india_code_bns
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      search_path: /handle/123456789/1362/simple-search
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Bharatiya Nyaya Sanhita, 2023"
+      act_short_name: BNS
+      act_number: "45 of 2023"
+      statute_family: bns
+      regime: current
+      effective_from: "2024-07-01"
+      domains: [criminal_law]
+      output_file: statutes/criminal_law/bns_sections.jsonl
+      format: [html, pdf]
+      expected_section_count: 358
+      enabled: true
+      license:
+        license_id: IN-Copyright-Act-1957-s52-1-q
+        usage: public_domain
+        full_text_storage_allowed: true
+        attribution_text: "Source: India Code, Government of India."
+        verified_by_human: false
+        verification_url: https://www.indiacode.nic.in/
+        notes: >-
+          Bare text of Central Acts. s.52(1)(q) of the Copyright Act, 1957 permits
+          reproduction of any Act of a legislature. Confirm the India Code site
+          terms/GODL-India notice before commercial release.
+
+    - id: india_code_bnss
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Bharatiya Nagarik Suraksha Sanhita, 2023"
+      act_short_name: BNSS
+      act_number: "46 of 2023"
+      statute_family: bnss
+      regime: current
+      effective_from: "2024-07-01"
+      domains: [criminal_law]
+      output_file: statutes/criminal_law/bnss_sections.jsonl
+      format: [html, pdf]
+      expected_section_count: 531
+      enabled: true
+      license: &india_code_license
+        license_id: IN-Copyright-Act-1957-s52-1-q
+        usage: public_domain
+        full_text_storage_allowed: true
+        attribution_text: "Source: India Code, Government of India."
+        verified_by_human: false
+        verification_url: https://www.indiacode.nic.in/
+        notes: Bare text of Central Acts; see india_code_bns notes.
+
+    - id: india_code_bsa
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Bharatiya Sakshya Adhiniyam, 2023"
+      act_short_name: BSA
+      act_number: "47 of 2023"
+      statute_family: bsa
+      regime: current
+      effective_from: "2024-07-01"
+      domains: [criminal_law]
+      output_file: statutes/criminal_law/bsa_sections.jsonl
+      format: [html, pdf]
+      expected_section_count: 170
+      enabled: true
+      license: *india_code_license
+
+    # --- repealed criminal regime: ARCHIVED, NOT DELETED --------------------
+    # Case law from 1860-2024 cites these numbers. A query for "IPC 498A" must
+    # resolve, then forward-point to the BNS equivalent via the crossref table.
+    - id: india_code_ipc_archived
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Indian Penal Code, 1860"
+      act_short_name: IPC
+      act_number: "45 of 1860"
+      statute_family: ipc
+      regime: archived
+      effective_until: "2024-06-30"
+      superseded_by_act: "Bharatiya Nyaya Sanhita, 2023"
+      domains: [criminal_law]
+      output_file: statutes/criminal_law/ipc_sections_archived.jsonl
+      format: [html, pdf]
+      expected_section_count: 511
+      enabled: true
+      license: *india_code_license
+
+    - id: india_code_crpc_archived
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Code of Criminal Procedure, 1973"
+      act_short_name: CrPC
+      act_number: "2 of 1974"
+      statute_family: crpc
+      regime: archived
+      effective_until: "2024-06-30"
+      superseded_by_act: "Bharatiya Nagarik Suraksha Sanhita, 2023"
+      domains: [criminal_law]
+      output_file: statutes/criminal_law/ipc_sections_archived.jsonl   # archived regime shares one file
+      format: [html, pdf]
+      expected_section_count: 484
+      enabled: true
+      license: *india_code_license
+
+    - id: india_code_evidence_archived
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Indian Evidence Act, 1872"
+      act_short_name: Evidence Act
+      act_number: "1 of 1872"
+      statute_family: evidence_act
+      regime: archived
+      effective_until: "2024-06-30"
+      superseded_by_act: "Bharatiya Sakshya Adhiniyam, 2023"
+      domains: [criminal_law]
+      output_file: statutes/criminal_law/ipc_sections_archived.jsonl
+      format: [html, pdf]
+      expected_section_count: 167
+      enabled: true
+      license: *india_code_license
+
+    # --- cybercrime sits across the criminal domain -------------------------
+    - id: india_code_it_act
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Information Technology Act, 2000"
+      act_short_name: IT Act
+      act_number: "21 of 2000"
+      statute_family: other
+      regime: current
+      domains: [criminal_law]
+      output_file: statutes/criminal_law/bns_sections.jsonl   # merged into current criminal law
+      section_filter: [43, 43A, 65, 66, 66A, 66B, 66C, 66D, 66E, 66F, 67, 67A, 67B, 69, 69A, 72, 72A, 79]
+      format: [html, pdf]
+      enabled: true
+      license: *india_code_license
+      notes: >-
+        Cybercrime provisions. s.66A was struck down in Shreya Singhal v. Union
+        of India (2015) — ingest it flagged as void, never as live law.
+
+    - id: india_code_cpa_2019
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Consumer Protection Act, 2019"
+      act_short_name: CPA 2019
+      act_number: "35 of 2019"
+      statute_family: other
+      regime: current
+      effective_from: "2020-07-20"
+      domains: [consumer_protection]
+      output_file: statutes/consumer_protection/cpa_2019_sections.jsonl
+      format: [html, pdf]
+      expected_section_count: 107
+      enabled: true
+      license: *india_code_license
+
+    - id: india_code_hindu_marriage_act
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Hindu Marriage Act, 1955"
+      act_short_name: HMA
+      act_number: "25 of 1955"
+      statute_family: other
+      regime: current
+      domains: [family_law]
+      output_file: statutes/family_law/hindu_marriage_act.jsonl
+      format: [html, pdf]
+      expected_section_count: 29
+      enabled: true
+      license: *india_code_license
+
+    - id: india_code_special_marriage_act
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Special Marriage Act, 1954"
+      act_short_name: SMA
+      act_number: "43 of 1954"
+      statute_family: other
+      regime: current
+      domains: [family_law]
+      output_file: statutes/family_law/special_marriage_act.jsonl
+      format: [html, pdf]
+      expected_section_count: 51
+      enabled: true
+      license: *india_code_license
+
+    # Muslim personal law is spread across several statutes; they share one file.
+    - id: india_code_muslim_personal_law
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_group:
+        - act_name: "Muslim Personal Law (Shariat) Application Act, 1937"
+          act_short_name: Shariat Act
+          act_number: "26 of 1937"
+        - act_name: "Dissolution of Muslim Marriages Act, 1939"
+          act_short_name: DMMA
+          act_number: "8 of 1939"
+        - act_name: "Muslim Women (Protection of Rights on Divorce) Act, 1986"
+          act_short_name: MWPRD
+          act_number: "25 of 1986"
+        - act_name: "Muslim Women (Protection of Rights on Marriage) Act, 2019"
+          act_short_name: MWPRM
+          act_number: "20 of 2019"
+      statute_family: other
+      regime: current
+      domains: [family_law]
+      output_file: statutes/family_law/muslim_personal_law.jsonl
+      format: [html, pdf]
+      enabled: true
+      license: *india_code_license
+      notes: >-
+        Codified statutes only. Uncodified personal law derived from religious
+        texts is out of scope — it is not statutory text and cannot be sourced
+        or licensed the same way.
+
+    - id: india_code_dv_act
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Protection of Women from Domestic Violence Act, 2005"
+      act_short_name: PWDVA
+      act_number: "43 of 2005"
+      statute_family: other
+      regime: current
+      domains: [family_law, criminal_law]
+      output_file: statutes/family_law/dv_act_2005.jsonl
+      format: [html, pdf]
+      expected_section_count: 37
+      enabled: true
+      license: *india_code_license
+
+    - id: india_code_transfer_of_property
+      source_name: India Code (Government of India)
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Transfer of Property Act, 1882"
+      act_short_name: TPA
+      act_number: "4 of 1882"
+      statute_family: other
+      regime: current
+      domains: [tenancy_property]
+      output_file: statutes/tenancy_property/transfer_of_property_act.jsonl
+      format: [html, pdf]
+      expected_section_count: 137
+      enabled: true
+      license: *india_code_license
+
+    - id: model_tenancy_act
+      source_name: Ministry of Housing and Urban Affairs
+      base_url: https://mohua.gov.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "Model Tenancy Act, 2021"
+      act_short_name: MTA
+      statute_family: other
+      regime: current
+      domains: [tenancy_property]
+      output_file: statutes/tenancy_property/transfer_of_property_act.jsonl
+      format: [pdf]
+      enabled: true
+      license:
+        license_id: GODL-India
+        usage: attribution_required
+        full_text_storage_allowed: true
+        attribution_text: "Source: Ministry of Housing and Urban Affairs, Government of India."
+        verified_by_human: false
+        verification_url: https://data.gov.in/government-open-data-license-india
+        notes: >-
+          Model law, NOT binding — it only applies where a state has adopted it.
+          Must be tagged so retrieval never presents it as enforceable law.
+
+    - id: constitution_of_india
+      source_name: Legislative Department, Ministry of Law and Justice
+      base_url: https://legislative.gov.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      act_name: "The Constitution of India"
+      act_short_name: Constitution
+      statute_family: constitution
+      regime: current
+      domains: [constitutional_law]
+      output_file: statutes/constitutional_law/articles.jsonl
+      format: [pdf, html]
+      expected_section_count: 470          # Articles, as amended
+      include: [articles, schedules, parts]
+      enabled: true
+      license:
+        license_id: IN-Copyright-Act-1957-s52-1-q
+        usage: public_domain
+        full_text_storage_allowed: true
+        attribution_text: "Source: Legislative Department, Ministry of Law and Justice, Government of India."
+        verified_by_human: false
+        verification_url: https://legislative.gov.in/constitution-of-india/
+        notes: Prefer the official updated-to-date PDF over third-party transcriptions.
+
+  # ---------------------------------------------------------------------------
+  # Statutes — state rent control (tenancy is a State subject)
+  # ---------------------------------------------------------------------------
+  state_statutes:
+    common:
+      source_name: India Code — State Acts
+      base_url: https://www.indiacode.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      statute_family: other
+      regime: current
+      jurisdiction: state
+      domains: [tenancy_property]
+      format: [html, pdf]
+      output_dir: statutes/tenancy_property/rent_control_by_state
+      license: *india_code_license
+      fallback_note: >-
+        Where India Code lacks a state Act, fall back to that state's own
+        legislature/law-department portal and record the URL per document.
+
+    states:
+      - state: maharashtra
+        act_name: "Maharashtra Rent Control Act, 1999"
+        act_short_name: MRCA
+        output_file: maharashtra.jsonl
+        enabled: true
+      - state: tamil_nadu
+        act_name: "Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017"
+        act_short_name: TNRRRLT
+        output_file: tamil_nadu.jsonl
+        enabled: true
+      - state: delhi
+        act_name: "Delhi Rent Control Act, 1958"
+        act_short_name: DRCA
+        output_file: delhi.jsonl
+        enabled: true
+      - state: karnataka
+        act_name: "Karnataka Rent Act, 1999"
+        act_short_name: KRA
+        output_file: karnataka.jsonl
+        enabled: true
+      - state: west_bengal
+        act_name: "West Bengal Premises Tenancy Act, 1997"
+        act_short_name: WBPTA
+        output_file: west_bengal.jsonl
+        enabled: false               # phase 2
+      - state: uttar_pradesh
+        act_name: "Uttar Pradesh Regulation of Urban Premises Tenancy Act, 2021"
+        act_short_name: UPRUPT
+        output_file: uttar_pradesh.jsonl
+        enabled: false               # phase 2
+      - state: telangana
+        act_name: "Telangana Buildings (Lease, Rent and Eviction) Control Act, 1960"
+        act_short_name: TBLREC
+        output_file: telangana.jsonl
+        enabled: false               # phase 2
+      - state: gujarat
+        act_name: "Gujarat Rent Control Act, 2011"
+        act_short_name: GRCA
+        output_file: gujarat.jsonl
+        enabled: false               # phase 2
+
+  # ---------------------------------------------------------------------------
+  # Case law — official court sources
+  # ---------------------------------------------------------------------------
+  # Stored as citation + short summary only, per copyright_policy above, even
+  # though s.52(1)(q)(iv) would likely permit more for official text.
+  caselaw:
+
+    - id: escr_supreme_court
+      source_name: eSCR — Supreme Court Judgments (eCourts, Supreme Court of India)
+      base_url: https://judgments.ecourts.gov.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      court_level: supreme_court
+      court_name: Supreme Court of India
+      domains: [criminal_law, consumer_protection, family_law, tenancy_property, constitutional_law]
+      output_file: caselaw/{domain}/cases.jsonl
+      format: [html, pdf]
+      date_range: {from: "1950-01-01", to: null}
+      max_documents_per_domain: 500
+      enabled: true
+      license:
+        license_id: IN-Copyright-Act-1957-s52-1-q-iv
+        usage: public_domain
+        full_text_storage_allowed: false     # our policy, stricter than the law
+        attribution_text: "Source: eSCR / Supreme Court of India."
+        verified_by_human: false
+        verification_url: https://judgments.ecourts.gov.in/
+        notes: >-
+          s.52(1)(q)(iv) permits reproducing court judgments unless the court
+          prohibits it. We still store citation + summary only. Confirm the
+          portal's own terms of use before Stage 2.
+
+    - id: ecourts_high_courts
+      source_name: eCourts — High Court Judgments
+      base_url: https://judgments.ecourts.gov.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      court_level: high_court
+      domains: [criminal_law, family_law, tenancy_property, constitutional_law]
+      output_file: caselaw/{domain}/cases.jsonl
+      high_courts: [bombay, delhi, madras, karnataka, calcutta, allahabad, kerala, gujarat]
+      format: [html, pdf]
+      max_documents_per_domain: 400
+      enabled: true
+      license:
+        license_id: IN-Copyright-Act-1957-s52-1-q-iv
+        usage: public_domain
+        full_text_storage_allowed: false
+        attribution_text: "Source: eCourts Services, Government of India."
+        verified_by_human: false
+        verification_url: https://judgments.ecourts.gov.in/
+        notes: Same posture as eSCR. Per-High-Court portals may differ — check each.
+
+    - id: ncdrc_consumer
+      source_name: National Consumer Disputes Redressal Commission
+      base_url: https://ncdrc.nic.in/
+      url_verified: false
+      resolve_url_at_runtime: true
+      court_level: ncdrc
+      court_name: National Consumer Disputes Redressal Commission
+      domains: [consumer_protection]
+      output_file: caselaw/consumer_protection/cases.jsonl
+      format: [html, pdf]
+      max_documents_per_domain: 300
+      enabled: true
+      license:
+        license_id: IN-Copyright-Act-1957-s52-1-q-iv
+        usage: public_domain
+        full_text_storage_allowed: false
+        attribution_text: "Source: NCDRC, Government of India."
+        verified_by_human: false
+        verification_url: https://ncdrc.nic.in/
+        notes: >-
+          Primary source of consumer precedent — the domain where High Court
+          coverage is thinnest.
+
+  # ---------------------------------------------------------------------------
+  # Bulk datasets — ALL DISABLED PENDING LICENCE REVIEW
+  # ---------------------------------------------------------------------------
+  # Being on GitHub or HuggingFace means nothing about commercial usability.
+  # Every entry below is enabled: false with verified_by_human: false. Read the
+  # licence, record what you find in `notes`, set verified_on, then decide.
+  # Some carry a second risk: they are derived from Indian Kanoon scrapes, so
+  # the upstream provenance may be more restricted than the dataset card claims.
+  datasets:
+
+    - id: nyayaanumana
+      source_name: NyayaAnumana
+      description: >-
+        Large Indian court judgment-prediction corpus (Supreme Court, High Courts,
+        district courts), released alongside the INLegalLlama work.
+      homepage: https://huggingface.co/datasets
+      url_verified: false
+      access: huggingface
+      domains: [criminal_law, constitutional_law]
+      intended_use: case_outcome_labels
+      enabled: false
+      license:
+        license_id: unknown
+        usage: unverified
+        full_text_storage_allowed: false
+        verified_by_human: false
+        verification_url: null
+        notes: >-
+          ACTION REQUIRED — read the dataset card + paper licence. Academic legal
+          NLP corpora of this kind are commonly CC-BY-NC (non-commercial) or
+          research-use-only. Treat as NON-COMMERCIAL until proven otherwise. Also
+          check upstream provenance: if judgments were scraped from an aggregator,
+          that aggregator's terms may still bind you.
+
+    - id: ildc
+      source_name: ILDC — Indian Legal Documents Corpus
+      description: >-
+        Supreme Court judgments annotated for judgment prediction and
+        explainability (Malik et al., ACL 2021; Exploration-Lab/CJPE).
+      homepage: https://github.com/Exploration-Lab/CJPE
+      url_verified: false
+      access: github
+      domains: [criminal_law, constitutional_law]
+      intended_use: outcome_labels_and_explanations
+      enabled: false
+      license:
+        license_id: unknown
+        usage: unverified
+        full_text_storage_allowed: false
+        verified_by_human: false
+        verification_url: https://github.com/Exploration-Lab/CJPE
+        notes: >-
+          ACTION REQUIRED — distribution has historically been gated behind a
+          terms/consent form for research use. A repository LICENSE file does not
+          necessarily cover the DATA. Assume research-only until confirmed in
+          writing.
+
+    - id: indiclegalqa
+      source_name: IndicLegalQA
+      description: Question-answer pairs derived from Indian Supreme Court judgments.
+      homepage: https://huggingface.co/datasets
+      url_verified: false
+      access: huggingface
+      domains: [criminal_law, constitutional_law, family_law]
+      intended_use: qa_pairs_for_eval
+      enabled: false
+      license:
+        license_id: unknown
+        usage: unverified
+        full_text_storage_allowed: false
+        verified_by_human: false
+        verification_url: null
+        notes: >-
+          ACTION REQUIRED — verify licence and, separately, verify factual
+          accuracy. Model-generated QA pairs over judgments can contain
+          hallucinated holdings; do not ship as ground truth without sampling.
+
+    - id: indian_bail_judgments
+      source_name: IndianBailJudgments
+      description: >-
+        Annotated bail decisions (offence type, bail outcome, reasoning tags) —
+        directly useful for the criminal-law domain.
+      homepage: https://huggingface.co/datasets
+      url_verified: false
+      access: huggingface
+      domains: [criminal_law]
+      intended_use: bail_outcome_labels
+      enabled: false
+      license:
+        license_id: unknown
+        usage: unverified
+        full_text_storage_allowed: false
+        verified_by_human: false
+        verification_url: null
+        notes: >-
+          ACTION REQUIRED — check the dataset card. If permissively licensed
+          (MIT/Apache/CC-BY) this is the highest-value dataset of the four for
+          your criminal-law domain. Confirm whether it embeds full judgment text;
+          if it does, keep only citation + summary to stay inside our policy.
+
+# -----------------------------------------------------------------------------
+# Cross-reference table (static, hand-maintained — no scraping)
+# -----------------------------------------------------------------------------
+crossref:
+  output_file: crossreference/ipc_to_bns_mapping.jsonl
+  module: src.crossref.ipc_bns_mapping
+  authority: >-
+    Ministry of Home Affairs / Bureau of Police Research & Development
+    comparative tables for BNS, BNSS and BSA.
+  flag_non_one_to_one: true
+  relationships: [one_to_one, merged, split, substantively_changed, no_equivalent, new_provision]
+  require_confidence_field: true
+  notes: >-
+    Non-1:1 mappings are the ones that matter. A merged or split section means a
+    naive "IPC 420 -> BNS 318" substitution is wrong, and the assistant must say so.
+
+# -----------------------------------------------------------------------------
+# Validation thresholds (src/validation/quality_checks.py)
+# -----------------------------------------------------------------------------
+validation:
+  dedup:
+    method: sha256_of_cleaned_text
+    near_duplicate_threshold: 0.95
+    on_duplicate: keep_first_log_rest
+  encoding:
+    require_utf8: true
+    reject_control_chars: true
+    reject_mojibake_patterns: ["â€™", "Ã©", "�"]
+  links:
+    check_source_urls: true          # network — Stage 2 only
+    sample_rate: 0.1
+    timeout_seconds: 15
+  content:
+    min_section_text_chars: 20
+    max_section_text_chars: 120000
+    require_license_on_every_doc: true
+    require_source_url_on_every_doc: true
+    warn_if_below_expected_count_pct: 0.9
+  fail_run_on:
+    - missing_license
+    - unverified_source_enabled
+    - schema_validation_error
+  warn_only_on:
+    - low_section_count
+    - broken_source_url
+    - missing_effective_date
+
+# -----------------------------------------------------------------------------
+# Chunking for embeddings_ready/chunks.jsonl
+# -----------------------------------------------------------------------------
+chunking:
+  output_file: embeddings_ready/chunks.jsonl
+  strategy: section_aware        # never split mid-section unless oversized
+  target_chars: 1800
+  max_chars: 3000
+  overlap_chars: 200
+  min_chars: 100                 # shorter sections stay whole rather than merge
+  prepend_context_header: true   # "BNS s.75 — Sexual harassment" prefixed to each chunk
+  include_archived_regime: true  # archived IPC/CrPC chunks stay retrievable, tagged
+  carry_fields: [domains, regime, act_short_name, section_number, citation, court_level, source_url, license_id]
+
+# -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
+logging:
+  level: INFO
+  file: logs/build.log
+  error_file: logs/errors.log
+  skipped_file: logs/skipped.jsonl     # every skip, with reason — the audit trail
+  rotate_max_bytes: 10485760
+  backup_count: 5
+  log_requests: true
+  redact_patterns: ["api_key", "token", "password", "authorization"]
+
+# -----------------------------------------------------------------------------
+# Orchestrator defaults (build_kb.py)
+# -----------------------------------------------------------------------------
+build:
+  dry_run_by_default: true       # requires an explicit --run flag to execute
+  steps: [statutes, caselaw, crossref, validate, kb_write]
+  continue_on_source_error: true # one bad source must not kill the run
+  checkpoint_every_n_documents: 50
+  regenerate_kb_readme: true
+  regenerate_manifest: true

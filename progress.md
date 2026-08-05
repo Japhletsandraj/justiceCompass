@@ -1,15 +1,18 @@
-# Knowledge Base — Build Status
+4/8/2026
+collected raw data.
 
-## Overview
+5/8/2026
+preprocessing and building knowledge base
 
-This repository contains an Indian legal knowledge base built from statute and case law sources. It is designed to support prototype legal assistance, retrieval, and explanation for ordinary citizens in a limited set of domains.
+result:
+## Knowledge Base — Build Status
 
-- **Last built:** _(fill in date)_
-- **Pipeline scripts:** `pdf_extractor.py`, `gazette_extractor.py`, `constitution_adapter.py`, `caselaw_adapter.py`, `ipc_bns_mapping.py`, `quality_checks.py`, `kb_builder.py`
+**Last built:** _(fill in date)_
+**Pipeline scripts:** `pdf_extractor.py`, `gazette_extractor.py`, `constitution_adapter.py`, `caselaw_adapter.py`, `ipc_bns_mapping.py`, `quality_checks.py`, `kb_builder.py`
 
-## Coverage Summary
+### Coverage Summary
 
-| Domain | Statute documents | Sections | Case law |
+| Domain | Statute docs | Sections | Case law |
 | --- | --- | --- | --- |
 | Constitutional law | 1 | 454 | 0 |
 | Criminal law | 5 | 2,159 | 1,200 |

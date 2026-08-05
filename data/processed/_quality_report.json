@@ -1,0 +1,343 @@
+{
+  "statutes": {
+    "constitutional_law__constitution.json": {
+      "records": 454,
+      "domain": "constitutional_law",
+      "distinct_sections": 454,
+      "null_source_url": 454
+    },
+    "consumer_protection__cpa_1986.json": {
+      "records": 35,
+      "domain": "consumer_protection",
+      "distinct_sections": 35,
+      "null_source_url": 35
+    },
+    "consumer_protection__cpa_2019.json": {
+      "records": 107,
+      "domain": "consumer_protection",
+      "distinct_sections": 107,
+      "null_source_url": 107
+    },
+    "criminal_law__bna_2023.json": {
+      "records": 170,
+      "domain": "criminal_law",
+      "distinct_sections": 170,
+      "null_source_url": 170
+    },
+    "criminal_law__bns_2023.json": {
+      "records": 358,
+      "domain": "criminal_law",
+      "distinct_sections": 358,
+      "null_source_url": 358
+    },
+    "criminal_law__bnss_2023.json": {
+      "records": 531,
+      "domain": "criminal_law",
+      "distinct_sections": 531,
+      "null_source_url": 531
+    },
+    "criminal_law__crpc_1973_archived.json": {
+      "records": 517,
+      "domain": "criminal_law",
+      "distinct_sections": 517,
+      "null_source_url": 517
+    },
+    "criminal_law__ipc_1860_archived.json": {
+      "records": 583,
+      "domain": "criminal_law",
+      "distinct_sections": 583,
+      "null_source_url": 583
+    },
+    "family_law__dv_act_2005.json": {
+      "records": 37,
+      "domain": "family_law",
+      "distinct_sections": 37,
+      "null_source_url": 37
+    },
+    "family_law__hindu_marriage_act_1955.json": {
+      "records": 37,
+      "domain": "family_law",
+      "distinct_sections": 37,
+      "null_source_url": 37
+    },
+    "family_law__special_marriage_act_1954.json": {
+      "records": 56,
+      "domain": "family_law",
+      "distinct_sections": 56,
+      "null_source_url": 56
+    },
+    "tenancy_property__rent_control__Delhi_Rent_Act.json": {
+      "records": 67,
+      "domain": "tenancy_property",
+      "distinct_sections": 67,
+      "null_source_url": 67
+    },
+    "tenancy_property__rent_control__Maharashtra_Rent_Control.json": {
+      "records": 60,
+      "domain": "tenancy_property",
+      "distinct_sections": 60,
+      "null_source_url": 60
+    },
+    "tenancy_property__rent_control__West_Bengal_Rent_Act.json": {
+      "records": 31,
+      "domain": "tenancy_property",
+      "distinct_sections": 31,
+      "null_source_url": 31
+    },
+    "tenancy_property__rent_control__tamilnadu__notification_commencement_2019.json": {
+      "records": 1,
+      "domain": "tenancy_property",
+      "distinct_sections": 1,
+      "null_source_url": 1
+    },
+    "tenancy_property__rent_control__tamilnadu__notification_registration_extension_2019.json": {
+      "records": 5,
+      "domain": "tenancy_property",
+      "distinct_sections": 5,
+      "null_source_url": 5
+    },
+    "tenancy_property__rent_control__tamilnadu__notification_rent_court_2019.json": {
+      "records": 12,
+      "domain": "tenancy_property",
+      "distinct_sections": 12,
+      "null_source_url": 12
+    },
+    "tenancy_property__rent_control__tamilnadu__tnrrrlt_act_2017.json": {
+      "records": 47,
+      "domain": "tenancy_property",
+      "distinct_sections": 47,
+      "null_source_url": 47
+    },
+    "tenancy_property__rent_control__tamilnadu__tnrrrlt_amendment_act_2018.json": {
+      "records": 28,
+      "domain": "tenancy_property",
+      "distinct_sections": 28,
+      "null_source_url": 28
+    },
+    "tenancy_property__rent_control__tamilnadu__tnrrrlt_rules_2019.json": {
+      "records": 1,
+      "domain": "tenancy_property",
+      "distinct_sections": 1,
+      "null_source_url": 1
+    },
+    "tenancy_property__transfer_of_property_act_1882.json": {
+      "records": 145,
+      "domain": "tenancy_property",
+      "distinct_sections": 145,
+      "null_source_url": 145
+    }
+  },
+  "caselaw": {
+    "records": 1200,
+    "distinct_case_ids": 1200,
+    "courts": 78
+  },
+  "crossref": {
+    "entries": 270,
+    "verification_status": "unverified_against_official_concordance",
+    "citation_coverage_pct": 94.7
+  },
+  "issues": {
+    "statutes/criminal_law__ipc_1860_archived.json": [
+      {
+        "severity": "warning",
+        "check": "empty_field",
+        "detail": "s.13: required field 'section_text' is empty",
+        "sample": ""
+      },
+      {
+        "severity": "warning",
+        "check": "empty_field",
+        "detail": "s.15: required field 'section_text' is empty",
+        "sample": ""
+      },
+      {
+        "severity": "warning",
+        "check": "empty_field",
+        "detail": "s.163: required field 'section_text' is empty",
+        "sample": ""
+      },
+      {
+        "severity": "warning",
+        "check": "empty_field",
+        "detail": "s.165A: required field 'section_text' is empty",
+        "sample": ""
+      }
+    ],
+    "statutes/tenancy_property__rent_control__West_Bengal_Rent_Act.json": [
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.1: unmapped PDF glyph codes leaked into text",
+        "sample": "Act, 1997. (2) It shall come into force on such date as the State Government may, by notification, appoint. (3) It extends to the areas included within the limits of the Calcutta Municipal Corporation"
+      },
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.3: unmapped PDF glyph codes leaked into text",
+        "sample": "Exemption. (a) any premises owned by— (i) the Central Government, or (ii) any State Government, or (iii) a Government undertaking or enterprise, or (iv) a statutory body which is not a local authority"
+      },
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.18: unmapped PDF glyph codes leaked into text",
+        "sample": "five per cent every three years:(cid:9) Provided that the State Government may issue notification varying such rate of increase every four years from the date of commencement of this Act. The West Ben"
+      },
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.26: unmapped PDF glyph codes leaked into text",
+        "sample": "(cid:9) (1) Where after the commencement of this Act, any premises"
+      },
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.37: unmapped PDF glyph codes leaked into text",
+        "sample": "a separate electric connection to a tenant, the tenant desiring to get such supply from a licensee as defined in clause (h) of section 2 of the Indian 9 of 1910.(cid:9) Electricity Act, 1910, may appl"
+      },
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.39: unmapped PDF glyph codes leaked into text",
+        "sample": "him for disposal to any Additional Controller or Deputy Controller or withdraw any proceeding pending before any Additional Controller or Deputy Controller and dispose of such proceeding himself or tr"
+      },
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.43: unmapped PDF glyph codes leaked into text",
+        "sample": "Tribunal as the State Legislature may, by law, provide: Provided that until a Tribunal is so provided, an appeal from the final order of the Controller shall lie to the High Court. (2) An appeal shall"
+      },
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.47: unmapped PDF glyph codes leaked into text",
+        "sample": "carrying out the purposes of this Act.(cid:9) In particular and without prejudice to the generality of the foregoing (2) powers, such rules may provide for all or any of the matters which, under any p"
+      }
+    ],
+    "statutes/tenancy_property__rent_control__tamilnadu__tnrrrlt_rules_2019.json": [
+      {
+        "severity": "error",
+        "check": "encoding_cid_glyphs",
+        "detail": "s.(whole document): unmapped PDF glyph codes leaked into text",
+        "sample": "© [Regd. No. TN/CCN/467/2012-14. GOVERNMENT OF TAMIL NADU [R. Dis. No. 197/2009. [Price: Re. 0.80 Paise. TAMIL NADU GOVERNMENT GAZETTE No. 297] CHENNAI, THURSDAY, JULY 11, 2019 Aani 26, Vikari, Thiruv"
+      }
+    ],
+    "statutes/tenancy_property__transfer_of_property_act_1882.json": [
+      {
+        "severity": "warning",
+        "check": "empty_field",
+        "detail": "s.88: required field 'section_text' is empty",
+        "sample": ""
+      },
+      {
+        "severity": "warning",
+        "check": "empty_field",
+        "detail": "s.89: required field 'section_text' is empty",
+        "sample": ""
+      }
+    ],
+    "caselaw/indianbail_1200.json": [
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-102 has same title+date as IBJ-25",
+        "sample": "state of karnataka vs nagaraja|2016-02-23"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-367 has same title+date as IBJ-331",
+        "sample": "girish bharti vs narcotics control bureau|2024-09-23"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-391 has same title+date as IBJ-390",
+        "sample": "lakho vs state of punjab|2025-01-07"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-413 has same title+date as IBJ-180",
+        "sample": "chandra prakash khandelwal vs directorate of enforcement|2023-02-23"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-436 has same title+date as IBJ-346",
+        "sample": "mr. manjunath p vs state by karnataka|2024-06-21"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-452 has same title+date as IBJ-410",
+        "sample": "kalamuddin ansari @ doka vs state of u.p.|2024-05-14"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-453 has same title+date as IBJ-356",
+        "sample": "shivam sharma vs state of u.p.|2024-04-24"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-469 has same title+date as IBJ-403",
+        "sample": "sumit kumar vs state of delhi|2022-09-21"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-471 has same title+date as IBJ-183",
+        "sample": "ashish kumar @ pintoo vs state|2022-03-25"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-516 has same title+date as IBJ-202",
+        "sample": "pratik vireshbhai vavadia vs the state of gujarat|2022-02-28"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-551 has same title+date as IBJ-544",
+        "sample": "ram niwas gupta vs union of india and ors.|1995-04-01"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-700 has same title+date as IBJ-600",
+        "sample": "rajesh kumar vs the state of bihar|2024-03-22"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-701 has same title+date as IBJ-596",
+        "sample": "biru kumar vs the state of bihar|2024-03-22"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-726 has same title+date as IBJ-403",
+        "sample": "sumit kumar vs state of delhi|2022-09-21"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-1049 has same title+date as IBJ-1038",
+        "sample": "subhash kumar sharma vs state|2018-06-20"
+      },
+      {
+        "severity": "warning",
+        "check": "duplicate_case_titledate",
+        "detail": "IBJ-1050 has same title+date as IBJ-1037",
+        "sample": "upendra rai vs directorate of enforcement|2019-07-09"
+      }
+    ]
+  },
+  "counts": {
+    "cross_document_identical_text": 91,
+    "warning": 22,
+    "error": 9
+  }
+}

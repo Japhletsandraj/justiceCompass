@@ -1,0 +1,210 @@
+[
+  {
+    "part": "Part I",
+    "subject": "Union & Its Territory",
+    "articles_raw": "Article 1-4",
+    "lo": "1",
+    "hi": "4",
+    "note": null
+  },
+  {
+    "part": "Part II",
+    "subject": "Citizenship",
+    "articles_raw": "Article 5-11",
+    "lo": "5",
+    "hi": "11",
+    "note": null
+  },
+  {
+    "part": "Part III",
+    "subject": "Fundamental Rights",
+    "articles_raw": "Article 12-35",
+    "lo": "12",
+    "hi": "35",
+    "note": null
+  },
+  {
+    "part": "Part IV",
+    "subject": "Directive Principles",
+    "articles_raw": "Article 36-51",
+    "lo": "36",
+    "hi": "51",
+    "note": null
+  },
+  {
+    "part": "Part IV A",
+    "subject": "Fundamental Duties",
+    "articles_raw": "Article 51A",
+    "lo": "51A",
+    "hi": "51A",
+    "note": null
+  },
+  {
+    "part": "Part V",
+    "subject": "The Union",
+    "articles_raw": "Article 52-151",
+    "lo": "52",
+    "hi": "151",
+    "note": null
+  },
+  {
+    "part": "Part VI",
+    "subject": "The States",
+    "articles_raw": "Article 152-237",
+    "lo": "152",
+    "hi": "237",
+    "note": null
+  },
+  {
+    "part": "Part VII",
+    "subject": "Note: 7th Amendment Act, 1956 repealed Part 7",
+    "articles_raw": "–",
+    "lo": null,
+    "hi": null,
+    "note": "no article range in index (Part repealed or blank)"
+  },
+  {
+    "part": "Part VIII",
+    "subject": "The Union Territories",
+    "articles_raw": "Article 239-242",
+    "lo": "239",
+    "hi": "242",
+    "note": null
+  },
+  {
+    "part": "Part IX",
+    "subject": "The Panchayats",
+    "articles_raw": "Article 243-243O",
+    "lo": "243",
+    "hi": "243O",
+    "note": null
+  },
+  {
+    "part": "Part IX A",
+    "subject": "The Municipalities",
+    "articles_raw": "Article 243P-243ZG",
+    "lo": "243P",
+    "hi": "243ZG",
+    "note": null
+  },
+  {
+    "part": "Part IX B",
+    "subject": "Co-operative Societies",
+    "articles_raw": "Article 243ZH-243ZT",
+    "lo": "243ZH",
+    "hi": "243ZT",
+    "note": null
+  },
+  {
+    "part": "Part X",
+    "subject": "Scheduled and Tribal Areas",
+    "articles_raw": "Article 244-244A",
+    "lo": "244",
+    "hi": "244A",
+    "note": null
+  },
+  {
+    "part": "Part XI",
+    "subject": "Relation between Union & States",
+    "articles_raw": "Article 245-263",
+    "lo": "245",
+    "hi": "263",
+    "note": null
+  },
+  {
+    "part": "Part XII",
+    "subject": "Finance, Property, Contracts and Suits",
+    "articles_raw": "Article 264-300A",
+    "lo": "264",
+    "hi": "300A",
+    "note": null
+  },
+  {
+    "part": "Part XIII",
+    "subject": "Trade, Commerce and Intercourse within the territory of India",
+    "articles_raw": "Article 301-307",
+    "lo": "301",
+    "hi": "307",
+    "note": null
+  },
+  {
+    "part": "Part XIV",
+    "subject": "Services under the Union and States",
+    "articles_raw": "Article 308-323",
+    "lo": "308",
+    "hi": "323",
+    "note": null
+  },
+  {
+    "part": "Part XIV A",
+    "subject": "Tribunals",
+    "articles_raw": "Article 323A-323B",
+    "lo": "323A",
+    "hi": "323B",
+    "note": null
+  },
+  {
+    "part": "Part XV",
+    "subject": "Elections",
+    "articles_raw": "Article 324-329A",
+    "lo": "324",
+    "hi": "329A",
+    "note": null
+  },
+  {
+    "part": "Part XVI",
+    "subject": "Special Provisions relating to certain classes",
+    "articles_raw": "Article 330-342",
+    "lo": "330",
+    "hi": "342",
+    "note": null
+  },
+  {
+    "part": "Part XVII",
+    "subject": "Official Languages",
+    "articles_raw": "Article 343-351",
+    "lo": "343",
+    "hi": "351",
+    "note": null
+  },
+  {
+    "part": "Part XVIII",
+    "subject": "Emergency Provisions",
+    "articles_raw": "Article 352-360",
+    "lo": "352",
+    "hi": "360",
+    "note": null
+  },
+  {
+    "part": "Part XIX",
+    "subject": "Miscellaneous",
+    "articles_raw": "Article 361-367",
+    "lo": "361",
+    "hi": "367",
+    "note": null
+  },
+  {
+    "part": "Part XX",
+    "subject": "Amendment of the Constitution",
+    "articles_raw": "Article 368",
+    "lo": "368",
+    "hi": "368",
+    "note": null
+  },
+  {
+    "part": "Part XXI",
+    "subject": "Temporary, Transitional and Special Provisions",
+    "articles_raw": "Article 369-392",
+    "lo": "369",
+    "hi": "392",
+    "note": null
+  },
+  {
+    "part": "Part XXII",
+    "subject": "Short title, Commencement, Authoritative Text in Hindi and Repeals",
+    "articles_raw": "Article 393-395",
+    "lo": "393",
+    "hi": "395",
+    "note": null
+  }
+]

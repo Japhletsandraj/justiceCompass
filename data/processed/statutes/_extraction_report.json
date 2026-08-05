@@ -1,0 +1,485 @@
+[
+  {
+    "source_file": "consumer_protection/cpa_1986.pdf",
+    "act_name": "The Consumer Protection Act, 1986",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 14,
+    "section_count": 35,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Consumer Protection Act, 1986",
+      "act_year": 1986,
+      "domain_tags": [
+        "consumer_protection"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "repealed",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "consumer_protection/cpa_2019.pdf",
+    "act_name": "The Consumer Protection Act, 2019",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 39,
+    "section_count": 107,
+    "body_start_method": "last_chapter_i_after_toc",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Consumer Protection Act, 2019",
+      "act_year": 2019,
+      "domain_tags": [
+        "consumer_protection"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "criminal_law/bna_2023.pdf",
+    "act_name": "The Bharatiya Sakshya Adhiniyam, 2023",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 54,
+    "section_count": 170,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at THE SCHEDULE (p.52)"
+    ],
+    "meta": {
+      "act_name": "The Bharatiya Sakshya Adhiniyam, 2023",
+      "act_abbrev": "BSA",
+      "act_year": 2023,
+      "domain_tags": [
+        "criminal_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "filename_mismatch": "File is named bna_2023.pdf; document is the Bharatiya Sakshya Adhiniyam (BSA), Act 47 of 2023."
+    }
+  },
+  {
+    "source_file": "criminal_law/bns_2023.pdf",
+    "act_name": "The Bharatiya Nyaya Sanhita, 2023",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 112,
+    "section_count": 358,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at STATEMENT OF OBJECTS AND REASONS (p.112)"
+    ],
+    "meta": {
+      "act_name": "The Bharatiya Nyaya Sanhita, 2023",
+      "act_abbrev": "BNS",
+      "act_year": 2023,
+      "domain_tags": [
+        "criminal_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "criminal_law/bnss_2023.pdf",
+    "act_name": "The Bharatiya Nagarik Suraksha Sanhita, 2023",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 282,
+    "section_count": 531,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at THE FIRST SCHEDULE (p.175)"
+    ],
+    "meta": {
+      "act_name": "The Bharatiya Nagarik Suraksha Sanhita, 2023",
+      "act_abbrev": "BNSS",
+      "act_year": 2023,
+      "domain_tags": [
+        "criminal_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "criminal_law/crpc_1973_archived.pdf",
+    "act_name": "The Code of Criminal Procedure, 1973",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 263,
+    "section_count": 517,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at THE FIRST SCHEDULE (p.196)"
+    ],
+    "meta": {
+      "act_name": "The Code of Criminal Procedure, 1973",
+      "act_abbrev": "CrPC",
+      "act_year": 1973,
+      "domain_tags": [
+        "criminal_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "repealed",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "criminal_law/ipc_1860_archived.pdf",
+    "act_name": "The Indian Penal Code, 1860",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 119,
+    "section_count": 583,
+    "body_start_method": "last_chapter_i_after_toc",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Indian Penal Code, 1860",
+      "act_abbrev": "IPC",
+      "act_year": 1860,
+      "domain_tags": [
+        "criminal_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "repealed",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "family_law/dv_act_2005.pdf",
+    "act_name": "The Protection of Women from Domestic Violence Act, 2005",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 12,
+    "section_count": 37,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Protection of Women from Domestic Violence Act, 2005",
+      "act_year": 2005,
+      "domain_tags": [
+        "family_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "family_law/hindu_marriage_act_1955.pdf",
+    "act_name": "The Hindu Marriage Act, 1955",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 17,
+    "section_count": 37,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at STATEMENT OF OBJECTS AND REASONS (p.17)"
+    ],
+    "meta": {
+      "act_name": "The Hindu Marriage Act, 1955",
+      "act_year": 1955,
+      "domain_tags": [
+        "family_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "family_law/special_marriage_act_1954.pdf",
+    "act_name": "The Special Marriage Act, 1954",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 24,
+    "section_count": 56,
+    "body_start_method": "enacting_formula",
+    "act_number": "43 of 1954",
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Special Marriage Act, 1954",
+      "act_year": 1954,
+      "domain_tags": [
+        "family_law"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/Delhi_Rent_Act.pdf",
+    "act_name": "The Delhi Rent Control Act, 1958",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 31,
+    "section_count": 67,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at THE FIRST SCHEDULE (p.29)"
+    ],
+    "meta": {
+      "act_name": "The Delhi Rent Control Act, 1958",
+      "act_year": 1958,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Delhi",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/Karnataka_Rent_Act_1999.pdf",
+    "act_name": "The Karnataka Rent Act, 1999",
+    "extraction_status": "failed",
+    "reason": "PDF has no usable text layer: 79% of extracted content is (cid:N) glyph codes with no ToUnicode mapping. Needs OCR or a re-download of a text-bearing copy.",
+    "pages": 77,
+    "section_count": 0,
+    "body_start_method": "n/a",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Karnataka Rent Act, 1999",
+      "act_year": 1999,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Karnataka",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/Maharashtra_Rent_Control.pdf",
+    "act_name": "The Maharashtra Rent Control Act, 1999",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 40,
+    "section_count": 60,
+    "body_start_method": "enacting_formula",
+    "act_number": "18 of 2000",
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Maharashtra Rent Control Act, 1999",
+      "act_year": 1999,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Maharashtra",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/West_Bengal_Rent_Act.pdf",
+    "act_name": "The West Bengal Premises Tenancy Act, 1997",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 29,
+    "section_count": 31,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at SCHEDULE I (p.28)"
+    ],
+    "meta": {
+      "act_name": "The West Bengal Premises Tenancy Act, 1997",
+      "act_year": 1997,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "West Bengal",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/tamilnadu/notification_commencement_2019.pdf",
+    "act_name": "Notification: date of coming into force of the Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+    "extraction_status": "ok",
+    "reason": "No section numbering present; captured as a single whole-document record (short notification or one-page amending instrument).",
+    "pages": 1,
+    "section_count": 1,
+    "body_start_method": "gazette_segmentation",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "Notification: date of coming into force of the Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+      "act_year": 2019,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "notification",
+      "gazette": true
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/tamilnadu/notification_registration_extension_2019.pdf",
+    "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants (Amendment) Act, 2019",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 3,
+    "section_count": 5,
+    "body_start_method": "gazette_segmentation",
+    "act_number": "22 of 2019",
+    "anomalies": [
+      "gazette issue also contains 1 unrelated act(s), not extracted"
+    ],
+    "meta": {
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants (Amendment) Act, 2019",
+      "act_year": 2019,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "amendment",
+      "amends": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+      "gazette": true,
+      "content_note": "Filename says 'notification'; the document is Act 22 of 2019, an amending Act. The same gazette issue also carries Act 21 of 2019 (fishermen welfare), which is unrelated and not extracted."
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/tamilnadu/notification_rent_court_2019.pdf",
+    "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Rules, 2019",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 12,
+    "section_count": 12,
+    "body_start_method": "gazette_segmentation",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Rules, 2019",
+      "act_year": 2019,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "rules",
+      "gazette": true,
+      "content_note": "Filename says 'notification'; the document is the principal TNRRRLT Rules, 2019 (G.O. Ms. No. 36, 22 February 2019)."
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/tamilnadu/tnrrrlt_act_2017.pdf",
+    "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 40,
+    "section_count": 47,
+    "body_start_method": "gazette_segmentation",
+    "act_number": "42 of 2017",
+    "anomalies": [
+      "gazette issue also contains 10 unrelated act(s), not extracted"
+    ],
+    "meta": {
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+      "act_year": 2017,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "gazette": true,
+      "content_note": "Gazette issue containing Acts 36-47 of 2017; only Act 42 of 2017 (the rent statute) is extracted."
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/tamilnadu/tnrrrlt_amendment_act_2018.pdf",
+    "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants (Amendment) Act, 2018",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 24,
+    "section_count": 28,
+    "body_start_method": "gazette_segmentation",
+    "act_number": "39 of 2018",
+    "anomalies": [
+      "gazette issue also contains 5 unrelated act(s), not extracted"
+    ],
+    "meta": {
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants (Amendment) Act, 2018",
+      "act_year": 2018,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "amendment",
+      "amends": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+      "gazette": true,
+      "content_note": "Gazette issue containing Acts 35-40 of 2018; only Act 39 of 2018 (the rent amendment) is extracted."
+    }
+  },
+  {
+    "source_file": "tenancy_property/rent_control/tamilnadu/tnrrrlt_rules_2019.pdf",
+    "act_name": "Amendments to the Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Rules, 2019",
+    "extraction_status": "ok",
+    "reason": "No section numbering present; captured as a single whole-document record (short notification or one-page amending instrument).",
+    "pages": 1,
+    "section_count": 1,
+    "body_start_method": "gazette_segmentation",
+    "act_number": null,
+    "anomalies": [],
+    "meta": {
+      "act_name": "Amendments to the Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Rules, 2019",
+      "act_year": 2019,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "amendment",
+      "amends": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Rules, 2019",
+      "gazette": true,
+      "content_note": "Filename says 'rules'; the document is a one-page amendment to those Rules (G.O. Ms. No. 103, 11 July 2019)."
+    }
+  },
+  {
+    "source_file": "tenancy_property/transfer_of_property_act_1882.pdf",
+    "act_name": "The Transfer of Property Act, 1882",
+    "extraction_status": "ok",
+    "reason": "",
+    "pages": 46,
+    "section_count": 145,
+    "body_start_method": "enacting_formula",
+    "act_number": null,
+    "anomalies": [
+      "body parsing stopped at THE SCHEDULE (p.46)"
+    ],
+    "meta": {
+      "act_name": "The Transfer of Property Act, 1882",
+      "act_year": 1882,
+      "domain_tags": [
+        "tenancy_property"
+      ],
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act"
+    }
+  }
+]

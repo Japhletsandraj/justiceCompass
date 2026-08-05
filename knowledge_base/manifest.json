@@ -1,0 +1,425 @@
+{
+  "name": "Indian legal knowledge base",
+  "generated": "2026-08-05",
+  "generated_by": "scripts/kb_builder.py",
+  "domains": [
+    "constitutional_law",
+    "criminal_law",
+    "consumer_protection",
+    "family_law",
+    "tenancy_property"
+  ],
+  "coverage": {
+    "constitutional_law": {
+      "statute_documents": 1,
+      "statute_sections": 454,
+      "case_law_documents": 0,
+      "has_case_law": false,
+      "jurisdictions": [
+        "India (Union)"
+      ]
+    },
+    "criminal_law": {
+      "statute_documents": 5,
+      "statute_sections": 2159,
+      "case_law_documents": 1200,
+      "has_case_law": true,
+      "jurisdictions": [
+        "India (Union)"
+      ]
+    },
+    "consumer_protection": {
+      "statute_documents": 2,
+      "statute_sections": 142,
+      "case_law_documents": 0,
+      "has_case_law": false,
+      "jurisdictions": [
+        "India (Union)"
+      ]
+    },
+    "family_law": {
+      "statute_documents": 3,
+      "statute_sections": 130,
+      "case_law_documents": 0,
+      "has_case_law": false,
+      "jurisdictions": [
+        "India (Union)"
+      ]
+    },
+    "tenancy_property": {
+      "statute_documents": 10,
+      "statute_sections": 397,
+      "case_law_documents": 0,
+      "has_case_law": false,
+      "jurisdictions": [
+        "Delhi",
+        "India (Union)",
+        "Maharashtra",
+        "Tamil Nadu",
+        "West Bengal"
+      ]
+    }
+  },
+  "totals": {
+    "statute_documents": 21,
+    "statute_sections": 3282,
+    "cases": 1200,
+    "crossreference_entries": 270,
+    "embeddings_ready_records": 4746
+  },
+  "regime_tag_counts": {
+    "current": 2147,
+    "repealed": 1135
+  },
+  "documents": [
+    {
+      "file": "statutes/constitutional_law/constitution.json",
+      "act_name": "The Constitution of India",
+      "domain": "constitutional_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "constitution",
+      "sections": 454,
+      "source": "Constitution of India dataset (Kaggle: rushikeshdarge/constitution-of-india)",
+      "source_url": "https://www.kaggle.com/datasets/rushikeshdarge/constitution-of-india",
+      "license": "Licence not recorded at acquisition and not stated in the downloaded files. The underlying text is the Constitution of India, a Government of India enactment.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/consumer_protection/cpa_1986.json",
+      "act_name": "The Consumer Protection Act, 1986",
+      "domain": "consumer_protection",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "repealed",
+      "document_type": "principal_act",
+      "sections": 35,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/consumer_protection/cpa_2019.json",
+      "act_name": "The Consumer Protection Act, 2019",
+      "domain": "consumer_protection",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 107,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/criminal_law/bna_2023.json",
+      "act_name": "The Bharatiya Sakshya Adhiniyam, 2023",
+      "domain": "criminal_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 170,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": "File is named bna_2023.pdf; document is the Bharatiya Sakshya Adhiniyam (BSA), Act 47 of 2023."
+    },
+    {
+      "file": "statutes/criminal_law/bns_2023.json",
+      "act_name": "The Bharatiya Nyaya Sanhita, 2023",
+      "domain": "criminal_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 358,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/criminal_law/bnss_2023.json",
+      "act_name": "The Bharatiya Nagarik Suraksha Sanhita, 2023",
+      "domain": "criminal_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 531,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/criminal_law/crpc_1973_archived.json",
+      "act_name": "The Code of Criminal Procedure, 1973",
+      "domain": "criminal_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "repealed",
+      "document_type": "principal_act",
+      "sections": 517,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/criminal_law/ipc_1860_archived.json",
+      "act_name": "The Indian Penal Code, 1860",
+      "domain": "criminal_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "repealed",
+      "document_type": "principal_act",
+      "sections": 583,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/family_law/dv_act_2005.json",
+      "act_name": "The Protection of Women from Domestic Violence Act, 2005",
+      "domain": "family_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 37,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/family_law/hindu_marriage_act_1955.json",
+      "act_name": "The Hindu Marriage Act, 1955",
+      "domain": "family_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 37,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/family_law/special_marriage_act_1954.json",
+      "act_name": "The Special Marriage Act, 1954",
+      "domain": "family_law",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 56,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__Delhi_Rent_Act.json",
+      "act_name": "The Delhi Rent Control Act, 1958",
+      "domain": "tenancy_property",
+      "jurisdiction": "Delhi",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 67,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__Maharashtra_Rent_Control.json",
+      "act_name": "The Maharashtra Rent Control Act, 1999",
+      "domain": "tenancy_property",
+      "jurisdiction": "Maharashtra",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 60,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__West_Bengal_Rent_Act.json",
+      "act_name": "The West Bengal Premises Tenancy Act, 1997",
+      "domain": "tenancy_property",
+      "jurisdiction": "West Bengal",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 31,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 7,
+      "content_note": null
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__tamilnadu__notification_commencement_2019.json",
+      "act_name": "Notification: date of coming into force of the Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+      "domain": "tenancy_property",
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "notification",
+      "sections": 1,
+      "source": "Tamil Nadu Government Gazette, Government of Tamil Nadu",
+      "source_url": null,
+      "license": "State Government gazette material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__tamilnadu__notification_registration_extension_2019.json",
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants (Amendment) Act, 2019",
+      "domain": "tenancy_property",
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "amendment",
+      "sections": 5,
+      "source": "Tamil Nadu Government Gazette, Government of Tamil Nadu",
+      "source_url": null,
+      "license": "State Government gazette material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": "Filename says 'notification'; the document is Act 22 of 2019, an amending Act. The same gazette issue also carries Act 21 of 2019 (fishermen welfare), which is unrelated and not extracted."
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__tamilnadu__notification_rent_court_2019.json",
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Rules, 2019",
+      "domain": "tenancy_property",
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "rules",
+      "sections": 12,
+      "source": "Tamil Nadu Government Gazette, Government of Tamil Nadu",
+      "source_url": null,
+      "license": "State Government gazette material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": "Filename says 'notification'; the document is the principal TNRRRLT Rules, 2019 (G.O. Ms. No. 36, 22 February 2019)."
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__tamilnadu__tnrrrlt_act_2017.json",
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+      "domain": "tenancy_property",
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 47,
+      "source": "Tamil Nadu Government Gazette, Government of Tamil Nadu",
+      "source_url": null,
+      "license": "State Government gazette material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": "Gazette issue containing Acts 36-47 of 2017; only Act 42 of 2017 (the rent statute) is extracted."
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__tamilnadu__tnrrrlt_amendment_act_2018.json",
+      "act_name": "The Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants (Amendment) Act, 2018",
+      "domain": "tenancy_property",
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "amendment",
+      "sections": 28,
+      "source": "Tamil Nadu Government Gazette, Government of Tamil Nadu",
+      "source_url": null,
+      "license": "State Government gazette material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": "Gazette issue containing Acts 35-40 of 2018; only Act 39 of 2018 (the rent amendment) is extracted."
+    },
+    {
+      "file": "statutes/tenancy_property/rent_control__tamilnadu__tnrrrlt_rules_2019.json",
+      "act_name": "Amendments to the Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Rules, 2019",
+      "domain": "tenancy_property",
+      "jurisdiction": "Tamil Nadu",
+      "regime_tag": "current",
+      "document_type": "amendment",
+      "sections": 1,
+      "source": "Tamil Nadu Government Gazette, Government of Tamil Nadu",
+      "source_url": null,
+      "license": "State Government gazette material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 1,
+      "content_note": "Filename says 'rules'; the document is a one-page amendment to those Rules (G.O. Ms. No. 103, 11 July 2019)."
+    },
+    {
+      "file": "statutes/tenancy_property/transfer_of_property_act_1882.json",
+      "act_name": "The Transfer of Property Act, 1882",
+      "domain": "tenancy_property",
+      "jurisdiction": "India (Union)",
+      "regime_tag": "current",
+      "document_type": "principal_act",
+      "sections": 145,
+      "source": "India Code (indiacode.nic.in), Government of India",
+      "source_url": null,
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "sections_with_encoding_damage": 0,
+      "content_note": null
+    }
+  ],
+  "extraction_failures": [
+    {
+      "file": "tenancy_property/rent_control/Karnataka_Rent_Act_1999.pdf",
+      "act_name": "The Karnataka Rent Act, 1999",
+      "status": "failed",
+      "reason": "PDF has no usable text layer: 79% of extracted content is (cid:N) glyph codes with no ToUnicode mapping. Needs OCR or a re-download of a text-bearing copy."
+    }
+  ],
+  "caselaw": {
+    "dataset": "IndianBailJudgments-1200",
+    "records": 1200,
+    "duplicate_title_date_groups": 15,
+    "records_flagged_possible_duplicate": 31,
+    "note": "Duplicates are flagged with possible_duplicate_of and retained, not deleted -- they may be separate proceedings sharing a cause title and date."
+  },
+  "crossreference": {
+    "verification_status": "unverified_against_official_concordance",
+    "caveat": "Compiled from domain knowledge and not checked against an official government concordance. Section numbers are machine-verified to exist in the extracted statute text; the correctness of each pairing is not.",
+    "coverage": 94.7
+  },
+  "sources": {
+    "constitution_csv": {
+      "name": "Constitution of India dataset (Kaggle: rushikeshdarge/constitution-of-india)",
+      "url": "https://www.kaggle.com/datasets/rushikeshdarge/constitution-of-india",
+      "url_note": "Identified from scripts/data_loader.py, which downloads this dataset via kagglehub.",
+      "license": "Licence not recorded at acquisition and not stated in the downloaded files. The underlying text is the Constitution of India, a Government of India enactment.",
+      "license_verified": false
+    },
+    "indiacode": {
+      "name": "India Code (indiacode.nic.in), Government of India",
+      "url": null,
+      "url_note": "Acquisition URLs were not captured in data/raw. Documents are indiacode.nic.in bare-act PDFs, identifiable from their own title blocks.",
+      "license": "Government of India legislative material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "license_verified": false
+    },
+    "indianbail": {
+      "name": "IndianBailJudgments-1200 (Sneha Deshmukh)",
+      "url": "https://huggingface.co/datasets/SnehaDeshmukh/IndianBailJudgments-1200",
+      "url_note": "Identified from scripts/data_loader.py, which loads this dataset from the Hugging Face Hub.",
+      "license": "CC-BY-4.0. Requires attribution to the dataset author when redistributed or used.",
+      "license_verified": true
+    },
+    "tn_gazette": {
+      "name": "Tamil Nadu Government Gazette, Government of Tamil Nadu",
+      "url": null,
+      "url_note": "Gazette issues (Extraordinary) as published by the Director of Stationery and Printing, Chennai. Acquisition URLs not captured in data/raw.",
+      "license": "State Government gazette material. Section 52(1)(q) of the Copyright Act, 1957 permits reproduction of any enactment. No explicit licence file accompanied the source PDFs.",
+      "license_verified": false
+    }
+  },
+  "quality": {
+    "errors": 9,
+    "warnings": 22,
+    "report": "data/processed/_quality_report.json"
+  }
+}

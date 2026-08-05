@@ -1,0 +1,3623 @@
+{
+  "verification_status": "unverified_against_official_concordance",
+  "caveat": "Compiled from domain knowledge and not checked against an official government concordance. Section numbers are machine-verified to exist in the extracted statute text; the correctness of each pairing is not.",
+  "entries": [
+    {
+      "source_statute": "IPC",
+      "source_section": "34",
+      "target_statute": "BNS",
+      "target_section": "3(5)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Common intention.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 305
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "107",
+      "target_statute": "BNS",
+      "target_section": "45",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Abetment defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "109",
+      "target_statute": "BNS",
+      "target_section": "49",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Abetment, offence committed.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 34
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "110",
+      "target_statute": "BNS",
+      "target_section": "50",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "111",
+      "target_statute": "BNS",
+      "target_section": "51",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "114",
+      "target_statute": "BNS",
+      "target_section": "46",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Abettor present.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 28
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "116",
+      "target_statute": "BNS",
+      "target_section": "55",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "120A",
+      "target_statute": "BNS",
+      "target_section": "61(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Criminal conspiracy defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "120B",
+      "target_statute": "BNS",
+      "target_section": "61(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for criminal conspiracy.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 360
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "121",
+      "target_statute": "BNS",
+      "target_section": "147",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Waging war against Government of India.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 7
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "121A",
+      "target_statute": "BNS",
+      "target_section": "148",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 12
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "122",
+      "target_statute": "BNS",
+      "target_section": "149",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "124A",
+      "target_statute": null,
+      "target_section": null,
+      "relation": "omitted",
+      "confidence": "high",
+      "note": "Sedition repealed. BNS 152 (act endangering sovereignty, unity and integrity) is NOT a renumbering -- different elements and scope.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": null,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "141",
+      "target_statute": "BNS",
+      "target_section": "189(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Unlawful assembly.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "143",
+      "target_statute": "BNS",
+      "target_section": "189(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 34
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "147",
+      "target_statute": "BNS",
+      "target_section": "191(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Rioting.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 58
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "148",
+      "target_statute": "BNS",
+      "target_section": "191(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Rioting, armed with deadly weapon.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 61
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "149",
+      "target_statute": "BNS",
+      "target_section": "190",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Vicarious liability of assembly members.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 77
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "153A",
+      "target_statute": "BNS",
+      "target_section": "196",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Promoting enmity between groups.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 9
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "153B",
+      "target_statute": "BNS",
+      "target_section": "197",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "166",
+      "target_statute": "BNS",
+      "target_section": "198",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "166A",
+      "target_statute": "BNS",
+      "target_section": "199",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "170",
+      "target_statute": "BNS",
+      "target_section": "205",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Personating a public servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 8
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "174A",
+      "target_statute": "BNS",
+      "target_section": "209",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Non-appearance after proclamation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "182",
+      "target_statute": "BNS",
+      "target_section": "217",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "False information to public servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 6
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "186",
+      "target_statute": "BNS",
+      "target_section": "221",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Obstructing public servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 9
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "188",
+      "target_statute": "BNS",
+      "target_section": "223",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Disobedience to order of public servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 8
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "189",
+      "target_statute": "BNS",
+      "target_section": "222",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "191",
+      "target_statute": "BNS",
+      "target_section": "227",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Giving false evidence.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "193",
+      "target_statute": "BNS",
+      "target_section": "229",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for false evidence.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "201",
+      "target_statute": "BNS",
+      "target_section": "238",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Causing disappearance of evidence.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 77
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "211",
+      "target_statute": "BNS",
+      "target_section": "248",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "False charge of offence.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "212",
+      "target_statute": "BNS",
+      "target_section": "249",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Harbouring an offender.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 16
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "213",
+      "target_statute": "BNS",
+      "target_section": "250",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "218",
+      "target_statute": "BNS",
+      "target_section": "234",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "224",
+      "target_statute": "BNS",
+      "target_section": "262",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "225",
+      "target_statute": "BNS",
+      "target_section": "263",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "269",
+      "target_statute": "BNS",
+      "target_section": "271",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Negligent act likely to spread infection.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "270",
+      "target_statute": "BNS",
+      "target_section": "272",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "279",
+      "target_statute": "BNS",
+      "target_section": "281",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Rash driving on a public way.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "294",
+      "target_statute": "BNS",
+      "target_section": "296",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Obscene acts and songs.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 23
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "295",
+      "target_statute": "BNS",
+      "target_section": "298",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Injuring a place of worship.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "299",
+      "target_statute": "BNS",
+      "target_section": "100",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Culpable homicide defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "300",
+      "target_statute": "BNS",
+      "target_section": "101",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Murder defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "302",
+      "target_statute": "BNS",
+      "target_section": "103(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for murder.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 137
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "303",
+      "target_statute": "BNS",
+      "target_section": "104",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Murder by life convict.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "304",
+      "target_statute": "BNS",
+      "target_section": "105",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Culpable homicide not amounting to murder.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "304A",
+      "target_statute": "BNS",
+      "target_section": "106(1)",
+      "relation": "narrowed",
+      "confidence": "high",
+      "note": "Death by negligence. BNS 106(2) adds a distinct, heavier offence for fleeing without reporting -- no IPC predecessor.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "304B",
+      "target_statute": "BNS",
+      "target_section": "80",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Dowry death: BNS 80(1) defines, 80(2) punishes.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 84
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "305",
+      "target_statute": "BNS",
+      "target_section": "107",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Abetment of suicide of child/insane person.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "306",
+      "target_statute": "BNS",
+      "target_section": "108",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Abetment of suicide.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 33
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "307",
+      "target_statute": "BNS",
+      "target_section": "109",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Attempt to murder.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 102
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "308",
+      "target_statute": "BNS",
+      "target_section": "110",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Attempt to commit culpable homicide.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "309",
+      "target_statute": null,
+      "target_section": null,
+      "relation": "omitted",
+      "confidence": "medium",
+      "note": "Attempt to suicide not re-enacted as a general offence; BNS 226 covers only attempt to suicide to compel/restrain a public servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": null,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "313",
+      "target_statute": "BNS",
+      "target_section": "89",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Causing miscarriage without consent.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "315",
+      "target_statute": "BNS",
+      "target_section": "91",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "316",
+      "target_statute": "BNS",
+      "target_section": "90",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "Causing death of a quick unborn child.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "319",
+      "target_statute": "BNS",
+      "target_section": "114",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Hurt defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "320",
+      "target_statute": "BNS",
+      "target_section": "116",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Grievous hurt defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "323",
+      "target_statute": "BNS",
+      "target_section": "115(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for voluntarily causing hurt.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 130
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "324",
+      "target_statute": "BNS",
+      "target_section": "118(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Hurt by dangerous weapons.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 46
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "325",
+      "target_statute": "BNS",
+      "target_section": "117(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for grievous hurt.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 20
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "326",
+      "target_statute": "BNS",
+      "target_section": "118(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Grievous hurt by dangerous weapons.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 19
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "326A",
+      "target_statute": "BNS",
+      "target_section": "124(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Acid attack.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "326B",
+      "target_statute": "BNS",
+      "target_section": "124(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Attempted acid attack.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "328",
+      "target_statute": "BNS",
+      "target_section": "123",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Hurt by poison.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 10
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "330",
+      "target_statute": "BNS",
+      "target_section": "120(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Hurt to extort confession.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "332",
+      "target_statute": "BNS",
+      "target_section": "121(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Hurt to deter public servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 19
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "333",
+      "target_statute": "BNS",
+      "target_section": "121(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Grievous hurt to deter public servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 10
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "336",
+      "target_statute": "BNS",
+      "target_section": "125",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Act endangering life or personal safety.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "337",
+      "target_statute": "BNS",
+      "target_section": "125(a)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 6
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "338",
+      "target_statute": "BNS",
+      "target_section": "125(b)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "339",
+      "target_statute": "BNS",
+      "target_section": "126(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Wrongful restraint.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "340",
+      "target_statute": "BNS",
+      "target_section": "127(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Wrongful confinement.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "341",
+      "target_statute": "BNS",
+      "target_section": "126(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for wrongful restraint.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 53
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "342",
+      "target_statute": "BNS",
+      "target_section": "127(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for wrongful confinement.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 40
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "343",
+      "target_statute": "BNS",
+      "target_section": "127(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "349",
+      "target_statute": "BNS",
+      "target_section": "128",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Force defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "350",
+      "target_statute": "BNS",
+      "target_section": "129",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Criminal force defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "351",
+      "target_statute": "BNS",
+      "target_section": "130",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Assault defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "352",
+      "target_statute": "BNS",
+      "target_section": "131",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "354",
+      "target_statute": "BNS",
+      "target_section": "74",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Outraging modesty of a woman.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 27
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "354A",
+      "target_statute": "BNS",
+      "target_section": "75",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Sexual harassment.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 22
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "354B",
+      "target_statute": "BNS",
+      "target_section": "76",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Assault to disrobe.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 6
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "354C",
+      "target_statute": "BNS",
+      "target_section": "77",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Voyeurism.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "354D",
+      "target_statute": "BNS",
+      "target_section": "78",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Stalking.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 8
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "359",
+      "target_statute": "BNS",
+      "target_section": "135",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Kidnapping.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "360",
+      "target_statute": "BNS",
+      "target_section": "136",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "361",
+      "target_statute": "BNS",
+      "target_section": "137(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Kidnapping from lawful guardianship.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "363",
+      "target_statute": "BNS",
+      "target_section": "137(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for kidnapping.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 102
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "364",
+      "target_statute": "BNS",
+      "target_section": "140(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Kidnapping to murder.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 22
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "364A",
+      "target_statute": "BNS",
+      "target_section": "140(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Kidnapping for ransom.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 43
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "365",
+      "target_statute": "BNS",
+      "target_section": "140(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 41
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "366",
+      "target_statute": "BNS",
+      "target_section": "87",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Kidnapping/abducting a woman to compel marriage.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 24
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "366A",
+      "target_statute": "BNS",
+      "target_section": "96",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Procuration of a minor girl.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 27
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "366B",
+      "target_statute": "BNS",
+      "target_section": "97",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "Importation of a girl from a foreign country.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "368",
+      "target_statute": "BNS",
+      "target_section": "139",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Concealing a kidnapped person.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 13
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "370",
+      "target_statute": "BNS",
+      "target_section": "143",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Trafficking in persons.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 34
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "370A",
+      "target_statute": "BNS",
+      "target_section": "144",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Exploitation of a trafficked person.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "372",
+      "target_statute": "BNS",
+      "target_section": "98",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Selling a minor for prostitution.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "373",
+      "target_statute": "BNS",
+      "target_section": "99",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Buying a minor for prostitution.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "375",
+      "target_statute": "BNS",
+      "target_section": "63",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Rape defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376",
+      "target_statute": "BNS",
+      "target_section": "64",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for rape.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 97
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376AB",
+      "target_statute": "BNS",
+      "target_section": "65(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Rape of a woman under 12.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376B",
+      "target_statute": "BNS",
+      "target_section": "67",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Sexual intercourse by husband on separation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376C",
+      "target_statute": "BNS",
+      "target_section": "68",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Sexual intercourse by a person in authority.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376D",
+      "target_statute": "BNS",
+      "target_section": "70(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Gang rape.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 8
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376DA",
+      "target_statute": "BNS",
+      "target_section": "70(2)",
+      "relation": "merged",
+      "confidence": "high",
+      "note": "IPC 376DA (gang rape of a woman under 16) and 376DB (under 12) are merged into BNS 70(2).",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376DB",
+      "target_statute": "BNS",
+      "target_section": "70(2)",
+      "relation": "merged",
+      "confidence": "high",
+      "note": "See 376DA.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "376E",
+      "target_statute": "BNS",
+      "target_section": "71",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Repeat offenders.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "377",
+      "target_statute": null,
+      "target_section": null,
+      "relation": "omitted",
+      "confidence": "high",
+      "note": "No counterpart in the BNS. Non-consensual acts against men and transgender persons are consequently not covered by a general provision.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": null,
+      "caselaw_citations": 10
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "378",
+      "target_statute": "BNS",
+      "target_section": "303(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Theft defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "379",
+      "target_statute": "BNS",
+      "target_section": "303(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for theft.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 28
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "380",
+      "target_statute": "BNS",
+      "target_section": "305",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Theft in a dwelling house.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 7
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "381",
+      "target_statute": "BNS",
+      "target_section": "306",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Theft by clerk or servant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "383",
+      "target_statute": "BNS",
+      "target_section": "308(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Extortion defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "384",
+      "target_statute": "BNS",
+      "target_section": "308(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for extortion.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 61
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "385",
+      "target_statute": "BNS",
+      "target_section": "308(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 9
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "386",
+      "target_statute": "BNS",
+      "target_section": "308(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 33
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "387",
+      "target_statute": "BNS",
+      "target_section": "308(5)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 30
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "388",
+      "target_statute": "BNS",
+      "target_section": "308(6)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "389",
+      "target_statute": "BNS",
+      "target_section": "308(7)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 19
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "390",
+      "target_statute": "BNS",
+      "target_section": "309(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Robbery defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "392",
+      "target_statute": "BNS",
+      "target_section": "309(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for robbery.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 56
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "393",
+      "target_statute": "BNS",
+      "target_section": "309(5)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Attempt to commit robbery.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "394",
+      "target_statute": "BNS",
+      "target_section": "309(6)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Hurt caused in robbery.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 27
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "395",
+      "target_statute": "BNS",
+      "target_section": "310(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for dacoity.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 39
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "396",
+      "target_statute": "BNS",
+      "target_section": "310(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Dacoity with murder.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 6
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "397",
+      "target_statute": "BNS",
+      "target_section": "311",
+      "relation": "merged",
+      "confidence": "high",
+      "note": "IPC 397 and 398 both map onto BNS 311.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 38
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "398",
+      "target_statute": "BNS",
+      "target_section": "311",
+      "relation": "merged",
+      "confidence": "high",
+      "note": "See 397.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 6
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "399",
+      "target_statute": "BNS",
+      "target_section": "310(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Preparation to commit dacoity.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 13
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "402",
+      "target_statute": "BNS",
+      "target_section": "310(5)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Assembling for dacoity.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 12
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "403",
+      "target_statute": "BNS",
+      "target_section": "314",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Dishonest misappropriation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "405",
+      "target_statute": "BNS",
+      "target_section": "316(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Criminal breach of trust defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "406",
+      "target_statute": "BNS",
+      "target_section": "316(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for criminal breach of trust.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 76
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "407",
+      "target_statute": "BNS",
+      "target_section": "316(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "408",
+      "target_statute": "BNS",
+      "target_section": "316(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "409",
+      "target_statute": "BNS",
+      "target_section": "316(5)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Breach of trust by public servant/banker.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 20
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "411",
+      "target_statute": "BNS",
+      "target_section": "317(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Receiving stolen property.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 31
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "412",
+      "target_statute": "BNS",
+      "target_section": "317(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 16
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "413",
+      "target_statute": "BNS",
+      "target_section": "317(5)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "Habitual dealing in stolen property.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "415",
+      "target_statute": "BNS",
+      "target_section": "318(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Cheating defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "417",
+      "target_statute": "BNS",
+      "target_section": "318(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for cheating.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 8
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "418",
+      "target_statute": "BNS",
+      "target_section": "318(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "419",
+      "target_statute": "BNS",
+      "target_section": "319(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Cheating by personation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 99
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "420",
+      "target_statute": "BNS",
+      "target_section": "318(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Cheating and dishonestly inducing delivery of property.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 224
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "425",
+      "target_statute": "BNS",
+      "target_section": "324(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Mischief defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "426",
+      "target_statute": "BNS",
+      "target_section": "324(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "427",
+      "target_statute": "BNS",
+      "target_section": "324(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Mischief causing damage.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 29
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "441",
+      "target_statute": "BNS",
+      "target_section": "329(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Criminal trespass.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "442",
+      "target_statute": "BNS",
+      "target_section": "329(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "House-trespass.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "447",
+      "target_statute": "BNS",
+      "target_section": "329(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for criminal trespass.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "448",
+      "target_statute": "BNS",
+      "target_section": "329(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for house-trespass.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 9
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "451",
+      "target_statute": "BNS",
+      "target_section": "331(2)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "452",
+      "target_statute": "BNS",
+      "target_section": "331(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "House-trespass after preparation for hurt.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 23
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "453",
+      "target_statute": "BNS",
+      "target_section": "331(1)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "454",
+      "target_statute": "BNS",
+      "target_section": "331(3)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "457",
+      "target_statute": "BNS",
+      "target_section": "331(6)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "458",
+      "target_statute": "BNS",
+      "target_section": "331(7)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "459",
+      "target_statute": "BNS",
+      "target_section": "331(8)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "460",
+      "target_statute": "BNS",
+      "target_section": "331(9)",
+      "relation": "one_to_one",
+      "confidence": "medium",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "463",
+      "target_statute": "BNS",
+      "target_section": "335",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Forgery defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "465",
+      "target_statute": "BNS",
+      "target_section": "336(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for forgery.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 23
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "466",
+      "target_statute": "BNS",
+      "target_section": "337",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Forgery of a court record.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "467",
+      "target_statute": "BNS",
+      "target_section": "338",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Forgery of a valuable security.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 144
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "468",
+      "target_statute": "BNS",
+      "target_section": "336(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Forgery for the purpose of cheating.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 154
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "469",
+      "target_statute": "BNS",
+      "target_section": "336(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Forgery to harm reputation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "471",
+      "target_statute": "BNS",
+      "target_section": "340(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Using a forged document as genuine.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 159
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "477A",
+      "target_statute": "BNS",
+      "target_section": "344",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Falsification of accounts.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 6
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "489A",
+      "target_statute": "BNS",
+      "target_section": "178",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Counterfeiting currency notes.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "489B",
+      "target_statute": "BNS",
+      "target_section": "179",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 3
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "489C",
+      "target_statute": "BNS",
+      "target_section": "180",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Possession of forged currency notes.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "493",
+      "target_statute": "BNS",
+      "target_section": "81",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Cohabitation caused by deceit.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "494",
+      "target_statute": "BNS",
+      "target_section": "82(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Bigamy.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "495",
+      "target_statute": "BNS",
+      "target_section": "82(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "496",
+      "target_statute": "BNS",
+      "target_section": "83",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Fraudulent marriage ceremony.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "497",
+      "target_statute": null,
+      "target_section": null,
+      "relation": "omitted",
+      "confidence": "high",
+      "note": "Adultery; already struck down in Joseph Shine v. Union of India (2018) and not re-enacted.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": null,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "498",
+      "target_statute": "BNS",
+      "target_section": "84",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Enticing a married woman.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "498A",
+      "target_statute": "BNS",
+      "target_section": "85",
+      "relation": "split",
+      "confidence": "high",
+      "note": "Cruelty by husband or relatives. BNS 85 carries the offence; the definition in the IPC Explanation becomes a standalone BNS 86.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 158
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "499",
+      "target_statute": "BNS",
+      "target_section": "356(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Defamation defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "500",
+      "target_statute": "BNS",
+      "target_section": "356(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for defamation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "503",
+      "target_statute": "BNS",
+      "target_section": "351(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Criminal intimidation defined.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 1
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "504",
+      "target_statute": "BNS",
+      "target_section": "352",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Intentional insult to provoke breach of peace.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 89
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "505",
+      "target_statute": "BNS",
+      "target_section": "353",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Statements conducing to public mischief.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 2
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "506",
+      "target_statute": "BNS",
+      "target_section": "351(2)",
+      "relation": "split",
+      "confidence": "high",
+      "note": "IPC 506 Part I -> BNS 351(2); Part II (threat to cause death/grievous hurt) -> BNS 351(3). Case data citing '506(II)' maps to 351(3).",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 203
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "507",
+      "target_statute": "BNS",
+      "target_section": "351(4)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Criminal intimidation by anonymous means.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 5
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "509",
+      "target_statute": "BNS",
+      "target_section": "79",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Word or gesture insulting a woman's modesty.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 4
+    },
+    {
+      "source_statute": "IPC",
+      "source_section": "511",
+      "target_statute": "BNS",
+      "target_section": "62",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Punishment for attempting to commit offences.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 18
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "41",
+      "target_statute": "BNSS",
+      "target_section": "35",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "When police may arrest without warrant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "41A",
+      "target_statute": "BNSS",
+      "target_section": "35(3)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Notice of appearance.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "41D",
+      "target_statute": "BNSS",
+      "target_section": "38",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Right to meet an advocate during interrogation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "46",
+      "target_statute": "BNSS",
+      "target_section": "43",
+      "relation": "narrowed",
+      "confidence": "high",
+      "note": "Arrest, how made. BNSS 43(3) newly permits use of handcuffs in specified cases.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "50",
+      "target_statute": "BNSS",
+      "target_section": "47",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Right to be informed of grounds of arrest.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "57",
+      "target_statute": "BNSS",
+      "target_section": "58",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Person arrested not to be detained over 24 hours.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "91",
+      "target_statute": "BNSS",
+      "target_section": "94",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Summons to produce a document.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "125",
+      "target_statute": "BNSS",
+      "target_section": "144",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Maintenance of wives, children, parents.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "144",
+      "target_statute": "BNSS",
+      "target_section": "163",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Urgent orders in nuisance/apprehended danger.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "154",
+      "target_statute": "BNSS",
+      "target_section": "173",
+      "relation": "narrowed",
+      "confidence": "high",
+      "note": "FIR. BNSS 173 newly permits registration irrespective of territorial jurisdiction (Zero FIR) and electronic filing.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "156",
+      "target_statute": "BNSS",
+      "target_section": "175",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Police power to investigate.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "157",
+      "target_statute": "BNSS",
+      "target_section": "176",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Procedure for investigation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "161",
+      "target_statute": "BNSS",
+      "target_section": "180",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Examination of witnesses by police.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "164",
+      "target_statute": "BNSS",
+      "target_section": "183",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Recording of confessions and statements.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "167",
+      "target_statute": "BNSS",
+      "target_section": "187",
+      "relation": "narrowed",
+      "confidence": "high",
+      "note": "Detention beyond 24 hours. The 15-day police custody period may now be sought in parts across the first 40/60 days.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "173",
+      "target_statute": "BNSS",
+      "target_section": "193",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Police report on completion of investigation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "176",
+      "target_statute": "BNSS",
+      "target_section": "196",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Magisterial inquiry into a death in custody.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "190",
+      "target_statute": "BNSS",
+      "target_section": "210",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Cognizance of offences by Magistrates.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "197",
+      "target_statute": "BNSS",
+      "target_section": "218",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Prosecution of judges and public servants.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "200",
+      "target_statute": "BNSS",
+      "target_section": "223",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Examination of the complainant.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "202",
+      "target_statute": "BNSS",
+      "target_section": "225",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Postponement of issue of process.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "204",
+      "target_statute": "BNSS",
+      "target_section": "227",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Issue of process.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "207",
+      "target_statute": "BNSS",
+      "target_section": "230",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Supply of copies to the accused.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "227",
+      "target_statute": "BNSS",
+      "target_section": "250",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Discharge.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "228",
+      "target_statute": "BNSS",
+      "target_section": "251",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Framing of charge.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "239",
+      "target_statute": "BNSS",
+      "target_section": "262",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Discharge in warrant cases.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "313",
+      "target_statute": "BNSS",
+      "target_section": "351",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Power to examine the accused.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "320",
+      "target_statute": "BNSS",
+      "target_section": "359",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Compounding of offences.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "321",
+      "target_statute": "BNSS",
+      "target_section": "360",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Withdrawal from prosecution.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "357",
+      "target_statute": "BNSS",
+      "target_section": "395",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Order to pay compensation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "360",
+      "target_statute": "BNSS",
+      "target_section": "401",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Release on probation of good conduct.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "372",
+      "target_statute": "BNSS",
+      "target_section": "413",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Victim's right of appeal.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "374",
+      "target_statute": "BNSS",
+      "target_section": "415",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Appeals from convictions.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "378",
+      "target_statute": "BNSS",
+      "target_section": "419",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Appeal in case of acquittal.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "389",
+      "target_statute": "BNSS",
+      "target_section": "430",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Suspension of sentence pending appeal.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "397",
+      "target_statute": "BNSS",
+      "target_section": "438",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Revision.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "401",
+      "target_statute": "BNSS",
+      "target_section": "442",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "High Court's powers of revision.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "436",
+      "target_statute": "BNSS",
+      "target_section": "478",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Bail in bailable offences.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "436A",
+      "target_statute": "BNSS",
+      "target_section": "479",
+      "relation": "narrowed",
+      "confidence": "high",
+      "note": "Maximum period of detention. BNSS 479 adds release on bond after one-third of the maximum sentence for a first-time offender, and bars the benefit for offences punishable with life.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "437",
+      "target_statute": "BNSS",
+      "target_section": "480",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Bail in non-bailable offences.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "438",
+      "target_statute": "BNSS",
+      "target_section": "482",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Anticipatory bail.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "439",
+      "target_statute": "BNSS",
+      "target_section": "483",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Special powers of High Court/Sessions Court.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "468",
+      "target_statute": "BNSS",
+      "target_section": "514",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Bar to taking cognizance after limitation.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "CrPC",
+      "source_section": "482",
+      "target_statute": "BNSS",
+      "target_section": "528",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Saving of inherent powers of the High Court.",
+      "source_section_verified_in_corpus": true,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "3",
+      "target_statute": "BSA",
+      "target_section": "2",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Interpretation clause.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "5",
+      "target_statute": "BSA",
+      "target_section": "3",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Evidence may be given of facts in issue.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "8",
+      "target_statute": "BSA",
+      "target_section": "6",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Motive, preparation and conduct.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "17",
+      "target_statute": "BSA",
+      "target_section": "15",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Admission defined.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "24",
+      "target_statute": "BSA",
+      "target_section": "22",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Confession caused by inducement.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "25",
+      "target_statute": "BSA",
+      "target_section": "23(1)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Confession to a police officer.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "26",
+      "target_statute": "BSA",
+      "target_section": "23(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Confession in police custody.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "27",
+      "target_statute": "BSA",
+      "target_section": "23(2)",
+      "relation": "merged",
+      "confidence": "medium",
+      "note": "The proviso on discovery of facts sits inside BSA 23(2).",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "32",
+      "target_statute": "BSA",
+      "target_section": "26",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Dying declaration and related statements.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "45",
+      "target_statute": "BSA",
+      "target_section": "39",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Opinion of experts.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "45A",
+      "target_statute": "BSA",
+      "target_section": "39(2)",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Opinion of the Examiner of Electronic Evidence.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "60",
+      "target_statute": "BSA",
+      "target_section": "55",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Oral evidence must be direct.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "61",
+      "target_statute": "BSA",
+      "target_section": "56",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Proof of contents of documents.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "62",
+      "target_statute": "BSA",
+      "target_section": "57",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Primary evidence.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "63",
+      "target_statute": "BSA",
+      "target_section": "58",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Secondary evidence.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "65A",
+      "target_statute": "BSA",
+      "target_section": "63",
+      "relation": "merged",
+      "confidence": "high",
+      "note": "IEA 65A/65B are consolidated into BSA 63, which materially expands the certificate requirement for electronic records.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "65B",
+      "target_statute": "BSA",
+      "target_section": "63",
+      "relation": "merged",
+      "confidence": "high",
+      "note": "See 65A.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "101",
+      "target_statute": "BSA",
+      "target_section": "104",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Burden of proof.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "106",
+      "target_statute": "BSA",
+      "target_section": "109",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Facts especially within knowledge.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "113A",
+      "target_statute": "BSA",
+      "target_section": "116",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Presumption as to abetment of suicide.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "113B",
+      "target_statute": "BSA",
+      "target_section": "117",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Presumption as to dowry death.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "114",
+      "target_statute": "BSA",
+      "target_section": "119",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Court may presume existence of facts.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "114A",
+      "target_statute": "BSA",
+      "target_section": "120",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Presumption as to absence of consent in rape.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "118",
+      "target_statute": "BSA",
+      "target_section": "124",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Who may testify.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "133",
+      "target_statute": "BSA",
+      "target_section": "138",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Accomplice.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": "IEA",
+      "source_section": "145",
+      "target_statute": "BSA",
+      "target_section": "148",
+      "relation": "one_to_one",
+      "confidence": "high",
+      "note": "Cross-examination as to previous statements.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": null
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "69",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Sexual intercourse by employing deceitful means or a false promise of marriage.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "103(2)",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Murder by a group of five or more on grounds of race, caste, community, sex, birthplace, language or personal belief (mob lynching).",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "106(2)",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Causing death by rash/negligent driving and fleeing without reporting to police or magistrate.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "111",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Organised crime.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "112",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Petty organised crime.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "113",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Terrorist act (previously reachable only under the UAPA).",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "152",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Act endangering sovereignty, unity and integrity of India (occupies the space vacated by sedition, with different elements).",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNS",
+      "target_section": "304",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Snatching.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNSS",
+      "target_section": "105",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Audio-video recording of search and seizure.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNSS",
+      "target_section": "356",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Trial in absentia of a proclaimed offender.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNSS",
+      "target_section": "398",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Witness protection scheme.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    },
+    {
+      "source_statute": null,
+      "source_section": null,
+      "target_statute": "BNSS",
+      "target_section": "530",
+      "relation": "new",
+      "confidence": "high",
+      "note": "Trial, inquiry and proceedings in electronic mode.",
+      "source_section_verified_in_corpus": null,
+      "target_section_verified_in_corpus": true,
+      "caselaw_citations": 0
+    }
+  ],
+  "validation_problems": [],
+  "coverage": {
+    "distinct_ipc_sections_in_caselaw": 242,
+    "distinct_ipc_sections_mapped": 152,
+    "caselaw_citations_total": 4620,
+    "caselaw_citations_covered": 4375,
+    "caselaw_citation_coverage_pct": 94.7,
+    "unmapped_cited_sections": [
+      {
+        "section": "353",
+        "citations": 26
+      },
+      {
+        "section": "414",
+        "citations": 21
+      },
+      {
+        "section": "436",
+        "citations": 10
+      },
+      {
+        "section": "294B",
+        "citations": 9
+      },
+      {
+        "section": "474",
+        "citations": 8
+      },
+      {
+        "section": "144",
+        "citations": 6
+      },
+      {
+        "section": "473",
+        "citations": 6
+      },
+      {
+        "section": "25",
+        "citations": 6
+      },
+      {
+        "section": "195",
+        "citations": 6
+      },
+      {
+        "section": "470",
+        "citations": 5
+      },
+      {
+        "section": "27",
+        "citations": 5
+      },
+      {
+        "section": "311",
+        "citations": 5
+      },
+      {
+        "section": "13",
+        "citations": 5
+      },
+      {
+        "section": "379B",
+        "citations": 4
+      },
+      {
+        "section": "35",
+        "citations": 4
+      },
+      {
+        "section": "363A",
+        "citations": 4
+      },
+      {
+        "section": "369",
+        "citations": 4
+      },
+      {
+        "section": "327",
+        "citations": 3
+      },
+      {
+        "section": "344",
+        "citations": 3
+      },
+      {
+        "section": "3",
+        "citations": 3
+      },
+      {
+        "section": "202",
+        "citations": 3
+      },
+      {
+        "section": "346",
+        "citations": 3
+      },
+      {
+        "section": "204",
+        "citations": 3
+      },
+      {
+        "section": "382",
+        "citations": 3
+      },
+      {
+        "section": "115",
+        "citations": 3
+      },
+      {
+        "section": "472",
+        "citations": 3
+      },
+      {
+        "section": "37",
+        "citations": 3
+      },
+      {
+        "section": "8",
+        "citations": 3
+      },
+      {
+        "section": "155",
+        "citations": 3
+      },
+      {
+        "section": "195A",
+        "citations": 2
+      },
+      {
+        "section": "506B",
+        "citations": 2
+      },
+      {
+        "section": "367",
+        "citations": 2
+      },
+      {
+        "section": "203",
+        "citations": 2
+      },
+      {
+        "section": "4",
+        "citations": 2
+      },
+      {
+        "section": "171",
+        "citations": 2
+      },
+      {
+        "section": "502",
+        "citations": 2
+      },
+      {
+        "section": "318",
+        "citations": 2
+      },
+      {
+        "section": "150",
+        "citations": 2
+      },
+      {
+        "section": "123",
+        "citations": 2
+      },
+      {
+        "section": "29",
+        "citations": 2
+      },
+      {
+        "section": "216",
+        "citations": 2
+      },
+      {
+        "section": "401",
+        "citations": 2
+      },
+      {
+        "section": "167",
+        "citations": 2
+      },
+      {
+        "section": "220",
+        "citations": 1
+      },
+      {
+        "section": "348",
+        "citations": 1
+      },
+      {
+        "section": "449",
+        "citations": 1
+      },
+      {
+        "section": "358",
+        "citations": 1
+      },
+      {
+        "section": "438",
+        "citations": 1
+      },
+      {
+        "section": "145",
+        "citations": 1
+      },
+      {
+        "section": "435",
+        "citations": 1
+      },
+      {
+        "section": "125",
+        "citations": 1
+      },
+      {
+        "section": "214",
+        "citations": 1
+      },
+      {
+        "section": "168",
+        "citations": 1
+      },
+      {
+        "section": "455",
+        "citations": 1
+      },
+      {
+        "section": "310",
+        "citations": 1
+      },
+      {
+        "section": "477",
+        "citations": 1
+      },
+      {
+        "section": "225B",
+        "citations": 1
+      },
+      {
+        "section": "437",
+        "citations": 1
+      },
+      {
+        "section": "137",
+        "citations": 1
+      },
+      {
+        "section": "126",
+        "citations": 1
+      },
+      {
+        "section": "119",
+        "citations": 1
+      },
+      {
+        "section": "174",
+        "citations": 1
+      },
+      {
+        "section": "175",
+        "citations": 1
+      },
+      {
+        "section": "216A",
+        "citations": 1
+      },
+      {
+        "section": "329",
+        "citations": 1
+      },
+      {
+        "section": "54",
+        "citations": 1
+      },
+      {
+        "section": "59",
+        "citations": 1
+      },
+      {
+        "section": "7",
+        "citations": 1
+      },
+      {
+        "section": "161",
+        "citations": 1
+      },
+      {
+        "section": "64",
+        "citations": 1
+      },
+      {
+        "section": "62",
+        "citations": 1
+      },
+      {
+        "section": "197",
+        "citations": 1
+      },
+      {
+        "section": "483",
+        "citations": 1
+      },
+      {
+        "section": "180",
+        "citations": 1
+      },
+      {
+        "section": "423",
+        "citations": 1
+      },
+      {
+        "section": "510",
+        "citations": 1
+      },
+      {
+        "section": "142",
+        "citations": 1
+      },
+      {
+        "section": "66E",
+        "citations": 1
+      },
+      {
+        "section": "67",
+        "citations": 1
+      },
+      {
+        "section": "67A",
+        "citations": 1
+      },
+      {
+        "section": "199",
+        "citations": 1
+      },
+      {
+        "section": "200",
+        "citations": 1
+      },
+      {
+        "section": "355",
+        "citations": 1
+      },
+      {
+        "section": "177",
+        "citations": 1
+      },
+      {
+        "section": "26",
+        "citations": 1
+      },
+      {
+        "section": "255",
+        "citations": 1
+      },
+      {
+        "section": "256",
+        "citations": 1
+      },
+      {
+        "section": "257",
+        "citations": 1
+      },
+      {
+        "section": "259",
+        "citations": 1
+      },
+      {
+        "section": "260",
+        "citations": 1
+      }
+    ]
+  },
+  "inventory_sizes": {
+    "IPC": 583,
+    "CrPC": 517,
+    "BNS": 358,
+    "BNSS": 531,
+    "BSA": 170
+  }
+}

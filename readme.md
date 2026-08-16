@@ -1,13 +1,16 @@
-# Knowledge Base — Build Status
+# Indian Legal Knowledge Base
 
 ## Overview
 
-This repository contains an Indian legal knowledge base built from statute and case law sources. It is designed to support prototype legal assistance, retrieval, and explanation for ordinary citizens in a limited set of domains.
+This repository contains a legal knowledge base for Indian statutes, case law, and legal cross-references. It is designed to support retrieval, explanation, and later vector-search deployment for legal assistance workflows.
 
-- **Last built:** _(fill in date)_
-- **Pipeline scripts:** `pdf_extractor.py`, `gazette_extractor.py`, `constitution_adapter.py`, `caselaw_adapter.py`, `ipc_bns_mapping.py`, `quality_checks.py`, `kb_builder.py`
+- **Last verified update:** 2026-08-16
+- **Repo status:** data pipeline complete; embeddings generated and ready for vector DB ingestion
+- **Core scripts:** `pdf_extractor.py`, `gazette_extractor.py`, `constitution_adapter.py`, `caselaw_adapter.py`, `ipc_bns_mapping.py`, `quality_checks.py`, `kb_builder.py`, `chunk_records.py`, `embed.py`
 
-## Coverage Summary
+## Current Build Status
+
+### Data coverage
 
 | Domain | Statute documents | Sections | Case law |
 | --- | --- | --- | --- |
@@ -18,52 +21,85 @@ This repository contains an Indian legal knowledge base built from statute and c
 | Tenancy/property | 10 | 397 | 0 |
 | **Total** | **21** | **3,282** | **1,200** |
 
-Plus **270** cross-reference entries (IPC/CrPC/Evidence Act → BNS/BNSS/BSA) and **4,746** embedding-ready records.
+Plus:
+- **270** cross-reference entries
+- **3,793** statute chunks
+- **1,198** case-law chunks
+- **270** crossreference chunks
 
-Section counts verified against real acts where checkable: BNS 358, BNSS 531, BSA 170, CPA 2019 107, DV Act 37, HMA 37.
+### Embedding readiness
 
----
+The vector generation step is complete and verified.
 
-### What's NOT Covered (by design, stated explicitly)
+Verified embeddings:
+- `knowledge_base/vectors/statutes.npy` — 3,793 rows, shape `(3793, 1024)`, float32
+- `knowledge_base/vectors/caselaw.npy` — 1,198 rows, shape `(1198, 1024)`, float32
+- `knowledge_base/vectors/crossreference.npy` — 270 rows, shape `(270, 1024)`, float32
 
-- **Case law exists only for criminal law**, and only bail decisions — no convictions, sentencing, appeals on merits, or trial procedure. No case law at all for constitutional, consumer, family, or tenancy domains yet.
-- **Family law** covers only Hindu Marriage Act, Special Marriage Act, and DV Act 2005. Not included: Hindu Succession Act, Hindu Adoption & Maintenance Act, Indian Divorce Act, Muslim personal law, Guardians and Wards Act.
-- **Tenancy** covers 4 states (Delhi, Maharashtra, West Bengal, Tamil Nadu) + the central Transfer of Property Act. Karnataka is a documented failure (see below).
-- **Indian Evidence Act, 1872** is not in the corpus — only its successor, BSA. Evidence Act → BSA crossref entries can't be validated against primary source text as a result.
-- Schedules, forms, and Statements of Objects and Reasons are excluded by design.
+Matching ID files exist for each collection:
+- `knowledge_base/vectors/statutes.ids.json`
+- `knowledge_base/vectors/caselaw.ids.json`
+- `knowledge_base/vectors/crossreference.ids.json`
 
----
+Model used:
+- `BAAI/bge-m3`
+- dimension: 1024
+- normalized embeddings enabled
 
-### Known Issues & Manual Review Items
+This means the repository is ready for the next step: vector database ingestion and retrieval setup.
 
-**Hard failure:**
-- **Karnataka Rent Act** — source PDF is 79% `(cid:N)` glyph codes with no ToUnicode map; not extractable without OCR or a different source copy. Tenancy coverage is effectively 4 states, not 5.
+## Project Structure
 
-**Needs review (text intact, structure is a heuristic guess):**
-- **Constitution**: 194 of 454 articles (43%) have heuristic title/text boundary splits — the source CSV runs heading and body together on one line. No text is lost.
-- **IPC**: ~77 of 583 section titles (13%) mangled by marginal-note typography artifacts.
-- **West Bengal**: ~68% of section titles similarly mangled; 7 of 31 sections have isolated undecodable glyphs (0.1–2% of section text).
-- **6 sections have empty text** (4 IPC, 2 TPA) — confirmed genuine repealed stubs, excluded from embeddings.
-- **Tamil-script text** is in a legacy non-Unicode font and is not recoverable. English text is unaffected.
-- **15 duplicate case groups** (31 records) in case law — flagged with `possible_duplicate_of`, retained rather than deleted, since they may represent separate proceedings.
+```text
+.
+├── README.md
+├── docs/
+│   └── progress.md
+├── .gitignore
+├── .venv/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── knowledge_base/
+│   ├── README.md
+│   ├── manifest.json
+│   ├── statutes/
+│   ├── caselaw/
+│   ├── crossreference/
+│   ├── vector_ready/
+│   └── vectors/
+├── scripts/
+│   ├── pdf_extractor.py
+│   ├── gazette_extractor.py
+│   ├── constitution_adapter.py
+│   ├── caselaw_adapter.py
+│   ├── ipc_bns_mapping.py
+│   ├── quality_checks.py
+│   ├── kb_builder.py
+│   ├── chunk_records.py
+│   └── embed.py
+└── ...
+```
 
-**Cross-reference table:**
-- Status: `unverified_against_official_concordance` — compiled from domain knowledge, not sourced from an official government concordance.
-- What *is* machine-verified: every source and target section number in the table exists in the extracted statute text (100% pass).
-- Citation-weighted coverage: 94.7% (of citations appearing in the case-law corpus).
-- **90 IPC sections cited in case law remain unmapped** in the crossref table — open item.
+## Next Phase: Vector DB Build
 
----
+The project is now past chunk generation and embedding. The next stage is to ingest the generated vectors into a vector store such as Qdrant and then layer in retrieval orchestration.
 
-### Corrections Made During Build
+Recommended next steps:
+1. ingest `knowledge_base/vectors/*.npy` into a vector database
+2. map each vector to its native metadata from `knowledge_base/vector_ready/*.jsonl`
+3. keep collections separate: `statutes`, `caselaw`, and `crossreference`
+4. validate retrieval with legal queries before building a full app layer
 
-- `bna_2023.pdf` was mislabeled — it is actually the **BSA** (Bharatiya Sakshya Adhiniyam, Act 47 of 2023). No source was missing; only the filename was wrong.
-- Tamil Nadu source files were **whole gazette issues**, not single acts. `tnrrrlt_act_2017.pdf` contained Acts 36–47 of 2017 bundled together, with the actual tenancy statute being only Act 42. A gazette segmenter (`gazette_extractor.py`) was built to correctly isolate the relevant act. 5 of 6 original TN filenames did not describe their actual contents; corrections are recorded per-document in this KB's manifest.
+## Known Limitations
 
----
+- Case law is criminal-law-specific and mostly bail-focused.
+- Family law and tenancy coverage remain limited by dataset scope.
+- The cross-reference table is not an official concordance; it is machine-verified for section existence, not legal authority.
+- Karnataka rent act extraction remains a documented failure because the source PDF is not text-readable.
 
-### Data Integrity Notes
+## Data Integrity Notes
 
-- No data was fabricated or backfilled to inflate apparent coverage.
-- Where a source URL wasn't captured at acquisition time, provenance is recorded as `"URL not captured at acquisition"` rather than invented.
-- Raw filenames were preserved and content-tagged rather than renamed, to keep an honest link back to original sources.
+- No fabricated or backfilled data was added to inflate coverage.
+- Provenance and source quality tracking are retained in the corpus metadata.
+- Raw filenames were preserved and tagged rather than renamed to maintain source traceability.

@@ -1,0 +1,381 @@
+{
+  "tokenizer": "hf/BAAI/bge-m3",
+  "token_budget": 512,
+  "statutes": {
+    "docs": 21,
+    "sections_in": 3282,
+    "sections_empty": 6,
+    "chunks": 3793,
+    "sections_chunked": 309,
+    "glyphs_resolved": 11,
+    "glyphs_unresolved": 9,
+    "records_with_glyphs": 9,
+    "flagged_quality": 12,
+    "flagged_note": 309,
+    "headers_over_reserve": 1606,
+    "no_citation_key": 2,
+    "abbrev_derived": 834,
+    "abbrev_missing": 0,
+    "unreadable_titles": 1
+  },
+  "statute_chunk_tokens": {
+    "n": 3793,
+    "min": 38,
+    "p50": 192,
+    "p90": 462,
+    "p99": 506,
+    "max": 511,
+    "mean": 233.5,
+    "over_512": 0
+  },
+  "statute_chunks_per_section": {
+    "1": 2967,
+    "2": 209,
+    "3": 52,
+    "4": 27,
+    "5": 6,
+    "6": 8,
+    "7": 2,
+    "8": 2,
+    "10": 1,
+    "12": 1,
+    "14": 1
+  },
+  "caselaw": {
+    "in": 1200,
+    "deduped": 2,
+    "possible_duplicate_flagged": 29,
+    "empty_cited_sections": 202,
+    "principles_present": 663,
+    "out": 1198
+  },
+  "caselaw_tokens": {
+    "old": {
+      "n": 1198,
+      "min": 49,
+      "p50": 70,
+      "p90": 81,
+      "p99": 91,
+      "max": 101,
+      "mean": 70.3,
+      "over_512": 0
+    },
+    "new": {
+      "n": 1198,
+      "min": 188,
+      "p50": 338,
+      "p90": 419,
+      "p99": 472,
+      "max": 512,
+      "mean": 337.6,
+      "over_512": 0
+    }
+  },
+  "crossreference": {
+    "n": 270,
+    "null_source": 12,
+    "null_target": 4
+  },
+  "lexical_verification": [
+    {
+      "query": "IPC 302",
+      "citation_detected": true,
+      "parsed_keys": [
+        "indian_penal_code:302",
+        "ipc:302",
+        "penal_code:302"
+      ],
+      "expected_key": "ipc:302",
+      "expected_key_matched": true,
+      "filter_hits": 1,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "IPC s.302"
+      ],
+      "bm25_statutes_top": [
+        "IPC s.302",
+        "COI s.302",
+        "BNS s.302"
+      ],
+      "bm25_unscoped_top": [
+        "crossreference:xref:600eab7dcea8c94e",
+        "case:IBJ-495",
+        "IPC s.302"
+      ]
+    },
+    {
+      "query": "section 302",
+      "citation_detected": true,
+      "parsed_keys": [
+        "*:302"
+      ],
+      "expected_key": "*",
+      "expected_key_matched": true,
+      "filter_hits": 5,
+      "filter_distinct_sections": 5,
+      "filter_top": [
+        "BNS s.302",
+        "BNSS s.302",
+        "COI s.302",
+        "CrPC s.302"
+      ],
+      "bm25_statutes_top": [
+        "IPC s.302",
+        "BNS s.302",
+        "COI s.302"
+      ],
+      "bm25_unscoped_top": [
+        "crossreference:xref:600eab7dcea8c94e",
+        "IPC s.302",
+        "case:IBJ-495"
+      ]
+    },
+    {
+      "query": "s. 302 IPC",
+      "citation_detected": true,
+      "parsed_keys": [
+        "indian_penal_code:302",
+        "ipc:302",
+        "penal_code:302"
+      ],
+      "expected_key": "ipc:302",
+      "expected_key_matched": true,
+      "filter_hits": 1,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "IPC s.302"
+      ],
+      "bm25_statutes_top": [
+        "IPC s.302",
+        "COI s.302",
+        "BNS s.302"
+      ],
+      "bm25_unscoped_top": [
+        "case:IBJ-495",
+        "crossreference:xref:600eab7dcea8c94e",
+        "case:IBJ-294"
+      ]
+    },
+    {
+      "query": "what does IPC section 420 say",
+      "citation_detected": true,
+      "parsed_keys": [
+        "indian_penal_code:420",
+        "ipc:420",
+        "penal_code:420"
+      ],
+      "expected_key": "ipc:420",
+      "expected_key_matched": true,
+      "filter_hits": 1,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "IPC s.420"
+      ],
+      "bm25_statutes_top": [
+        "CrPC s.39#c0",
+        "IPC s.244",
+        "IPC s.403"
+      ],
+      "bm25_unscoped_top": [
+        "CrPC s.39#c0",
+        "IPC s.244",
+        "IPC s.403"
+      ]
+    },
+    {
+      "query": "BNS 103",
+      "citation_detected": true,
+      "parsed_keys": [
+        "bharatiya_nyaya_sanhita:103",
+        "bns:103",
+        "nyaya_sanhita:103"
+      ],
+      "expected_key": "bns:103",
+      "expected_key_matched": true,
+      "filter_hits": 1,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "BNS s.103"
+      ],
+      "bm25_statutes_top": [
+        "BNS s.103",
+        "CrPC s.103",
+        "BSA s.103"
+      ],
+      "bm25_unscoped_top": [
+        "crossreference:xref:600eab7dcea8c94e",
+        "crossreference:xref:9eb3c7e55339e126",
+        "BNS s.103"
+      ]
+    },
+    {
+      "query": "CrPC 167 default bail",
+      "citation_detected": true,
+      "parsed_keys": [
+        "code_of_criminal_procedure:167",
+        "criminal_procedure_code:167",
+        "crpc:167"
+      ],
+      "expected_key": "crpc:167",
+      "expected_key_matched": true,
+      "filter_hits": 12,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "CrPC s.167#c0",
+        "CrPC s.167#c1",
+        "CrPC s.167#c10",
+        "CrPC s.167#c11"
+      ],
+      "bm25_statutes_top": [
+        "CrPC s.167#c4",
+        "CrPC s.167#c7",
+        "CrPC s.167#c5"
+      ],
+      "bm25_unscoped_top": [
+        "case:IBJ-157",
+        "case:IBJ-1068",
+        "case:IBJ-1096"
+      ]
+    },
+    {
+      "query": "Article 21",
+      "citation_detected": true,
+      "parsed_keys": [
+        "coi:21",
+        "constitution:21",
+        "constitution_of_india:21"
+      ],
+      "expected_key": "coi:21",
+      "expected_key_matched": true,
+      "filter_hits": 1,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "COI s.21"
+      ],
+      "bm25_statutes_top": [
+        "COI s.21",
+        "COI s.359#c0",
+        "HMA s.21"
+      ],
+      "bm25_unscoped_top": [
+        "COI s.21",
+        "case:IBJ-1072",
+        "case:IBJ-1059"
+      ]
+    },
+    {
+      "query": "TPA section 106",
+      "citation_detected": true,
+      "parsed_keys": [
+        "tpa:106",
+        "transfer_of_property_act:106"
+      ],
+      "expected_key": "tpa:106",
+      "expected_key_matched": true,
+      "filter_hits": 1,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "TPA s.106"
+      ],
+      "bm25_statutes_top": [
+        "TPA s.116",
+        "TPA s.106",
+        "IPC s.106"
+      ],
+      "bm25_unscoped_top": [
+        "TPA s.116",
+        "crossreference:xref:189b678a9d5198ee",
+        "crossreference:xref:9e71ef4d2490208f"
+      ]
+    },
+    {
+      "query": "CPA section 35",
+      "citation_detected": true,
+      "parsed_keys": [
+        "consumer_protection_act:35",
+        "cpa1986:35",
+        "cpa2019:35",
+        "cpa:35",
+        "cpa_1986:35",
+        "cpa_2019:35"
+      ],
+      "expected_key": "cpa2019:35",
+      "expected_key_matched": true,
+      "filter_hits": 1,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "CPA2019 s.35"
+      ],
+      "bm25_statutes_top": [
+        "CPA2019 s.59",
+        "CPA2019 s.49",
+        "CPA2019 s.35"
+      ],
+      "bm25_unscoped_top": [
+        "CPA2019 s.59",
+        "CPA2019 s.49",
+        "CPA2019 s.35"
+      ]
+    },
+    {
+      "query": "Indian Penal Code section 375",
+      "citation_detected": true,
+      "parsed_keys": [
+        "indian_penal_code:375",
+        "ipc:375",
+        "penal_code:375"
+      ],
+      "expected_key": "ipc:375",
+      "expected_key_matched": true,
+      "filter_hits": 2,
+      "filter_distinct_sections": 1,
+      "filter_top": [
+        "IPC s.375#c0",
+        "IPC s.375#c1"
+      ],
+      "bm25_statutes_top": [
+        "IPC s.375#c1",
+        "IPC s.376B",
+        "IPC s.376C"
+      ],
+      "bm25_unscoped_top": [
+        "crossreference:xref:8ad6cf6aa7a7431a",
+        "IPC s.375#c1",
+        "IPC s.376B"
+      ]
+    },
+    {
+      "query": "punishment for murder",
+      "citation_detected": false,
+      "parsed_keys": [],
+      "expected_key": null,
+      "expected_key_matched": null,
+      "filter_hits": 0,
+      "filter_distinct_sections": 0,
+      "filter_top": [],
+      "bm25_statutes_top": [
+        "IPC s.303",
+        "IPC s.302",
+        "BNS s.104"
+      ],
+      "bm25_unscoped_top": [
+        "IPC s.303",
+        "IPC s.302",
+        "BNS s.104"
+      ]
+    }
+  ],
+  "embedding_estimate": {
+    "records": 5261,
+    "total_tokens": 1298167,
+    "tokenizer": "hf/BAAI/bge-m3",
+    "local_bge_m3_cpu_minutes": 7.3,
+    "local_bge_m3_gpu_minutes": 0.4,
+    "openai_text_embedding_3_small_usd": 0.026,
+    "voyage_law_2_usd": 0.156
+  },
+  "totals": {
+    "records": 5261,
+    "duplicate_point_ids": 0
+  }
+}

@@ -44,6 +44,33 @@ The remaining work is not data preparation; it is database loading, retrieval te
 - output validation passed for all collections
 - vector DB handoff prepared
 
+## 2026-08-22 — FAISS and BM25 retrieval milestone
+
+### Completed
+
+- Built a working FAISS index for the statute corpus.
+- Built a working BM25 index for the statute corpus.
+- Implemented a hybrid retrieval layer with dense + lexical ranking.
+- Validated retrieval against live legal corpus data and confirmed ranked results.
+
+### Verified outputs
+
+- `knowledge_base/indices/faiss/statutes.faiss`
+- `knowledge_base/indices/faiss/statutes.ids.json`
+- `knowledge_base/indices/bm25/statutes.bm25`
+- `knowledge_base/indices/bm25/statutes.ids.json`
+- `knowledge_base/indices/retriever.py`
+
+### Current milestone
+
+The project has reached the retrieval-system handoff stage.
+
+Next steps:
+1. generate missing caselaw and crossreference vector collections
+2. build all FAISS and BM25 indices for each collection
+3. expose the unified hybrid retriever as a service entrypoint
+4. connect retrieval results into the LLM prompt-building stage
+
 ## Important note
 
-The repository is considered ready for a vector database build only when the generated embeddings are loaded into a vector store and tested with real legal queries. At this stage, the data layer is complete and the next phase is operational retrieval.
+The repository is considered ready for a retrieval system handoff when the generated embeddings are searchable through real retrieval layers and tested with legal queries. At this stage, the dense and lexical retrieval foundation is working for the statute corpus, and the next phase is service integration and full-collection expansion.

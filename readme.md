@@ -1,105 +1,43 @@
-# Indian Legal Knowledge Base
+# JusticeCompass
 
-## Overview
+## Current status
 
-This repository contains a legal knowledge base for Indian statutes, case law, and legal cross-references. It is designed to support retrieval, explanation, and later vector-search deployment for legal assistance workflows.
+JusticeCompass has moved from raw corpus preparation into the retrieval/indexing phase. The project includes a legal corpus for statutes, case law, and cross-reference data, with generated embeddings and a working hybrid search foundation using FAISS and BM25.
 
-- **Last verified update:** 2026-08-16
-- **Repo status:** data pipeline complete; embeddings generated and ready for vector DB ingestion
-- **Core scripts:** `pdf_extractor.py`, `gazette_extractor.py`, `constitution_adapter.py`, `caselaw_adapter.py`, `ipc_bns_mapping.py`, `quality_checks.py`, `kb_builder.py`, `chunk_records.py`, `embed.py`
+### Milestone reached
 
-## Current Build Status
+- Dense vectors were generated and aligned to the legal records in the corpus.
+- FAISS index creation was validated for the statute collection.
+- BM25 lexical indexing was validated for the statute collection.
+- A hybrid retrieval orchestrator was implemented for dense + lexical search.
 
-### Data coverage
+### Repository layout
 
-| Domain | Statute documents | Sections | Case law |
-| --- | --- | --- | --- |
-| Constitutional law | 1 | 454 | 0 |
-| Criminal law | 5 | 2,159 | 1,200 |
-| Consumer protection | 2 | 142 | 0 |
-| Family law | 3 | 130 | 0 |
-| Tenancy/property | 10 | 397 | 0 |
-| **Total** | **21** | **3,282** | **1,200** |
+- `knowledge_base/` — corpus, metadata, vector-ready records, and generated indexes
+- `scripts/` — extraction, embedding, and index-building scripts
+- `docs/` — project notes and handoff documentation
+- `data/` — raw and processed legal source files
 
-Plus:
-- **270** cross-reference entries
-- **3,793** statute chunks
-- **1,198** case-law chunks
-- **270** crossreference chunks
+### What comes next
 
-### Embedding readiness
+The next phase is the retrieval system itself.
 
-The vector generation step is complete and verified.
+1. complete the remaining caselaw and crossreference vector generation
+2. build FAISS indexes for all collections
+3. build BM25 indexes for all collections
+4. expose a shared hybrid retriever as a service/API layer
+5. integrate retrieval output into the legal Q&A orchestration flow
 
-Verified embeddings:
-- `knowledge_base/vectors/statutes.npy` — 3,793 rows, shape `(3793, 1024)`, float32
-- `knowledge_base/vectors/caselaw.npy` — 1,198 rows, shape `(1198, 1024)`, float32
-- `knowledge_base/vectors/crossreference.npy` — 270 rows, shape `(270, 1024)`, float32
+This is the handoff from offline indexing into online retrieval for JusticeCompass.
 
-Matching ID files exist for each collection:
-- `knowledge_base/vectors/statutes.ids.json`
-- `knowledge_base/vectors/caselaw.ids.json`
-- `knowledge_base/vectors/crossreference.ids.json`
+## Verification summary
 
-Model used:
-- `BAAI/bge-m3`
-- dimension: 1024
-- normalized embeddings enabled
+The current validated build is: statute corpus + FAISS + BM25 + hybrid retrieval prototype.
 
-This means the repository is ready for the next step: vector database ingestion and retrieval setup.
+The project is ready for the next operational step: retrieval-system integration and result benchmarking.
 
-## Project Structure
+## Relevant project notes
 
-```text
-.
-├── README.md
-├── docs/
-│   └── progress.md
-├── .gitignore
-├── .venv/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── knowledge_base/
-│   ├── README.md
-│   ├── manifest.json
-│   ├── statutes/
-│   ├── caselaw/
-│   ├── crossreference/
-│   ├── vector_ready/
-│   └── vectors/
-├── scripts/
-│   ├── pdf_extractor.py
-│   ├── gazette_extractor.py
-│   ├── constitution_adapter.py
-│   ├── caselaw_adapter.py
-│   ├── ipc_bns_mapping.py
-│   ├── quality_checks.py
-│   ├── kb_builder.py
-│   ├── chunk_records.py
-│   └── embed.py
-└── ...
-```
-
-## Next Phase: Vector DB Build
-
-The project is now past chunk generation and embedding. The next stage is to ingest the generated vectors into a vector store such as Qdrant and then layer in retrieval orchestration.
-
-Recommended next steps:
-1. ingest `knowledge_base/vectors/*.npy` into a vector database
-2. map each vector to its native metadata from `knowledge_base/vector_ready/*.jsonl`
-3. keep collections separate: `statutes`, `caselaw`, and `crossreference`
-4. validate retrieval with legal queries before building a full app layer
-
-## Known Limitations
-
-- Case law is criminal-law-specific and mostly bail-focused.
-- Family law and tenancy coverage remain limited by dataset scope.
-- The cross-reference table is not an official concordance; it is machine-verified for section existence, not legal authority.
-- Karnataka rent act extraction remains a documented failure because the source PDF is not text-readable.
-
-## Data Integrity Notes
-
-- No fabricated or backfilled data was added to inflate coverage.
-- Provenance and source quality tracking are retained in the corpus metadata.
-- Raw filenames were preserved and tagged rather than renamed to maintain source traceability.
+- See [docs/progress.md](docs/progress.md) for the build log and milestone tracking.
+- See [docs/vector-db-build-handoff.md](docs/vector-db-build-handoff.md) for the retrieval architecture and handoff details.
+- The current verified index assets are stored under `knowledge_base/indices/`.

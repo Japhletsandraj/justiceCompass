@@ -555,3 +555,71 @@ The next job is not data preprocessing anymore. The next job is:
 4. **Integration into LLM orchestration** (Step 5 in JusticeCompass architecture) for context construction and prompt engineering
 
 This completes the "Offline Indexing Pipeline" (bottom portion of architecture diagram) and enables the "Hybrid Retrieval Engine" (Step 2 in architecture) for online query processing.
+
+## Retrieval system handoff
+
+The vector-index milestone has been reached for the available statutory corpus. The next phase is to turn the index assets into a retrieval service that can answer real legal queries with hybrid ranking and filtering.
+
+### Handoff objective
+
+Build a retrieval service that:
+- loads all available FAISS and BM25 indices
+- normalizes query embeddings
+- searches semantically via FAISS
+- searches lexically via BM25
+- fuses the results with a configurable alpha blend
+- filters by jurisdiction, act, and date metadata
+- returns top-k results with legal citations and section references
+
+### Recommended next tasks
+
+1. generate the remaining caselaw and crossreference vector collections
+2. create FAISS indexes for all collections
+3. create BM25 indexes for all collections
+4. expose a shared `HybridRetriever` object as a service entrypoint
+5. add a query API layer or lightweight Flask/FastAPI interface
+6. validate result quality on benchmark legal queries
+7. integrate retrieval context into the LLM response pipeline
+
+### Handoff status
+
+- statutes: complete for FAISS + BM25
+- caselaw: pending generation/indexing
+- crossreference: pending generation/indexing
+- retrieval orchestration: implemented and ready for extension
+
+The retrieval system step is now the next operational process after indexing, and the project should continue from this handoff into service and orchestration integration.
+
+## Retrieval system handoff
+
+The vector-index milestone has been reached for the available statutory corpus. The next phase is to turn the index assets into a retrieval service that can answer real legal queries with hybrid ranking and filtering.
+
+### Handoff objective
+
+Build a retrieval service that:
+- loads all available FAISS and BM25 indices
+- normalizes query embeddings
+- searches semantically via FAISS
+- searches lexically via BM25
+- fuses the results with a configurable alpha blend
+- filters by jurisdiction, act, and date metadata
+- returns top-k relevant legal passages with citations and section references
+
+### Recommended next tasks
+
+1. generate the remaining caselaw and crossreference vector collections
+2. create FAISS indexes for all collections
+3. create BM25 indexes for all collections
+4. expose a shared `HybridRetriever` object as a service entrypoint
+5. add a query API layer or simple Flask/FastAPI interface
+6. validate result quality on benchmark legal queries
+7. integrate retrieval context into the LLM response pipeline
+
+### Handoff status
+
+- statutes: complete for FAISS + BM25
+- caselaw: pending generation/indexing
+- crossreference: pending generation/indexing
+- retrieval orchestration: implemented and ready for extension
+
+The retrieval system step is now the next operational process after indexing, and the project should continue from this handoff into service and orchestration integration.

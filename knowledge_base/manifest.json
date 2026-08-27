@@ -65,7 +65,7 @@
     "statute_sections": 3282,
     "cases": 1200,
     "crossreference_entries": 270,
-    "embeddings_ready_records": 4746
+    "vector_db_records": 4746
   },
   "regime_tag_counts": {
     "current": 2147,

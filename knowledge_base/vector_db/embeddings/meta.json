@@ -1,0 +1,44 @@
+{
+  "model": "BAAI/bge-m3",
+  "dim": 1024,
+  "normalized": true,
+  "max_seq_length": 512,
+  "batch_size": 8,
+  "device": "cpu",
+  "collections": {
+    "statutes": {
+      "rows": 3793,
+      "dim": 1024,
+      "ids_aligned": true,
+      "dtype": "float32",
+      "norm_min": 1.0,
+      "norm_max": 1.0,
+      "zero_rows": 0,
+      "nan_rows": 0,
+      "seconds": 1585.7
+    },
+    "caselaw": {
+      "rows": 1198,
+      "dim": 1024,
+      "ids_aligned": true,
+      "dtype": "float32",
+      "norm_min": 1.0,
+      "norm_max": 1.0,
+      "zero_rows": 0,
+      "nan_rows": 0,
+      "seconds": 1098.9
+    },
+    "crossreference": {
+      "rows": 270,
+      "dim": 1024,
+      "ids_aligned": true,
+      "dtype": "float32",
+      "norm_min": 1.0,
+      "norm_max": 1.0,
+      "zero_rows": 0,
+      "nan_rows": 0,
+      "seconds": 39.6
+    }
+  },
+  "total_rows": 5261
+}

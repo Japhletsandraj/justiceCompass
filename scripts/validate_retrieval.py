@@ -9,7 +9,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
-from knowledge_base.indices.retriever import HybridRetriever
+from retrieval.hybrid_retriever import HybridRetriever
 
 
 def main():
@@ -41,9 +41,14 @@ def main():
 
     for query in queries:
         embedding = model.encode(query["text"], normalize_embeddings=True)
-        results = retriever.hybrid_search(embedding, query["text"], query["collection"], k=5, alpha=0.6)
-        if query["filters"]:
-            results = retriever.filter_by_metadata(results, query["filters"])
+        results = retriever.hybrid_search(
+            embedding,
+            query["text"],
+            query["collection"],
+            k=5,
+            alpha=0.6,
+            filters=query["filters"],
+        )
         print(f"\nQuery: {query['text']}")
         if not results:
             print("  No results returned")

@@ -5,17 +5,17 @@
 The project has passed the embedding readiness check.
 
 Verified collections:
-- statutes: 3,793 records -> `knowledge_base/vectors/statutes.npy` + `knowledge_base/vectors/statutes.ids.json`
-- caselaw: 1,198 records -> `knowledge_base/vectors/caselaw.npy` + `knowledge_base/vectors/caselaw.ids.json`
-- crossreference: 270 records -> `knowledge_base/vectors/crossreference.npy` + `knowledge_base/vectors/crossreference.ids.json`
+- statutes: 3,793 records -> `knowledge_base/vector_db/embeddings/statutes.npy` + `knowledge_base/vector_db/embeddings/statutes.ids.json`
+- caselaw: 1,198 records -> `knowledge_base/vector_db/embeddings/caselaw.npy` + `knowledge_base/vector_db/embeddings/caselaw.ids.json`
+- crossreference: 270 records -> `knowledge_base/vector_db/embeddings/crossreference.npy` + `knowledge_base/vector_db/embeddings/crossreference.ids.json`
 
 All vectors are float32 arrays with shape `(n, 1024)`, aligned with their IDs, and ready for ingestion into a vector database.
 
 ## What the repo already contains
 
 Relevant source and output folders:
-- `knowledge_base/vector_ready/` -> chunked and cleaned records before embedding
-- `knowledge_base/vectors/` -> dense embeddings and ID alignment files
+- `knowledge_base/vector_db/records/` -> chunked and cleaned records before embedding
+- `knowledge_base/vector_db/embeddings/` -> dense embeddings and ID alignment files
 - `scripts/embed.py` -> embedding generator
 - `knowledge_base/README.md` -> repository and data description
 
@@ -55,14 +55,14 @@ Additionally, create a BM25 index for lexical retrieval alongside FAISS.
 ### 1) Confirm the source input files
 
 Each collection has a JSONL source file under:
-- `knowledge_base/vector_ready/statutes.jsonl`
-- `knowledge_base/vector_ready/caselaw.jsonl`
-- `knowledge_base/vector_ready/crossreference.jsonl`
+- `knowledge_base/vector_db/records/statutes.jsonl`
+- `knowledge_base/vector_db/records/caselaw.jsonl`
+- `knowledge_base/vector_db/records/crossreference.jsonl`
 
 These are the canonical payload sources. The corresponding vector files are in:
-- `knowledge_base/vectors/statutes.npy`
-- `knowledge_base/vectors/caselaw.npy`
-- `knowledge_base/vectors/crossreference.npy`
+- `knowledge_base/vector_db/embeddings/statutes.npy`
+- `knowledge_base/vector_db/embeddings/caselaw.npy`
+- `knowledge_base/vector_db/embeddings/crossreference.npy`
 
 Important: use the JSONL records as the metadata source, not the `.npy` files alone.
 
@@ -77,9 +77,9 @@ import numpy as np
 base = "knowledge_base"
 
 for name in ["statutes", "caselaw", "crossreference"]:
-    ids = json.load(open(f"{base}/vectors/{name}.ids.json", encoding="utf-8"))
-    vecs = np.load(f"{base}/vectors/{name}.npy", mmap_mode="r")
-    rows = [json.loads(line) for line in open(f"{base}/vector_ready/{name}.jsonl", encoding="utf-8") if line.strip()]
+    ids = json.load(open(f"{base}/vector_db/embeddings/{name}.ids.json", encoding="utf-8"))
+    vecs = np.load(f"{base}/vector_db/embeddings/{name}.npy", mmap_mode="r")
+    rows = [json.loads(line) for line in open(f"{base}/vector_db/records/{name}.jsonl", encoding="utf-8") if line.strip()]
     print(name, len(ids), vecs.shape[0], len(rows))
 ```
 
@@ -125,7 +125,7 @@ import json
 import numpy as np
 
 base = "knowledge_base"
-faiss_dir = "knowledge_base/indices/faiss"
+faiss_dir = "knowledge_base/vector_db/indices/faiss"
 
 for name in ["statutes", "caselaw", "crossreference"]:
     # Load vectors
@@ -137,7 +137,7 @@ for name in ["statutes", "caselaw", "crossreference"]:
     index.add(vecs)
     
     # Save index and ID mapping
-    faiss.write_index(index, f"{faiss_dir}/{name}.faiss")
+    faiss.write_index(index, f"{faiss_dir}/{name}.index")
     
     # Save ID mapping
     ids = json.load(open(f"{base}/vectors/{name}.ids.json"))
@@ -164,11 +164,11 @@ from rank_bm25 import BM25Okapi
 import pickle
 
 base = "knowledge_base"
-bm25_dir = "knowledge_base/indices/bm25"
+bm25_dir = "knowledge_base/vector_db/indices/bm25"
 
 for name in ["statutes", "caselaw", "crossreference"]:
     # Load JSONL records
-    rows = [json.loads(line) for line in open(f"{base}/vector_ready/{name}.jsonl", encoding="utf-8") if line.strip()]
+    rows = [json.loads(line) for line in open(f"{base}/vector_db/records/{name}.jsonl", encoding="utf-8") if line.strip()]
     
     # Extract text and tokenize
     # For legal documents, preserve citations and section numbers
@@ -211,7 +211,7 @@ class HybridRetriever:
         # Load all indices
         for name in self.collections:
             # Load FAISS
-            self.faiss_indices[name] = faiss.read_index(f"{faiss_dir}/{name}.faiss")
+            self.faiss_indices[name] = faiss.read_index(f"{faiss_dir}/{name}.index")
             self.id_maps[name] = json.load(open(f"{faiss_dir}/{name}.ids.json"))
             
             # Load BM25
@@ -224,7 +224,7 @@ class HybridRetriever:
                 if line.strip()
             ]
     
-    def dense_search(self, query_embedding, collection, k=10):
+    def dense_search(self, query_embedding, collection, k=5):
         """FAISS semantic retrieval"""
         index = self.faiss_indices[collection]
         distances, indices = index.search(np.array([query_embedding]).astype('float32'), k)
@@ -240,7 +240,7 @@ class HybridRetriever:
                 })
         return results
     
-    def lexical_search(self, query_text, collection, k=10):
+    def lexical_search(self, query_text, collection, k=5):
         """BM25 lexical retrieval"""
         bm25 = self.bm25_indices[collection]
         tokenized_query = query_text.split()
@@ -259,7 +259,7 @@ class HybridRetriever:
             })
         return results
     
-    def hybrid_search(self, query_embedding, query_text, collection, k=10, alpha=0.6):
+    def hybrid_search(self, query_embedding, query_text, collection, k=5, alpha=0.6):
         """Hybrid retrieval with score fusion
         
         alpha: weight for dense retrieval (1-alpha for lexical)
@@ -415,7 +415,7 @@ Validation checklist:
 
 ### Do not overwrite the source data
 
-The canonical inputs are the JSONL files under `knowledge_base/vector_ready`. Do not regenerate chunk data unless you are intentionally rebuilding the whole corpus.
+The canonical inputs are the JSONL files under `knowledge_base/vector_db/records`. Do not regenerate chunk data unless you are intentionally rebuilding the whole corpus.
 
 ### Use metadata from JSONL, not from filenames
 
@@ -489,33 +489,36 @@ Organize indices as follows:
 
 ```
 knowledge_base/
-├── indices/
-│   ├── faiss/
-│   │   ├── statutes.faiss
+├── vector_db/
+│   ├── records/
+│   │   ├── statutes.jsonl
+│   │   ├── caselaw.jsonl
+│   │   └── crossreference.jsonl
+│   ├── embeddings/
+│   │   ├── statutes.npy
 │   │   ├── statutes.ids.json
-│   │   ├── caselaw.faiss
+│   │   ├── caselaw.npy
 │   │   ├── caselaw.ids.json
-│   │   ├── crossreference.faiss
+│   │   ├── crossreference.npy
 │   │   └── crossreference.ids.json
-│   ├── bm25/
-│   │   ├── statutes.bm25
-│   │   ├── statutes.ids.json
-│   │   ├── caselaw.bm25
-│   │   ├── caselaw.ids.json
-│   │   ├── crossreference.bm25
-│   │   └── crossreference.ids.json
-│   └── retriever.py  # HybridRetriever class
-├── vector_ready/
-│   ├── statutes.jsonl
-│   ├── caselaw.jsonl
-│   └── crossreference.jsonl
-└── vectors/
-    ├── statutes.npy
-    ├── statutes.ids.json
-    ├── caselaw.npy
-    ├── caselaw.ids.json
-    ├── crossreference.npy
-    └── crossreference.ids.json
+│   └── indices/
+│       ├── faiss/
+│       │   ├── statutes.index
+│       │   ├── statutes.ids.json
+│       │   ├── caselaw.index
+│       │   ├── caselaw.ids.json
+│       │   ├── crossreference.index
+│       │   └── crossreference.ids.json
+│       └── bm25/
+│           ├── statutes.bm25
+│           ├── statutes.ids.json
+│           ├── caselaw.bm25
+│           ├── caselaw.ids.json
+│           ├── crossreference.bm25
+│           └── crossreference.ids.json
+retrieval/
+├── hybrid_retriever.py
+└── cli.py
 ```
 
 ## Recommended next command sequence
@@ -589,6 +592,78 @@ Build a retrieval service that:
 - retrieval orchestration: implemented and ready for extension
 
 The retrieval system step is now the next operational process after indexing, and the project should continue from this handoff into service and orchestration integration.
+
+## Future work: outcome probability prediction
+
+The next modeling phase may add a probability estimate for a clearly defined legal outcome. The current IndianBailJudgments-1200 corpus is useful for retrieval and bail-outcome experiments, but it is not a general court-winning dataset. Do not describe a bail grant probability as a universal winning percentage.
+
+### External dataset required
+
+Source and document the external labeled dataset before implementing the model. Each row should contain, at minimum:
+
+- a stable case or proceeding ID
+- filing and decision dates
+- court, jurisdiction, and procedural stage
+- case type and requested relief
+- facts and arguments available before the decision
+- cited statutes and sections
+- observed outcome and outcome date
+- source URL, licence, and provenance
+
+Store an acquired copy outside Git, preferably under `prediction/data/external/`, and keep a schema/data dictionary in `prediction/README.md`. Do not include confidential personal data unless there is a documented lawful basis and a redaction process.
+
+### Define the target before training
+
+Specify the event and prediction timepoint in writing. Examples include:
+
+- probability that bail will be granted at the next hearing
+- probability that a petition will be allowed at a specified procedural stage
+- probability of a particular relief being granted within a defined period
+
+Use one binary label per defined event, for example `1 = event occurred` and `0 = event did not occur`. Do not mix bail, conviction, appeal, settlement, and interim-relief outcomes into one label. Exclude outcome language, final orders, later procedural events, and post-decision summaries from model inputs.
+
+### Split and leakage controls
+
+- Use a chronological train/validation/test split to simulate future cases.
+- Group related proceedings, appeals, and duplicate reports so they cannot cross splits.
+- Fit preprocessing, feature selection, and calibration only on training data.
+- Review duplicate, near-duplicate, and copied judgment records before training.
+- Track missingness and source coverage; do not silently impute legally meaningful facts.
+
+### Evaluation requirements
+
+Compare against a majority-class and simple logistic-regression baseline. Report discrimination and probability quality separately:
+
+- ROC-AUC and PR-AUC
+- accuracy, precision, recall, and F1 where appropriate
+- Brier score and reliability/calibration plots
+- calibration error and performance by court, jurisdiction, year, case type, and outcome class
+- confidence intervals and the number of test examples in every subgroup
+
+Calibrate probabilities on a held-out validation set. A model must not expose a percentage to users until calibration, temporal generalization, and subgroup stability have been reviewed.
+
+### Planned integration
+
+The prediction service should receive structured case facts and optionally retrieval features from the hybrid retriever. It should return:
+
+- the defined event name
+- probability and calibrated confidence interval
+- model/version and training-data date
+- supporting retrieved citations
+- a clear limitation that the estimate is not legal advice
+
+The LLM may explain the model output and retrieved law, but it must not invent or alter the probability. The prediction model, retrieval system, and LLM explanation layer should remain separate and independently testable.
+
+### Future implementation checklist
+
+- [ ] acquire and licence the external labeled dataset
+- [ ] write the target-event definition and data dictionary
+- [ ] add an ingestion/validation script under `prediction/`
+- [ ] audit duplicates, leakage, missingness, and class imbalance
+- [ ] create chronological grouped train/validation/test splits
+- [ ] train and evaluate a transparent baseline
+- [ ] add calibrated probability modeling and subgroup evaluation
+- [ ] expose prediction output separately from LLM response generation
 
 ## Retrieval system handoff
 

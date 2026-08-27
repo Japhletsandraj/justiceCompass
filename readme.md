@@ -40,4 +40,4 @@ The project is ready for the next operational step: retrieval-system integration
 
 - See [docs/progress.md](docs/progress.md) for the build log and milestone tracking.
 - See [docs/vector-db-build-handoff.md](docs/vector-db-build-handoff.md) for the retrieval architecture and handoff details.
-- The current verified index assets are stored under `knowledge_base/indices/`.
+- The current verified vector database assets are stored under `knowledge_base/vector_db/`.

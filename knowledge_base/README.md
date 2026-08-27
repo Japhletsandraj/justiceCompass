@@ -35,7 +35,7 @@ knowledge_base/
   statutes/<domain>/<act>.json      one record per section
   caselaw/criminal_law/             bail judgments
   crossreference/                   IPC/CrPC/IEA -> BNS/BNSS/BSA
-  embeddings_ready/*.jsonl          {id, text, metadata} per line
+  vector_db/legacy_embeddings/*.jsonl  legacy {id, text, metadata} records
   manifest.json                     counts, per-document provenance
 ```
 

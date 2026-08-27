@@ -7,9 +7,9 @@ import faiss
 import numpy as np
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-READY_DIR = os.path.join(ROOT, "knowledge_base", "vector_ready")
-VECTORS_DIR = os.path.join(ROOT, "knowledge_base", "vectors")
-OUT_DIR = os.path.join(ROOT, "knowledge_base", "indices", "faiss")
+READY_DIR = os.path.join(ROOT, "knowledge_base", "vector_db", "records")
+VECTORS_DIR = os.path.join(ROOT, "knowledge_base", "vector_db", "embeddings")
+OUT_DIR = os.path.join(ROOT, "knowledge_base", "vector_db", "indices", "faiss")
 COLLECTIONS = ["statutes", "caselaw", "crossreference"]
 
 
@@ -41,7 +41,7 @@ for name in available:
     os.makedirs(OUT_DIR, exist_ok=True)
     index = faiss.IndexFlatIP(vecs.shape[1])
     index.add(vecs)
-    faiss.write_index(index, os.path.join(OUT_DIR, f"{name}.faiss"))
+    faiss.write_index(index, os.path.join(OUT_DIR, f"{name}.index"))
 
     with open(os.path.join(OUT_DIR, f"{name}.ids.json"), "w", encoding="utf-8") as fh:
         json.dump(ids, fh)

@@ -8,9 +8,9 @@ import re
 from rank_bm25 import BM25Okapi
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-READY_DIR = os.path.join(ROOT, "knowledge_base", "vector_ready")
-VECTORS_DIR = os.path.join(ROOT, "knowledge_base", "vectors")
-OUT_DIR = os.path.join(ROOT, "knowledge_base", "indices", "bm25")
+READY_DIR = os.path.join(ROOT, "knowledge_base", "vector_db", "records")
+VECTORS_DIR = os.path.join(ROOT, "knowledge_base", "vector_db", "embeddings")
+OUT_DIR = os.path.join(ROOT, "knowledge_base", "vector_db", "indices", "bm25")
 COLLECTIONS = ["statutes", "caselaw", "crossreference"]
 
 

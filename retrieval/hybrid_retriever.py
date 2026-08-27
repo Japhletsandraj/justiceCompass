@@ -11,12 +11,12 @@ import numpy as np
 
 class HybridRetriever:
     def __init__(self, root_dir: str | None = None):
-        root_dir = root_dir or os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+        root_dir = root_dir or os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         self.root_dir = root_dir
         self.collections = ["statutes", "caselaw", "crossreference"]
-        self.faiss_dir = os.path.join(root_dir, "knowledge_base", "indices", "faiss")
-        self.bm25_dir = os.path.join(root_dir, "knowledge_base", "indices", "bm25")
-        self.ready_dir = os.path.join(root_dir, "knowledge_base", "vector_ready")
+        self.faiss_dir = os.path.join(root_dir, "knowledge_base", "vector_db", "indices", "faiss")
+        self.bm25_dir = os.path.join(root_dir, "knowledge_base", "vector_db", "indices", "bm25")
+        self.ready_dir = os.path.join(root_dir, "knowledge_base", "vector_db", "records")
 
         self.faiss_indices: dict[str, Any] = {}
         self.bm25_indices: dict[str, Any] = {}
@@ -25,7 +25,7 @@ class HybridRetriever:
         self.record_by_id: dict[str, dict[str, dict[str, Any]]] = {}
 
         for name in self.collections:
-            faiss_path = os.path.join(self.faiss_dir, f"{name}.faiss")
+            faiss_path = os.path.join(self.faiss_dir, f"{name}.index")
             ids_path = os.path.join(self.faiss_dir, f"{name}.ids.json")
             bm25_path = os.path.join(self.bm25_dir, f"{name}.bm25")
             ready_path = os.path.join(self.ready_dir, f"{name}.jsonl")
@@ -73,7 +73,7 @@ class HybridRetriever:
             return payload.get(key)
         return None
 
-    def dense_search(self, query_embedding, collection: str, k: int = 10):
+    def dense_search(self, query_embedding, collection: str, k: int = 5):
         index = self.faiss_indices[collection]
         q = np.asarray(query_embedding, dtype="float32").reshape(1, -1)
         distances, indices = index.search(q, min(k, index.ntotal))
@@ -91,7 +91,7 @@ class HybridRetriever:
             })
         return results
 
-    def lexical_search(self, query_text: str, collection: str, k: int = 10):
+    def lexical_search(self, query_text: str, collection: str, k: int = 5):
         bm25 = self.bm25_indices[collection]
         tokenized_query = query_text.lower().split()
         if not tokenized_query:
@@ -110,9 +110,16 @@ class HybridRetriever:
             })
         return results
 
-    def hybrid_search(self, query_embedding, query_text: str, collection: str, k: int = 10, alpha: float = 0.6):
-        dense_results = self.dense_search(query_embedding, collection, k=k)
-        lexical_results = self.lexical_search(query_text, collection, k=k)
+    def hybrid_search(self, query_embedding, query_text: str, collection: str, k: int = 5, alpha: float = 0.6, filters=None):
+        candidate_k = k
+        if filters:
+            candidate_k = min(self.faiss_indices[collection].ntotal, max(k * 10, 100))
+        dense_results = self.dense_search(query_embedding, collection, k=candidate_k)
+        lexical_results = self.lexical_search(query_text, collection, k=candidate_k)
+
+        if filters:
+            dense_results = self.filter_by_metadata(dense_results, filters)
+            lexical_results = self.filter_by_metadata(lexical_results, filters)
 
         dense_results = self._normalize_scores(dense_results)
         lexical_results = self._normalize_scores(lexical_results)

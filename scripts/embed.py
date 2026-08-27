@@ -1,10 +1,10 @@
 """
 embed.py — dense embeddings for the vector-ready records.
 
-Input : knowledge_base/vector_ready/{statutes,caselaw,crossreference}.jsonl
-Output: knowledge_base/vectors/{name}.npy      float32 [n, dim], L2-normalised
-        knowledge_base/vectors/{name}.ids.json point ids, row-aligned with .npy
-        knowledge_base/vectors/meta.json       model / dim / counts / timings
+Input : knowledge_base/vector_db/records/{statutes,caselaw,crossreference}.jsonl
+Output: knowledge_base/vector_db/embeddings/{name}.npy      float32 [n, dim], L2-normalised
+    knowledge_base/vector_db/embeddings/{name}.ids.json point ids, row-aligned with .npy
+    knowledge_base/vector_db/embeddings/meta.json       model / dim / counts / timings
 
 Model is BAAI/bge-m3 — the same tokenizer the chunk budget was measured
 against in chunk_records.py, so nothing gets silently truncated. bge-m3
@@ -34,8 +34,8 @@ import time
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IN = os.path.join(ROOT, "knowledge_base", "vector_ready")
-OUT = os.path.join(ROOT, "knowledge_base", "vectors")
+IN = os.path.join(ROOT, "knowledge_base", "vector_db", "records")
+OUT = os.path.join(ROOT, "knowledge_base", "vector_db", "embeddings")
 
 MODEL = "BAAI/bge-m3"
 MAX_SEQ = 512

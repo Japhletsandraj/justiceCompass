@@ -6,7 +6,7 @@ opens no connection. It reads knowledge_base/ and writes JSONL text files;
 loading them into Qdrant (or anything else) is a separate step.
 
 Rebuilds from the canonical knowledge_base/ layer rather than from
-embeddings_ready/*.jsonl, because the embedding layer drops fields we need
+vector_db/records/*.jsonl, because the embedding layer drops fields we need
 (data_quality_flag, content_note, possible_duplicate_of, case_details).
 
 Pipeline:
@@ -18,8 +18,8 @@ Pipeline:
   6. duplicate handling — byte-identical deduped, near-duplicates kept + flagged
   7. hybrid lexical layer (BM25 sparse text + exact citation keys)
 
-Output: knowledge_base/vector_ready/{statutes,caselaw,crossreference}.jsonl
-        knowledge_base/vector_ready/report.json
+Output: knowledge_base/vector_db/records/{statutes,caselaw,crossreference}.jsonl
+    knowledge_base/vector_db/records/report.json
 
 Usage:
   python scripts/chunk_records.py --dry-run
@@ -41,7 +41,7 @@ from collections import Counter, defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KB = os.path.join(ROOT, "knowledge_base")
-OUT = os.path.join(KB, "vector_ready")
+OUT = os.path.join(KB, "vector_db", "records")
 
 # Namespace for deterministic Qdrant point ids. Qdrant point ids must be
 # uint64 or UUID -- "stat:abc123#c0" is not a legal point id, so the readable
@@ -920,7 +920,7 @@ def main():
     g.add_argument("--dry-run", action="store_true",
                    help="report counts and samples, write nothing")
     g.add_argument("--run", action="store_true",
-                   help="write knowledge_base/vector_ready/")
+                   help="write knowledge_base/vector_db/records/")
     args = ap.parse_args()
 
     report = {"tokenizer": TOKENIZER_NAME, "token_budget": TOKEN_BUDGET}

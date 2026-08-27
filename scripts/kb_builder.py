@@ -7,7 +7,7 @@ Layout produced:
       statutes/<domain>/<document>.json
       caselaw/criminal_law/indianbail_1200.json
       crossreference/ipc_bns_mapping.json
-      embeddings_ready/{statutes,caselaw,crossreference}.jsonl
+    vector_db/legacy_embeddings/{statutes,caselaw,crossreference}.jsonl
       manifest.json
       README.md
 
@@ -292,11 +292,11 @@ def build() -> dict:
         },
     } for e in xref["entries"]]
 
-    n_stat = write_jsonl(os.path.join(KB, "embeddings_ready", "statutes.jsonl"),
+    n_stat = write_jsonl(os.path.join(KB, "vector_db", "legacy_embeddings", "statutes.jsonl"),
                          embed_statutes)
-    n_case = write_jsonl(os.path.join(KB, "embeddings_ready", "caselaw.jsonl"),
+    n_case = write_jsonl(os.path.join(KB, "vector_db", "legacy_embeddings", "caselaw.jsonl"),
                          embed_cases)
-    n_xref = write_jsonl(os.path.join(KB, "embeddings_ready", "crossreference.jsonl"),
+    n_xref = write_jsonl(os.path.join(KB, "vector_db", "legacy_embeddings", "crossreference.jsonl"),
                          embed_xref)
 
     failures = [
@@ -324,7 +324,7 @@ def build() -> dict:
             "statute_sections": sum(domain_counts.values()),
             "cases": len(cases),
             "crossreference_entries": len(xref["entries"]),
-            "embeddings_ready_records": n_stat + n_case + n_xref,
+            "vector_db_records": n_stat + n_case + n_xref,
         },
         "regime_tag_counts": dict(regime_counts),
         "documents": manifest_docs,
@@ -374,7 +374,7 @@ def write_readme(m: dict, xref: dict) -> None:
     a(f"- **{t['cases']:,} case law records** (criminal law only)")
     a(f"- **{t['crossreference_entries']} crossreference entries** "
       f"(IPC/CrPC/Evidence Act to BNS/BNSS/BSA)")
-    a(f"- **{t['embeddings_ready_records']:,} embedding-ready records**")
+    a(f"- **{t['vector_db_records']:,} legacy vector-db records**")
     a("")
     a("## Coverage by domain")
     a("")
@@ -410,7 +410,7 @@ def write_readme(m: dict, xref: dict) -> None:
     a("  statutes/<domain>/<act>.json      one record per section")
     a("  caselaw/criminal_law/             bail judgments")
     a("  crossreference/                   IPC/CrPC/IEA -> BNS/BNSS/BSA")
-    a("  embeddings_ready/*.jsonl          {id, text, metadata} per line")
+    a("  vector_db/legacy_embeddings/*.jsonl  legacy {id, text, metadata} records")
     a("  manifest.json                     counts, per-document provenance")
     a("```")
     a("")
@@ -502,7 +502,7 @@ def main(argv: list[str]) -> int:
     print(f"  statute sections  : {t['statute_sections']}")
     print(f"  cases             : {t['cases']}")
     print(f"  crossref entries  : {t['crossreference_entries']}")
-    print(f"  embedding records : {t['embeddings_ready_records']}")
+    print(f"  vector-db records : {t['vector_db_records']}")
     print("\n  by domain:")
     for d, c in m["coverage"].items():
         print(f"    {d:<22} docs={c['statute_documents']:<3} "

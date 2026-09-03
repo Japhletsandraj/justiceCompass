@@ -10,3 +10,4 @@ dist/
 build/
 .claude/
 .env
+data/external_cache/

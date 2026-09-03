@@ -98,6 +98,158 @@ Next steps:
 
 Use `--collection caselaw` or `--collection crossreference` to search another collection.
 
+## 2026-08-31 — Complete RAG pipeline with confidence scoring
+
+### Completed
+
+- **System Prompt** (`retrieval/system_prompt.md`):
+  - Comprehensive guidelines for the legal Q&A system
+  - Core principles: accuracy, transparency, jurisdiction awareness, limitations
+  - Knowledge base structure documentation
+  - Response guidelines with structured format
+  - Confidence scoring methodology
+  - Special considerations for criminal law, constitutional law, and jurisdiction-specific provisions
+  - Citation format standards
+  - Prohibited actions and ethical guidelines
+
+- **Confidence Scoring** (`retrieval/confidence_scorer.py`):
+  - Multi-factor confidence evaluation framework
+  - Seven scoring factors with configurable weights:
+    - Retrieval score (30%): hybrid ranking quality
+    - Source type (15%): statute vs case law authority
+    - Recency (10%): publication/amendment date
+    - Directness (20%): query-result relevance
+    - Specificity (10%): specific sections vs general concepts
+    - Citation frequency (5%): how often cited
+    - Consensus (10%): multiple sources agreeing
+  - Confidence labels: High (≥0.80) / Medium (0.50-0.80) / Low (<0.50)
+  - Filtering by confidence threshold
+  - Aggregate confidence across multiple results
+
+- **RAG Pipeline** (`retrieval/rag_pipeline.py`):
+  - Complete end-to-end RAG orchestration
+  - Support for OpenAI and Anthropic LLMs
+  - Query embedding using BGE-M3
+  - Hybrid retrieval with configurable parameters
+  - Confidence-based result filtering
+  - Context formatting with citations
+  - Dynamic prompt engineering
+  - LLM integration with system prompt injection
+  - Response formatting with citations and confidence metadata
+  - JSON export capability
+
+- **RAG CLI** (`retrieval/rag_cli.py`):
+  - Interactive command-line interface for RAG pipeline
+  - Support for multiple LLM providers
+  - Configurable parameters (collection, confidence, alpha, top-k)
+  - Output formats: text and JSON
+  - Verbose logging option
+  - API key configuration
+
+- **Dependencies Update** (`requirements.txt`):
+  - Added `openai>=1.3.0` for OpenAI API
+  - Added `anthropic>=0.7.0` for Anthropic Claude API
+
+- **Documentation Update** (`retrieval/README.md`):
+  - Comprehensive quick-start guide
+  - Architecture documentation
+  - Installation and configuration instructions
+  - Usage examples (retrieval-only, RAG pipeline, Python API)
+  - Confidence scoring methodology
+  - Performance benchmarks
+  - Troubleshooting guide
+  - Future enhancements roadmap
+
+### Verified outputs
+
+- ✅ `retrieval/system_prompt.md`: 200+ lines of legal Q&A guidelines
+- ✅ `retrieval/confidence_scorer.py`: ~500 lines of confidence evaluation logic
+- ✅ `retrieval/rag_pipeline.py`: ~600 lines of RAG orchestration
+- ✅ `retrieval/rag_cli.py`: ~200 lines of CLI interface
+- ✅ Updated `requirements.txt` with LLM dependencies
+- ✅ Updated `retrieval/README.md` with complete documentation
+
+### How to Use
+
+#### Quick Start - RAG Pipeline
+
+```powershell
+# Initialize and activate virtual environment (if needed)
+.\.venv\Scripts\python.exe -m retrieval.rag_cli --collection statutes --llm openai
+```
+
+#### With API Key
+
+```powershell
+.\.venv\Scripts\python.exe -m retrieval.rag_cli --collection statutes --api-key "sk-..."
+```
+
+#### Different LLM Provider
+
+```powershell
+.\.venv\Scripts\python.exe -m retrieval.rag_cli --collection statutes --llm anthropic --model claude-3-haiku-20240307
+```
+
+#### Python API
+
+```python
+from retrieval.rag_pipeline import LegalRAGPipeline
+
+rag = LegalRAGPipeline(
+    llm_provider="openai",
+    llm_model="gpt-4-turbo-preview",
+    min_confidence=0.50,
+)
+
+response = rag.query("What is punishment for theft?", collection="statutes")
+print(response.answer)
+print(response.confidence_label)
+```
+
+### Architecture Summary
+
+```
+User Query
+    ↓
+Embedding (BGE-M3)
+    ↓
+Hybrid Retrieval (FAISS + BM25)
+    ↓
+Confidence Scoring (7-factor evaluation)
+    ↓
+Confidence Filtering (min_confidence threshold)
+    ↓
+Context Formatting
+    ↓
+Prompt Engineering (system prompt + context + query)
+    ↓
+LLM (OpenAI/Anthropic)
+    ↓
+Response with Metadata
+    (answer, confidence, citations, metrics)
+```
+
+### Key Features
+
+1. **Multi-factor Confidence**: Not just retrieval score, but full evaluation of source quality, recency, directness, specificity, and consensus
+2. **Flexible LLM Support**: OpenAI, Anthropic, with easy extensibility for local models
+3. **Legal-Specific System Prompt**: 200+ lines of comprehensive guidelines for accurate legal Q&A
+4. **Configurable Thresholds**: Adjust confidence, alpha (dense/lexical), top-k for different use cases
+5. **Citation Tracking**: Full source citations in response
+6. **JSON Export**: Structured output for integration
+7. **Verbose Logging**: Debug mode for understanding pipeline decisions
+
+### Next Steps
+
+- [ ] Deploy as REST API (FastAPI/Flask)
+- [ ] Add web UI for interactive queries
+- [ ] Implement local LLM support (Llama 2, Mistral, etc.)
+- [ ] Add multi-turn conversation support
+- [ ] Implement citation verification
+- [ ] Add batch query processing
+- [ ] Create benchmark test suite
+- [ ] Add performance monitoring and metrics
+
 ## 2026-08-27 — Prediction preparation
 
 ### Completed

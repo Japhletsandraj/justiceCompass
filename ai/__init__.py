@@ -1,0 +1,1 @@
+"""JusticeCompass AI package."""

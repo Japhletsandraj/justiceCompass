@@ -110,3 +110,28 @@ Only the IndianBailJudgments-1200 licence (CC-BY-4.0) is stated by the source it
 - The Indian Evidence Act 1872 itself is **not** in this corpus, only its successor the BSA 2023. IEA→BSA source sections are therefore unverified against primary text.
 - Schedules, forms and the Statement of Objects and Reasons are excluded; extraction stops at the end of the operative sections.
 - Tamil-script text in the Tamil Nadu gazettes is set in a legacy non-Unicode font and is not recoverable. English text is unaffected.
+
+## New record metadata contract
+
+New statutes, rules, judgments, forms, and resources should include stable provenance metadata:
+
+```json
+{
+  "document_id": "stable-id",
+  "source_url": "https://official-source.example/document",
+  "source_type": "statute|rule|judgment|form|resource",
+  "authority_level": "primary|secondary",
+  "legal_domain": "criminal|family|consumer|employment|property|constitutional",
+  "jurisdiction": "India",
+  "region": null,
+  "court": null,
+  "language": "en",
+  "effective_from": "2024-07-01",
+  "effective_until": null,
+  "last_verified": "2026-09-03",
+  "version": "1",
+  "content_hash": "sha256:..."
+}
+```
+
+Prefer official government and court sources for current law. Mark repealed material as archived, manually review extracted judgment outcomes, record missing fields instead of inventing them, and rebuild both FAISS and BM25 indexes after approved source changes. New outcome datasets must document licensing, sampling, labels, date range, jurisdiction, and known class imbalance.

@@ -1,0 +1,207 @@
+JUSTICECOMPASS EVALUATION METRICS
+================================
+
+Purpose
+-------
+This document defines the evaluation metrics for the JusticeCompass legal RAG
+system. The system should be evaluated as four separate components:
+
+1. Knowledge-base retrieval
+2. Generated answer quality and grounding
+3. Historical outcome estimation
+4. System performance and reliability
+
+Do not report the retrieval confidence score as a legal-success probability.
+Retrieval confidence measures source relevance and quality. Outcome estimation
+must be evaluated separately and must be reported as a historical pattern, not
+a guarantee about an individual case.
+
+Evaluation dataset
+------------------
+Create a held-out test set of questions that is not used to tune prompts,
+retrieval thresholds, or models. Each question should have:
+
+- The question text
+- Legal domain and jurisdiction
+- Relevant statute sections or authoritative sources
+- Relevant case identifiers where applicable
+- Required legal elements or facts
+- Expected procedural next steps, reviewed by a legal expert
+- Whether the available knowledge base is sufficient
+
+For prediction evaluation, each historical case must also have a reviewed
+outcome label, such as allowed, dismissed, rejected, granted, or settled. Split
+prediction data by time where possible: train on earlier cases and test on
+later cases. This better represents real-world use than a random split.
+
+1. Retrieval metrics
+--------------------
+These metrics measure whether the system retrieves the correct legal sources.
+They require a relevance label for each returned document.
+
+Precision@K
+Definition: proportion of the top K retrieved documents that are relevant.
+Formula: Precision@K = relevant documents in top K / K
+Use: Measures how much of the displayed context is useful.
+
+Recall@K
+Definition: proportion of all known relevant documents retrieved in the top K.
+Formula: Recall@K = relevant documents in top K / all relevant documents
+Use: Measures whether important authorities were missed.
+
+Hit Rate@K
+Definition: percentage of questions with at least one relevant document in
+the top K results.
+Formula: Hit Rate@K = questions with a relevant top-K result / total questions
+Use: A simple measure of whether retrieval finds anything useful.
+
+MRR (Mean Reciprocal Rank)
+Definition: average reciprocal rank of the first relevant result.
+Formula: MRR = average(1 / rank of first relevant result)
+Use: Rewards placing the first useful authority near the top.
+
+nDCG@K
+Definition: ranking-quality metric that supports graded relevance labels, for
+example 0 = irrelevant, 1 = related, 2 = directly applicable.
+Use: Measures whether the most useful legal authorities are ranked first.
+
+Recommended retrieval table columns:
+- Collection: statutes, case law, cross-reference, or all
+- K value
+- Precision@K
+- Recall@K
+- Hit Rate@K
+- MRR
+- nDCG@K
+
+2. Answer quality and grounding metrics
+---------------------------------------
+These metrics measure the generated response. Use expert review and, where
+possible, an answer reference created by a qualified legal reviewer.
+
+Citation precision
+Definition: percentage of citations in the answer that are supported by the
+retrieved source text.
+Formula: supported citations / all cited sources
+
+Citation recall
+Definition: percentage of required authoritative sources that were cited.
+Formula: required sources cited / all required sources
+
+Citation completeness
+Definition: percentage of material legal claims that have a supporting source.
+Formula: supported material claims / all material claims
+
+Faithfulness / groundedness
+Definition: percentage of factual and legal claims that can be verified from
+the retrieved context. Score claims individually and average them.
+
+Answer relevance
+Definition: whether the answer directly addresses the user's question,
+without irrelevant or unsupported discussion. Use a 1-5 expert rating.
+
+Actionability
+Definition: whether the response provides usable next steps, documents to
+collect, likely forum, missing facts, and deadline warnings where supported.
+Use a 1-5 expert rating.
+
+Legal safety
+Definition: whether the answer avoids fabricated citations, guarantees,
+unauthorized legal advice, and unsupported predictions. Report the percentage
+of answers with no critical safety violation.
+
+Structured-output validity
+Definition: percentage of LLM responses that parse into the required JSON
+schema without manual repair.
+Formula: valid structured responses / total responses
+
+Recommended expert-review scale:
+- 1 = incorrect or unsafe
+- 2 = mostly incorrect or incomplete
+- 3 = partly useful, substantial omissions
+- 4 = mostly correct and useful
+- 5 = accurate, grounded, complete for the supplied facts
+
+3. Historical outcome estimation metrics
+----------------------------------------
+Use these only after collecting enough reviewed outcome labels. Evaluate each
+legal category separately; do not combine bail, consumer, family, property,
+and criminal outcomes into one score.
+
+Accuracy
+Definition: fraction of outcome labels predicted correctly.
+Formula: correct predictions / all predictions
+Limitation: can be misleading when one outcome is much more common.
+
+Precision, recall, and F1
+Use per outcome class, especially when allowed and rejected cases are
+imbalanced. Report macro-F1 in addition to micro-F1.
+
+ROC-AUC or PR-AUC
+Use only when the estimator produces a continuous score. PR-AUC is often more
+informative for rare favorable outcomes.
+
+Brier score
+Definition: mean squared error between predicted probability and observed
+binary outcome.
+Formula: Brier = average((predicted probability - observed outcome)^2)
+Lower is better.
+
+Calibration error
+Compare predicted probability buckets with observed favorable rates. Report
+Expected Calibration Error (ECE) and include a reliability diagram.
+A model should not display a percentage to users until calibration has been
+checked on held-out data.
+
+Coverage / abstention rate
+Definition: percentage of questions for which the model provides an estimate
+instead of returning insufficient_data.
+Also report accuracy only on covered cases and the error rate of abstained cases.
+A conservative system may have lower coverage but safer behavior.
+
+Subgroup and stability checks
+Report metrics separately by:
+- Jurisdiction and court
+- Legal domain and case type
+- Year or time period
+- Outcome class
+- Data completeness level
+
+For the current JusticeCompass implementation, the correct result when there
+are too few clearly labeled live judgments is insufficient_data, not zero and
+not an invented probability.
+
+4. Operational metrics
+----------------------
+These metrics measure whether the system is usable.
+
+- End-to-end latency: p50, p95, and p99 milliseconds
+- Retrieval latency: p50 and p95 milliseconds
+- LLM latency: p50 and p95 milliseconds
+- Error rate: failed requests / total requests
+- Timeout rate
+- Cache hit rate
+- Indian Kanoon API calls per assessment
+- Average API cost per live assessment
+- Number of retrieved context documents
+- Token usage per LLM request
+
+5. Results section template
+---------------------------
+Use wording similar to the following in the paper:
+
+"JusticeCompass was evaluated using a held-out set of legal questions covering
+multiple legal domains. Retrieval quality was measured using Precision@K,
+Recall@K, Hit Rate@K, MRR, and nDCG@K. Generated responses were reviewed for
+citation precision, citation completeness, groundedness, answer relevance,
+actionability, legal safety, and structured-output validity. Historical outcome
+estimation was evaluated separately using accuracy, macro-F1, Brier score,
+calibration error, and coverage. Because the available case corpus is not
+uniform across legal domains, results were reported by case type and
+jurisdiction rather than as one aggregate legal-success score. The system
+abstained when the comparable outcome sample was insufficient."
+
+Do not claim measured values in the paper until the held-out evaluation has
+actually been run. Report the number of questions, number of reviewers,
+reviewer agreement, corpus date range, jurisdictions, model name, prompt
+version, retrieval K, and confidence threshold alongside every result table.

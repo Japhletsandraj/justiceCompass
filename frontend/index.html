@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JusticeCompass</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 120 120" role="img" aria-label="Justice Compass logo">
+              <defs>
+                <linearGradient id="goldGlow" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#f5f7fb" />
+                  <stop offset="35%" stop-color="#dfe4ea" />
+                  <stop offset="70%" stop-color="#a5acb8" />
+                  <stop offset="100%" stop-color="#eff4ff" />
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="52" fill="none" stroke="url(#goldGlow)" stroke-width="2.4" opacity="0.9"/>
+              <path d="M60 20 L72 48 L88 52 L73 68 L78 96 L60 82 L42 96 L47 68 L32 52 L48 48 Z" fill="none" stroke="url(#goldGlow)" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M60 30 L66 48 L78 50 L67 62 L70 82 L60 72 L50 82 L53 62 L42 50 L54 48 Z" fill="url(#goldGlow)" opacity="0.18"/>
+              <path d="M60 12 L60 104 M18 60 L102 60" stroke="url(#goldGlow)" stroke-width="1.7" opacity="0.7"/>
+              <path d="M60 35 L60 82 M41 60 L79 60" stroke="url(#goldGlow)" stroke-width="2" opacity="0.65"/>
+              <path d="M40 82 L60 60 L80 82" fill="none" stroke="url(#goldGlow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M60 60 L86 24" stroke="url(#goldGlow)" stroke-width="2" opacity="0.7"/>
+              <circle cx="60" cy="60" r="6" fill="url(#goldGlow)"/>
+            </svg>
+          </div>
+          <div>
+            <p class="eyebrow">Legal triage tool</p>
+            <h1>Justice Compass</h1>
+          </div>
+        </div>
+        <button id="newAssessmentBtn" class="secondary-btn">Start new assessment</button>
+      </header>
+
+      <main class="layout">
+        <section class="hero-visual" aria-label="Justice sculpture and brand illustration">
+          <div class="hero-copy">
+            <p>Legal clarity before the next step.</p>
+          </div>
+
+          <div class="statue-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80"
+              alt="Front-facing justice statue with scales"
+              class="statue-image"
+            />
+          </div>
+        </section>
+
+        <section class="panel form-panel">
+          <div class="panel-kicker">Assessment workspace</div>
+          <h2>Assess a legal concern</h2>
+
+          <form id="assessmentForm">
+            <label class="field">
+              <span>Question or situation</span>
+              <textarea id="question" name="question" rows="5" placeholder="Describe the issue, notice, dates, parties, and desired outcome." required></textarea>
+            </label>
+
+            <div class="inline-grid">
+              <label class="field">
+                <span>Jurisdiction</span>
+                <input id="jurisdiction" name="jurisdiction" type="text" placeholder="Delhi, India" />
+              </label>
+
+              <label class="field">
+                <span>Legal category</span>
+                <select id="caseType" name="case_type">
+                  <option value="">General legal issue</option>
+                  <option value="criminal">Criminal</option>
+                  <option value="family">Family</option>
+                  <option value="consumer">Consumer</option>
+                  <option value="employment">Employment</option>
+                  <option value="tenancy_property">Tenancy & property</option>
+                  <option value="constitutional">Constitutional</option>
+                  <option value="bail">Bail</option>
+                </select>
+              </label>
+            </div>
+
+            <button id="toggleDetailsBtn" type="button" class="secondary-btn">Add details</button>
+
+            <div id="detailsSection" class="details hidden">
+              <div class="inline-grid">
+                <label class="field">
+                  <span>Date context</span>
+                  <input id="dateContext" name="date_context" type="text" placeholder="Notice received 5 days ago" />
+                </label>
+
+                <label class="field">
+                  <span>Region</span>
+                  <input id="region" name="region" type="text" placeholder="Delhi / Maharashtra" />
+                </label>
+              </div>
+
+              <div class="inline-grid">
+                <label class="field">
+                  <span>Relevant section</span>
+                  <input id="citedSection" name="cited_section" type="text" placeholder="Section 498A / Article 21" />
+                </label>
+                <label class="field">
+                  <span>Max judgments</span>
+                  <input id="maxFullJudgments" name="max_full_judgments" type="number" min="1" max="20" value="5" />
+                </label>
+              </div>
+            </div>
+
+            <div class="toggle-grid">
+              <label class="checkbox-row">
+                <input id="fetchExternalSources" type="checkbox" name="fetch_external_sources" />
+                <span>Search live judgments</span>
+              </label>
+              <label class="checkbox-row">
+                <input id="fetchFullJudgments" type="checkbox" name="fetch_full_judgments" />
+                <span>Fetch full judgments</span>
+              </label>
+            </div>
+
+            <div id="liveCostWarning" class="warning hidden">
+              Live Indian Kanoon research can be metered and may add cost. Only enable it when you need current case material.
+            </div>
+
+            <div id="errorBanner" class="banner error hidden" aria-live="polite"></div>
+
+            <button id="submitBtn" class="primary-btn" type="submit">Assess concern</button>
+          </form>
+        </section>
+
+        <section class="panel result-panel">
+          <div id="loadingState" class="status hidden">
+            <div class="spinner" aria-hidden="true"></div>
+            <p>Reviewing the facts and checking the available legal sources...</p>
+          </div>
+
+          <div id="emptyState" class="status">
+            <h3>Ready for a first assessment</h3>
+            <p>Describe the issue in plain language and the system will identify likely legal issues, relevant laws, and next steps.</p>
+          </div>
+
+          <div id="resultContainer" class="result hidden"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -57,3 +57,9 @@ def test_assess_can_skip_llm(monkeypatch):
     )
     assert response.status_code == 200
     assert response.json()["confidence_label"] == "Low"
+
+
+def test_frontend_entry_page_is_served():
+    response = TestClient(backend_api.app).get("/")
+    assert response.status_code == 200
+    assert "JusticeCompass" in response.text

@@ -29,7 +29,7 @@ _DOMAIN_KEYWORDS = {
     "family": ("divorce", "custody", "maintenance", "marriage", "domestic violence"),
     "consumer": ("consumer", "refund", "defective", "service", "seller", "product"),
     "employment": ("salary", "termination", "employer", "job", "workplace", "employee"),
-    "tenancy_property": ("rent", "tenant", "landlord", "eviction", "property", "lease"),
+    "tenancy_property": ("rent", "tenant", "landlord", "eviction", "property", "lease", "neighbour", "neighbor", "renovation", "cement", "car damage"),
     "constitutional": ("fundamental right", "discrimination", "writ", "constitutional"),
 }
 
@@ -61,17 +61,48 @@ def assess_question(
         if domain != "unknown"
         else "The question may involve a legal concern, but the legal area cannot yet be identified."
     )
-    steps = [
-        "Write a dated timeline using only facts you can support.",
-        "Preserve original documents, messages, notices, photographs, and transaction records.",
-        "Avoid deleting evidence or contacting the other party in a way that could escalate risk.",
-        "Have a qualified lawyer or legal-aid clinic verify jurisdiction, deadlines, and filing strategy.",
-    ]
-    evidence = [
-        "Identity and contact details of relevant parties",
-        "Contracts, notices, receipts, orders, or police/court documents",
-        "Messages, emails, call records, photographs, and witness details",
-    ]
+    if domain == "tenancy_property" and any(term in question.lower() for term in ("deposit", "security", "refund")):
+        steps = [
+            "Check the rental agreement for the deposit amount, refund timeline, permitted deductions, and handover terms.",
+            "Ask the landlord in writing for the reason and itemized proof for every deduction, including rent, utilities, repairs, or cleaning.",
+            "Send a written demand for the undisputed deposit balance, stating the tenancy dates, vacating date, amount due, and payment details.",
+            "If payment is still refused, have a lawyer or legal-aid service send a formal notice and identify the appropriate recovery forum for the state.",
+            "Keep the agreement, payment proof, handover record, exit photographs, utility clearances, and all messages together.",
+        ]
+        evidence = [
+            "Rental agreement and any written deposit or deduction clause",
+            "Security-deposit payment proof, rent receipts, and utility clearances",
+            "Handover or vacating proof and dated photographs of the premises",
+            "Written demand, landlord replies, and itemized repair or deduction records",
+        ]
+    elif domain == "tenancy_property" and any(term in question.lower() for term in ("neighbour", "neighbor", "renovation", "cement", "car", "damage")):
+        steps = [
+            "Document the damage immediately with timestamped photographs or video, a garage repair estimate, and witness details.",
+            "Send the neighbour a written demand for compensation within a clear period, attaching the photographs and repair estimate.",
+            "If the demand is ignored, have an advocate send a formal legal notice seeking the repair cost and any provable consequential loss.",
+            "Try mediation or Lok Adalat through the local District Legal Services Authority before starting litigation.",
+            "If settlement fails, ask a lawyer about a civil claim for damages in the appropriate local court and whether the renovation contractor shares liability.",
+            "Make a police complaint only if the facts support a separate criminal element such as intentional damage, intimidation, or another cognizable offence.",
+        ]
+        evidence = [
+            "Timestamped photographs or video showing cement on the vehicle and the surrounding renovation work",
+            "Garage inspection report, repair estimate, invoices, and proof of consequential loss",
+            "Vehicle ownership documents, witness details, messages, and the neighbour's renovation details",
+            "Copies of the written demand, advocate notice, replies, mediation record, or police complaint",
+        ]
+    else:
+        steps = [
+            "Write down the exact timeline, parties, location, harm, and remedy requested.",
+            "Identify the document, notice, payment, communication, or event that created the dispute.",
+            "Send a factual written request for the explanation, correction, payment, or other remedy available for this issue.",
+            "Check the applicable notice and limitation deadlines before choosing a court, tribunal, authority, or police route.",
+            "Have a qualified lawyer or legal-aid clinic verify jurisdiction, evidence, and filing strategy where the facts remain disputed.",
+        ]
+        evidence = [
+            "Agreement, notice, receipt, order, or police/court document connected to the issue",
+            "Payment records, messages, emails, photographs, and dated communications",
+            "Identity and contact details of relevant parties and witnesses",
+        ]
     forums = [
         "The appropriate local court, tribunal, police authority, or statutory grievance body must be confirmed for this jurisdiction."
     ]

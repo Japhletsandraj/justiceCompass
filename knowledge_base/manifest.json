@@ -13,8 +13,8 @@
     "constitutional_law": {
       "statute_documents": 1,
       "statute_sections": 454,
-      "case_law_documents": 0,
-      "has_case_law": false,
+      "case_law_documents": 32,
+      "has_case_law": true,
       "jurisdictions": [
         "India (Union)"
       ]
@@ -22,7 +22,7 @@
     "criminal_law": {
       "statute_documents": 5,
       "statute_sections": 2159,
-      "case_law_documents": 1200,
+      "case_law_documents": 1240,
       "has_case_law": true,
       "jurisdictions": [
         "India (Union)"
@@ -31,8 +31,8 @@
     "consumer_protection": {
       "statute_documents": 2,
       "statute_sections": 142,
-      "case_law_documents": 0,
-      "has_case_law": false,
+      "case_law_documents": 40,
+      "has_case_law": true,
       "jurisdictions": [
         "India (Union)"
       ]
@@ -40,8 +40,8 @@
     "family_law": {
       "statute_documents": 3,
       "statute_sections": 130,
-      "case_law_documents": 0,
-      "has_case_law": false,
+      "case_law_documents": 40,
+      "has_case_law": true,
       "jurisdictions": [
         "India (Union)"
       ]
@@ -49,8 +49,8 @@
     "tenancy_property": {
       "statute_documents": 10,
       "statute_sections": 397,
-      "case_law_documents": 0,
-      "has_case_law": false,
+      "case_law_documents": 40,
+      "has_case_law": true,
       "jurisdictions": [
         "Delhi",
         "India (Union)",
@@ -63,9 +63,9 @@
   "totals": {
     "statute_documents": 21,
     "statute_sections": 3282,
-    "cases": 1200,
+    "cases": 1392,
     "crossreference_entries": 270,
-    "vector_db_records": 4746
+    "vector_db_records": 5452
   },
   "regime_tag_counts": {
     "current": 2147,

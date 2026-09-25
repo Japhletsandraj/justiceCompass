@@ -24,7 +24,8 @@ class IndianKanoonClient:
         configured_token = token or os.getenv("INDIANKANOON_API_TOKEN")
         self.token = "".join(configured_token.split()) if configured_token else None
         self.timeout = timeout
-        self.cache_dir = Path(cache_dir or "data/external_cache")
+        default_cache_dir = Path(__file__).resolve().parents[2] / "data" / "external_cache"
+        self.cache_dir = Path(cache_dir) if cache_dir else default_cache_dir
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         if not self.token:
             raise ValueError("INDIANKANOON_API_TOKEN is not configured")
@@ -80,13 +81,30 @@ class IndianKanoonClient:
         """Attach only high-signal, explicitly stated final-order outcomes."""
         text = str(document.get("doc", "")).lower()
         outcome = None
-        if "partly allowed" in text:
+        if "partly allowed" in text or "allowed in part" in text:
             outcome = "partly_allowed"
-        elif "petition is allowed" in text or "application is allowed" in text or "appeal is allowed" in text:
+        elif (
+            "petition is allowed" in text
+            or "application is allowed" in text
+            or "appeal is allowed" in text
+            or "bail is granted" in text
+            or "application for bail is allowed" in text
+        ):
             outcome = "allowed"
-        elif "petition is dismissed" in text or "application is dismissed" in text or "appeal is dismissed" in text:
+        elif (
+            "petition is dismissed" in text
+            or "application is dismissed" in text
+            or "appeal is dismissed" in text
+            or "petition stands dismissed" in text
+        ):
             outcome = "dismissed"
-        elif "petition is rejected" in text or "application is rejected" in text or "application is denied" in text:
+        elif (
+            "petition is rejected" in text
+            or "application is rejected" in text
+            or "application is denied" in text
+            or "bail is rejected" in text
+            or "bail is denied" in text
+        ):
             outcome = "rejected"
         result = dict(record)
         result["full_text_available"] = bool(document.get("doc"))

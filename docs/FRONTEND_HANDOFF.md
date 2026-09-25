@@ -28,7 +28,7 @@ Submit with `POST /assess`:
   "jurisdiction": "Delhi, India",
   "date_context": "Notice received 5 days ago",
   "case_type": "tenancy_property",
-  "fetch_external_sources": false,
+  "fetch_external_sources": true,
   "fetch_full_judgments": false,
   "include_rag_answer": true
 }

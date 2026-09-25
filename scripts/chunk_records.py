@@ -632,8 +632,15 @@ def as_text(v):
 
 
 def prepare_caselaw(report):
-    cases = load(os.path.join(KB, "caselaw", "criminal_law",
-                              "indianbail_1200.json"))
+    cases = []
+    caselaw_root = os.path.join(KB, "caselaw")
+    for root_dir, _, files in os.walk(caselaw_root):
+        for fname in sorted(files):
+            if fname.endswith(".json") and not fname.startswith("_"):
+                fpath = os.path.join(root_dir, fname)
+                loaded = load(fpath)
+                if isinstance(loaded, list):
+                    cases.extend(loaded)
     stats = {"in": len(cases), "deduped": 0, "possible_duplicate_flagged": 0,
              "empty_cited_sections": 0, "principles_present": 0}
 

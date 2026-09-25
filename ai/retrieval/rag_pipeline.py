@@ -93,20 +93,25 @@ Your role is to provide accurate, cited, and legally grounded answers to legal q
     STRUCTURED_RESPONSE_INSTRUCTION = """
 Return your answer as valid JSON only, with exactly these keys:
 {
-    "concern_assessment": "possible concern, not a legal validity guarantee",
+    "concern_assessment": "fact-specific explanation of what appears to have happened and the legal issue it may raise",
+    "severity_assessment": "low, moderate, or high severity with reasons tied to the supplied facts and cited law",
+    "potential_consequences": ["specific civil, criminal, financial, procedural, or safety consequences supported by cited law"],
     "registrable_assessment": "likely registrable, possibly registrable, or cannot determine from supplied facts",
     "registration_conditions": ["facts, legal elements, jurisdiction, documents, and limitation requirements supported by context"],
     "registration_forum": "court, tribunal, authority, or unknown based only on context",
-    "analysis": "source-grounded explanation",
+    "analysis": "plain-language, fact-specific explanation applying the cited law to the user's situation",
     "applicable_law": ["law and section citations from context only"],
     "case_references": [{"case_number": "case id or citation from context", "title": "case title", "outcome": "if stated"}],
     "prediction_score": null,
     "prediction_basis": "why a score is unavailable, or a verified historical estimate",
-    "next_steps": ["practical source-grounded steps"],
+    "next_steps": [
+        "MANDATORY: return 5 to 7 ordered, issue-specific triage steps. Every item must state an action or an explicitly justified 'not applicable'. Cover: (1) self-serve actions the user can take without a lawyer, including evidence and any free or low-cost formal route; (2) a formal notice step where applicable; (3) the exact escalation trigger for when a lawyer becomes necessary; (4) what to bring to that lawyer if escalation occurs; and (5) realistic cost and time expectations for the available routes. Do not omit this list."
+    ],
     "missing_information": ["facts needed before legal review"],
     "disclaimer": "general legal information, not legal advice"
 }
 Use null for prediction_score unless a verified historical outcome estimate is explicitly provided in the context. Never invent case numbers, outcomes, citations, or probabilities.
+Do not use historical case outcomes to decide severity or state likely success. Historical outcomes are optional supporting context only.
 """
 
     def __init__(
@@ -273,14 +278,20 @@ Use null for prediction_score unless a verified historical outcome estimate is e
 ## Your Task
 Based ONLY on the provided legal context above, provide a comprehensive answer to the legal question. Follow these guidelines:
 
-1. **Start with the Question**: Briefly restate and clarify the question
-2. **Cite the Applicable Law**: Quote the relevant statute/constitutional sections
-3. **Reference Case Law**: If case law is provided, cite key judgments
-4. **Analyze**: Apply the law to the question scenario
-5. **State Confidence**: Assess the quality of your answer based on source availability
-6. **Recommendations**: Suggest professional consultation if needed
+1. **Start with the Question**: Restate the user's actual facts, requested remedy, and important dates
+2. **Cite the Applicable Law**: Explain the relevant statute/constitutional sections in plain language
+3. **Analyze**: Apply each cited provision to the specific facts; distinguish known facts from missing facts
+4. **Give the mandatory triage action plan**: Return 5 to 7 ordered, issue-specific steps. The list MUST cover all five categories below, even when one category is "not applicable" with a reason:
+    - **Self-serve now**: documentation/evidence and free or low-cost formal routes such as RTI, a police complaint where a cognizable offence is supported, a consumer commission route, Lok Adalat, or DLSA mediation.
+    - **Formal notice**: identify whether a legal notice, demand, complaint, or employer/authority notice is appropriate, and state what it should ask for.
+    - **Escalation trigger**: state the concrete condition that changes this from self-help to legal representation, such as an approaching limitation deadline, disputed liability, high claim value, opposing counsel, refusal after notice, safety risk, or criminal conduct.
+    - **Prepare for a lawyer**: give an issue-specific checklist of the timeline, documents, evidence, parties, notices, and questions to bring if the trigger occurs.
+    - **Cost and time**: give cautious ranges or relative expectations where supported, such as free/low-cost mediation taking weeks versus a civil claim taking months or years and costing more. Never invent exact fees or deadlines.
+    For a withheld rental deposit, address the agreement, itemized deductions, written demand, notice, recovery forum, escalation trigger, lawyer packet, and cost/time. For vehicle/property damage caused by a neighbour's renovation, address documented damage and repair estimates, a written compensation demand, advocate notice, mediation or Lok Adalat, civil recovery for repair cost and consequential loss, the contractor question, escalation trigger, lawyer packet, and cost/time. For another issue, do not reuse either example; identify the actual routes for that issue.
+5. **State Confidence**: Assess the quality of the answer based on source availability and missing facts
+6. **Recommendations**: Suggest professional consultation only where the facts or procedure require it
 
-If the context does not contain sufficient information to answer the question, explicitly state this and recommend what type of legal expertise would be needed.
+If the context does not contain sufficient information to answer the question, state exactly which fact or provision is missing, but still return the mandatory five-part triage list. Mark only the unsupported item as "not determinable from the supplied facts" and explain what would determine it. Do not replace the list with generic advice to preserve documents and consult a lawyer.
 
 Remember: Only cite sources from the context above. Do not use external knowledge.
 
@@ -297,7 +308,7 @@ Remember: Only cite sources from the context above. Do not use external knowledg
                     {"role": "system", "content": self.system_prompt},
                     {"role": "user", "content": prompt},
                 ],
-                max_tokens=2000,
+                max_tokens=int(os.getenv("LLM_MAX_TOKENS", "1600")),
                 top_p=0.9,
                 temperature=float(os.getenv("OPENROUTER_TEMPERATURE", "0.3")),
             )
@@ -322,12 +333,15 @@ Remember: Only cite sources from the context above. Do not use external knowledg
             raise ValueError(f"Unknown LLM provider: {self.llm_provider}")
 
     def _extract_sources_from_answer(self, answer: str, context_items: list[ContextItem]) -> list[str]:
-        """Extract sources cited in the answer."""
+        """Extract primary legal sources cited in the answer."""
         citations = []
 
         for item in context_items:
-            # Check if source appears in answer
-            if item.source.lower() in answer.lower():
+            if item.source_type not in {"statute", "constitutional", "crossreference"}:
+                continue
+            # Return the relevant primary provisions even when the model
+            # paraphrases a citation instead of repeating its exact label.
+            if item.source.lower() in answer.lower() or item.source_type in {"statute", "constitutional"}:
                 citations.append(item.source)
 
         # Remove duplicates while preserving order
@@ -385,9 +399,14 @@ Remember: Only cite sources from the context above. Do not use external knowledg
 
         all_results = []
         if collection == "all":
-            for col in ["statutes", "caselaw", "crossreference"]:
+            # Statutes are primary authority; case law is supporting context.
+            for col, collection_top_k in [
+                ("statutes", max(top_k, 6)),
+                ("crossreference", min(top_k, 3)),
+                ("caselaw", min(top_k, 2)),
+            ]:
                 results = self.retriever.hybrid_search(
-                    query_embedding, question, col, k=top_k, alpha=alpha
+                    query_embedding, question, col, k=collection_top_k, alpha=alpha
                 )
                 all_results.extend(results)
         else:

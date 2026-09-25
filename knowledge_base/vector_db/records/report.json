@@ -42,33 +42,33 @@
     "14": 1
   },
   "caselaw": {
-    "in": 1200,
-    "deduped": 2,
+    "in": 1392,
+    "deduped": 3,
     "possible_duplicate_flagged": 29,
-    "empty_cited_sections": 202,
-    "principles_present": 663,
-    "out": 1198
+    "empty_cited_sections": 259,
+    "principles_present": 854,
+    "out": 1389
   },
   "caselaw_tokens": {
     "old": {
-      "n": 1198,
+      "n": 1389,
       "min": 49,
-      "p50": 70,
-      "p90": 81,
-      "p99": 91,
-      "max": 101,
-      "mean": 70.3,
+      "p50": 71,
+      "p90": 101,
+      "p99": 127,
+      "max": 151,
+      "mean": 75.6,
       "over_512": 0
     },
     "new": {
-      "n": 1198,
+      "n": 1389,
       "min": 188,
-      "p50": 338,
-      "p90": 419,
-      "p99": 472,
-      "max": 512,
-      "mean": 337.6,
-      "over_512": 0
+      "p50": 347,
+      "p90": 430,
+      "p99": 577,
+      "max": 749,
+      "mean": 348.6,
+      "over_512": 46
     }
   },
   "crossreference": {
@@ -153,7 +153,7 @@
       "bm25_unscoped_top": [
         "case:IBJ-495",
         "crossreference:xref:600eab7dcea8c94e",
-        "case:IBJ-294"
+        "IPC s.302"
       ]
     },
     {
@@ -366,16 +366,16 @@
     }
   ],
   "embedding_estimate": {
-    "records": 5261,
-    "total_tokens": 1298167,
+    "records": 5452,
+    "total_tokens": 1377815,
     "tokenizer": "hf/BAAI/bge-m3",
-    "local_bge_m3_cpu_minutes": 7.3,
+    "local_bge_m3_cpu_minutes": 7.6,
     "local_bge_m3_gpu_minutes": 0.4,
-    "openai_text_embedding_3_small_usd": 0.026,
-    "voyage_law_2_usd": 0.156
+    "openai_text_embedding_3_small_usd": 0.028,
+    "voyage_law_2_usd": 0.165
   },
   "totals": {
-    "records": 5261,
+    "records": 5452,
     "duplicate_point_ids": 0
   }
 }

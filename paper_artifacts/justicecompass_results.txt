@@ -1,0 +1,25 @@
+JusticeCompass paper-ready summary
+
+Validated implementation:
+- 8 tests passed
+- 75.41 seconds total runtime
+- Abstains with insufficient_data when comparable case data are too small
+
+Corpus data:
+- 21 statute documents
+- 3,282 statute sections
+- 1,392 case-law records
+- 270 cross-reference entries
+- 5,452 vector database records
+- Citation coverage: 94.7%
+- 90 IPC sections remain manually unmapped
+
+Coverage profile:
+- criminal_law: 5 statute docs, 2,159 sections, 1,200 case-law records
+- constitutional_law: 1 statute doc, 454 sections, 0 case-law records
+- consumer_protection: 2 statute docs, 142 sections, 0 case-law records
+- family_law: 3 statute docs, 130 sections, 0 case-law records
+- tenancy_property: 10 statute docs, 397 sections, 0 case-law records
+
+Paper-ready paragraph:
+JusticeCompass was validated on the current implementation with 8 automated tests passing successfully. The project knowledge base contains 21 statute documents, 3,282 statute sections, 1,392 case-law records, 270 cross-reference entries, and 5,452 vector database records. Coverage is strongest in criminal law, where 1,200 bail-related judgments are available; other domains are represented primarily by statutes rather than case law. The system reports 94.7% citation coverage in the cross-reference layer, while noting that 90 IPC sections remain unmapped and that the concordance is not yet verified against an official government mapping. The model abstains with insufficient_data when comparable outcome data are too small, avoiding unsupported probability estimates. A full held-out retrieval and answer-quality benchmark has not yet been executed in the repository, so these results reflect implementation validation and corpus coverage rather than final benchmarked retrieval metrics.

@@ -91,7 +91,9 @@ class PredictionResult:
 
 FAVORABLE = {"allowed", "granted", "partly_allowed", "partly allowed", "successful"}
 UNFAVORABLE = {"dismissed", "rejected", "denied", "refused", "withdrawn"}
-BAIL_OUTCOMES = {"granted", "rejected", "denied"}
+BAIL_GRANTED_OUTCOMES = {"granted", "allowed"}
+BAIL_REJECTED_OUTCOMES = {"rejected", "denied", "dismissed", "refused"}
+BAIL_OUTCOMES = BAIL_GRANTED_OUTCOMES | BAIL_REJECTED_OUTCOMES
 
 # Common outcome keywords found in Indian judgment text
 _OUTCOME_PATTERNS: list[tuple[re.Pattern[str], str]] = [
@@ -183,6 +185,8 @@ def estimate_bail_outcome(
     comparable = []
     for record in records:
         payload = _get_payload(record)
+        if payload.get("outcome_verified") is not True:
+            continue
         outcome = extract_outcome(record)
         if outcome not in BAIL_OUTCOMES:
             continue
@@ -190,7 +194,10 @@ def estimate_bail_outcome(
             continue
         if not _match_section(payload, cited_section):
             continue
-        comparable.append({**payload, "outcome": outcome})
+        normalized_outcome = (
+            "granted" if outcome in BAIL_GRANTED_OUTCOMES else "rejected"
+        )
+        comparable.append({**payload, "outcome": normalized_outcome})
 
     if len(comparable) < min_cases:
         return OutcomeEstimate(
@@ -205,7 +212,7 @@ def estimate_bail_outcome(
             ),
             limitations=[
                 "Historical judgments are not a forecast of an individual case.",
-                "The dataset may be incomplete or non-representative.",
+                "Only manually verified outcomes are counted; the verified sample may be incomplete or non-representative.",
             ],
         )
 
@@ -242,6 +249,8 @@ def estimate_historical_outcome(
     comparable = []
     for record in records:
         payload = _get_payload(record)
+        if payload.get("outcome_verified") is not True:
+            continue
         outcome = extract_outcome(record)
         if outcome in FAVORABLE or outcome in UNFAVORABLE:
             comparable.append(({**payload, "outcome": outcome}, outcome))
@@ -259,8 +268,8 @@ def estimate_historical_outcome(
             ),
             limitations=[
                 "This is not a probability of winning or legal advice.",
-                "Search results may be incomplete and outcome extraction "
-                "requires review.",
+                "Only manually verified outcomes are counted; the verified "
+                "sample may be incomplete or non-representative.",
             ],
         )
 
@@ -282,8 +291,8 @@ def estimate_historical_outcome(
         ),
         limitations=[
             "This is not a probability of winning or legal advice.",
-            "Similarity and outcome labels cannot capture every fact "
-            "considered by a judge.",
+            "Similarity and manually verified outcome labels cannot capture "
+            "every fact considered by a judge.",
         ],
     )
 

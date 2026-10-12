@@ -53,6 +53,7 @@ SOURCE_FILES: Dict[str, tuple[str, str]] = {
 # Bail dataset lives at the root, not in a subfolder
 BAIL_FILE = "indianbail_1200.json"
 BAIL_DOMAIN = "bail"
+ECOURTS_FILE = "ecourts_cases.json"
 
 
 # ---------------------------------------------------------------------------
@@ -114,6 +115,18 @@ def _normalize_record(case: Dict[str, Any], source_file: str,
     details = case.get("case_details") or {}
     judges = case.get("judges") or []
     sections = case.get("cited_sections") or []
+    source_dataset = case.get(
+        "source_dataset",
+        "eCourts" if source_file == ECOURTS_FILE else "Indian Kanoon",
+    )
+    # Only manually imported eCourts records need an explicit review flag;
+    # bulk curated datasets (e.g. IndianBailJudgments-1200, Indian Kanoon)
+    # ship with pre-labeled outcomes and are trusted by default.
+    outcome_verified = (
+        case.get("outcome_verified") is True
+        if source_dataset == "eCourts"
+        else True
+    )
 
     return {
         # Identity
@@ -143,11 +156,14 @@ def _normalize_record(case: Dict[str, Any], source_file: str,
         "outcome_raw": case.get("outcome"),
         "outcome": _normalize_outcome(case.get("outcome")),
         "outcome_detail": case.get("outcome_detail"),
+        "outcome_verified": outcome_verified,
+        "outcome_candidate": case.get("outcome_candidate"),
 
         # Text
         "summary": case.get("summary", ""),
         "ratio_decidendi": case.get("ratio_decidendi", ""),
         "obiter_dicta": case.get("obiter_dicta", ""),
+        "judgment_text": case.get("judgment_text", ""),
 
         # Legal provisions
         "cited_sections": sections,
@@ -160,7 +176,9 @@ def _normalize_record(case: Dict[str, Any], source_file: str,
 
         # Provenance
         "source_file": source_file,
-        "source_dataset": case.get("source_dataset", "Indian Kanoon"),
+        "source_dataset": source_dataset,
+        "source_url": case.get("source_url"),
+        "source_record": case.get("source_record"),
     }
 
 
@@ -203,6 +221,22 @@ def load_cases(caselaw_root: Path | None = None) -> List[Dict[str, Any]]:
         print(f"[caselaw] loaded {len(batch):>5} from {BAIL_FILE}")
     else:
         print(f"[caselaw] missing bail file: {bail_fp}")
+
+    # Optional supplemental judgments exported from eCourts in the same
+    # canonical case schema as the existing processed datasets.
+    ecourts_fp = root / ECOURTS_FILE
+    if ecourts_fp.exists():
+        with open(ecourts_fp, "r", encoding="utf-8") as fh:
+            try:
+                batch = json.load(fh)
+            except json.JSONDecodeError as e:
+                print(f"[caselaw] JSON error in {ecourts_fp}: {e}")
+                batch = []
+        for case in batch:
+            records.append(_normalize_record(case, ECOURTS_FILE, "ecourts"))
+        print(f"[caselaw] loaded {len(batch):>5} from {ECOURTS_FILE}")
+    else:
+        print(f"[caselaw] optional eCourts file not found: {ecourts_fp}")
 
     print(f"[caselaw] TOTAL: {len(records)} cases loaded")
     return records

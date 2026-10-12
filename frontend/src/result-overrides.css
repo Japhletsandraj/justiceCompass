@@ -1,0 +1,106 @@
+.answer-points {
+  color: #d3d1c9;
+  line-height: 1.75;
+  font-size: 13px;
+  max-width: 590px;
+  margin: 25px 0 28px;
+  padding-left: 18px;
+}
+
+.answer-points li {
+  margin-bottom: 13px;
+  padding-left: 5px;
+  max-width: 68ch;
+}
+
+.answer-points li::marker {
+  color: var(--gold);
+}
+
+.step-list li p {
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+html[data-theme='light'] .step-list li p {
+  color: #211f1b;
+}
+
+html[data-theme='night'] .step-list li p {
+  color: #f5f1e8;
+}
+
+.dashboard-grid {
+  align-items: start;
+}
+
+.insight-card {
+  min-height: 0;
+  height: fit-content;
+}
+
+.answer-card {
+  grid-row: auto;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 3px;
+}
+
+.language-switcher span {
+  color: var(--muted);
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.language-switcher select {
+  width: 92px;
+  border: 1px solid var(--line);
+  padding: 7px 6px;
+  color: var(--ink);
+  background: var(--panel);
+  font-size: 11px;
+}
+
+/* Keep assessment text and controls readable in both themes. */
+.answer-points,
+.answer-points li,
+.answer-text {
+  color: var(--ink);
+}
+
+html[data-theme='light'] .answer-points,
+html[data-theme='light'] .answer-points li,
+html[data-theme='light'] .answer-text {
+  color: #211f1b;
+}
+
+html[data-theme='night'] .answer-points,
+html[data-theme='night'] .answer-points li,
+html[data-theme='night'] .answer-text {
+  color: #f5f1e8;
+}
+
+html[data-theme='light'] .language-switcher select {
+  color: #211f1b;
+  background: #fbf8f1;
+}
+
+html[data-theme='night'] .language-switcher select {
+  color: #f5f1e8;
+  background: #111820;
+}
+
+.language-switcher select option {
+  color: #211f1b;
+  background: #fbf8f1;
+}
+
+html[data-theme='night'] .language-switcher select option {
+  color: #f5f1e8;
+  background: #111820;
+}

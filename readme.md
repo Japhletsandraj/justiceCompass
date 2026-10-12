@@ -1,5 +1,29 @@
 # JusticeCompass
 
+## Running the App
+
+### Backend (FastAPI)
+
+Start the API server from the repo root:
+
+```powershell
+.\.venv\Scripts\python.exe -m uvicorn backend.api:app --reload
+```
+
+The API runs at `http://localhost:8000` (interactive docs at `http://localhost:8000/docs`).
+
+### Frontend (React + Vite)
+
+In a separate terminal:
+
+```powershell
+cd frontend
+npm install   # first time only
+npm run dev
+```
+
+The UI runs at `http://localhost:5173` and talks to the backend on port 8000.
+
 ## Current status
 
 JusticeCompass has completed its core infrastructure: hybrid retrieval (FAISS + BM25) and a full Retrieval Augmented Generation (RAG) pipeline for legal Q&A. The system provides accurate, cited, and confidence-scored answers to legal questions using Indian statutes, constitutional law, and case law.
